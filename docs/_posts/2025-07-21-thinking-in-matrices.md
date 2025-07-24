@@ -3,28 +3,9 @@ layout: post
 title:  "Thinking inside the Matrix"
 rendered_title: "Thinking <del>outside</del> <em>inside</em> the Matrix"
 date:   2025-07-21 11:22:40 +0200
-update_date:  2025-07-23 11:22:40 +0200
+update_date:  2025-07-24 11:22:40 +0200
 categories: foundations
-toc: true
 ---
-
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {
-          delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false},
-            {left: '\\[', right: '\\]', display: true},
-            {left: '\\(', right: '\\)', display: false}
-          ]
-        });"></script>
-
-* TOC
-{:toc}
 
 <img class="center-image" src="{{ '/assets/img/matrix.png' | relative_url }}" alt="Matrix illustration" width="200"/>
 
@@ -146,7 +127,7 @@ Below is the central idea of matrix thinking, which I will refer to as the Golde
 
 **I don't think that's a real name, I just made it up for dramatic purposes. But it's a neat name to really drive my point accross.*
 
-<div class="highlight">
+<div class="myhighlight">
 A sum of products $\sum_{k=1}^K a_k b_k$ iterated over the same index $k$ can be written as a dot product $<\cdot,\cdot>$ between two $K$-dimensional vectors $\mathbf{a}$ and $\mathbf{b}$:
 
 $$\sum_{k=1}^K a_k b_k = <\mathbf{a}, \mathbf{b}> = \mathbf{a}^\top\mathbf{b} = \mathbf{b}^\top\mathbf{a}$$
@@ -473,6 +454,8 @@ In addition to a deeper understanding of machine learning algorithms and the abi
 
 So, let's do a very quick test that should hopefully help me convert any remaining non-believer.
 
+### Implementation with index notation
+
 Let's first create a dummy dataset for test purposes using numpy.
 
 ```python
@@ -516,6 +499,8 @@ print(compute_error(w, X, y))
 takes about 3.4 seconds on my computer.
 
 Notice that there is nothing particularly wrong with this code, it is a mostly straightforward Python implementation of the formula above.
+
+### Implementation with matrix notation
 
 Now let's compute the exact same thing, this time using linear algebra operations from numpy to implement the matrix notation of the loss:
 $$
@@ -570,7 +555,7 @@ For each of the examples below, try to either write it in matrix notation if it 
 
 You may look at the solution of the first exercise (which is a really basic example) to clarify what is being asked if you want. But ideally, you should try to do the other ones yourself.
 
-<div class="highlight" markdown="1">
+<div class="myhighlight" markdown="1">
 Hints: some of these exercises may require the use of:
 
 - The $\ell 1$ norm
@@ -623,7 +608,12 @@ A @ b
 ```
 </details>
 
-#### Exercise 1
+<details markdown="1" style="background-color: white;">
+<summary>Show exercises</summary>
+
+#### Other practice exercises
+
+##### Exercise 1
 
 $$\sum_i (a_{i} - b_i) b_i$$
 
@@ -640,7 +630,7 @@ Numpy assuming definition
 ```
 </details>
 
-#### Exercise 2
+##### Exercise 2
 
 $$(\mathbf{A} \odot \mathbf{B}) \mathbf{c}$$
 
@@ -660,7 +650,7 @@ Numpy assuming definition
 ```
 </details>
 
-#### Exercise 3
+##### Exercise 3
 
 $$\sum_j b_j  a_{j,i}$$
 
@@ -679,7 +669,7 @@ A.T @ b
 ```
 </details>
 
-#### Exercise 4
+##### Exercise 4
 
 $$\frac{\sum_j a_j b_j}{\sum_j b_j^2} b_i$$
 
@@ -703,7 +693,7 @@ a @ b / b @ b * b # check parentheses
 ```
 </details>
 
-#### Exercise 5
+##### Exercise 5
 
 $$\sum_i \sum_j a_{i,j}b_j$$
 
@@ -720,7 +710,7 @@ Numpy implementation:
 ```
 </details>
 
-#### Exercise 6
+##### Exercise 6
 
 $$\sum_i a_i b_i c_i$$
 
@@ -746,7 +736,7 @@ Numpy implementation:
 ```
 </details>
 
-#### Exercise 7
+##### Exercise 7
 
 $$\sum_i \sum_j b_{i,j} a_i a_j$$
 
@@ -771,7 +761,7 @@ a.T @ B @ a
 ```
 </details>
 
-#### Exercise 8
+##### Exercise 8
 
 $$\sum_i a_i b_i b_j$$
 
@@ -792,7 +782,7 @@ Numpy implementation:
 ```
 </details>
 
-#### Exercise 9
+##### Exercise 9
 
 $$\sum_k (a_{i,k}x_{k,j} + b_{k,j}x_{i,k} + c_{i,j})$$
 
@@ -810,7 +800,7 @@ Numpy implementation:
 ```
 </details>
 
-#### Exercise 10
+##### Exercise 10
 
 $$\mathbf{a}\mathbf{b}^{\top}$$
 
@@ -829,7 +819,7 @@ $\mathbf{a}\mathbf{b}^\top$ is the *outer product* of vectors $\mathbf{a}$ and $
 
 </details>
 
-#### Exercise 11
+##### Exercise 11
 
 $$a_i b_j b_i$$
 
@@ -843,7 +833,7 @@ $$
 
 </details>
 
-#### Exercise 12
+##### Exercise 12
 
 $$\sum_i c_{i,k} a_j \sum_k a_{k,i} b_j$$
 
@@ -854,7 +844,7 @@ $a$ sometimes has one index, sometimes two: this one doesn't really seem to make
 
 </details>
 
-#### Exercise 13
+##### Exercise 13
 
 $$\sum_i c_{i,j} a_i \sum_k b_{i,k} a_k$$
 
@@ -871,7 +861,7 @@ $$
 
 </details>
 
-#### Exercise 14
+##### Exercise 14
 
 $$\sum_i b_i \mathbf{a}_i a_{i,j}$$
 
@@ -886,6 +876,8 @@ $$
 \mathbf{Ab} \odot \mathbf{A}
 $$
 (agreed, this is a bit unclear, and I would discourage you from using such notations without first being cristal clear about what is what and what you are defining)
+
+</details>
 
 </details>
 
@@ -909,3 +901,5 @@ Put exercises in details?
 [matrix-calculus]: {% link _posts/2025-07-22-matrix-calculus.md %}
 [pseudo-inverse]:   https://https://comingsoon.com/
 [introduction-tensors]: https://https://comingsoon.com/
+
+

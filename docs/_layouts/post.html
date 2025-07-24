@@ -3,6 +3,27 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
+  <!--- Render math with MathJax (ugly) -->
+  <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+  <!--- Render math with KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ]
+          });"></script>
+
+  <aside id="toc" style="width: 250px; position: fixed; top: 1rem; height: 100vh;">
+    <h2>Table of Contents</h2>
+  </aside>
+
   <header class="post-header">
     <!-- <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1> -->
     <h1 class="post-title p-name" itemprop="name headline">{{ page.rendered_title | default: page.title | markdownify }}</h1>
@@ -26,4 +47,18 @@ layout: default
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+  <!--- Create a table of contents -->
+  <link rel="stylesheet" href="https://unpkg.com/tocbot@4.18.2/dist/tocbot.css">
+  <script src="https://unpkg.com/tocbot@4.18.2/dist/tocbot.min.js"></script>
+  <script>
+    tocbot.init({
+      tocSelector: '#toc',
+      contentSelector: '.post',
+      headingSelector: 'h1, h2, h3, h4',
+      collapseDepth: 6,
+      scrollSmooth: true
+    });
+  </script>
+
 </article>
