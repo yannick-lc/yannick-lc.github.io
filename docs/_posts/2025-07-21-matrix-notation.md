@@ -101,7 +101,7 @@ Our estimation or *prediction* $\hat{y}$ will be a linear combination of the inp
 
 $$
 \begin{align*}
-\hat{y} &= w_1 \cdot x_1 + w_2 \cdot x_2 + \dots + w_K \cdot x_D \\
+\hat{y} &= w_1 \cdot x_1 + w_2 \cdot x_2 + \dots + w_K \cdot x_K \\
 &= \sum_{k=1}^K w_k x_k
 \end{align*}
 $$
@@ -228,7 +228,9 @@ x_{N,1} & x_{N,2} & \dots & x_{N,k} & \dots & x_{N,K}
 \in \mathbb{R}^{N \times K}$$
 
 <details markdown="1">
-<summary><em>A quick word on notation</em></summary>
+<summary>A quick word on notation</summary>
+
+<a id="quick-word-notation"></a>
 
 In general throughout this blog, matrices are denoted by uppercase bold letters (e.g. $\mathbf{X}$), vectors by lowercase bold letters (e.g. $\mathbf{x}$), and scalars by non-bold letters (e.g. $k$, $N$ or $x_{n,k}$). This is a fairly common and quite useful convention, as this makes the nature of each variable/object much clearer in equations.
 
@@ -474,7 +476,7 @@ Well, I'm glad you asked!
 First, I 100% guarantee that someone mindlessly *.fit.predicting* (yes, that's a word now) their way to predictions using existing implementations without understanding how the underlying algorithm works is bound to make some dumb mistakes sooner or later. I could tell you quite a few horror stories on this topic, and I probably will in a future blog post. So in general, the more you know, the less likely you are to do something stupid.
 
 Second, truly mastering the basics is a prerequisite to identifying situations where the same ideas can be applied to obtain non-trivial results.
-After all, this is what this blog is supposed to be about — and this should hopefully be illustrated soon enough with real case studies on e.g. 3D facial shape estimation from photos, or internal bone shape estimation from 3D surface mesh. So stay tuned!
+After all, this is what this blog is supposed to be about — and this should hopefully be illustrated soon enough with real case studies on e.g. 3D facial shape estimation from photos, or internal bone shape estimation from 3D skin surface mesh. So stay tuned!
 
 And of course, mastering the basics is also a prerequisite to work on cutting-edge topics. Mastering PCA is a first step in mastering auto-encoders. Auto-encoders lead to VAEs. VAEs lead to diffusion models, diffusion models lead to <del>the dark side</del> image generation models — which are great to generate awesome illustrations for ridiculously technical blog posts.
 
@@ -620,7 +622,7 @@ $$\sum_j a_{i,j} b_j$$
 <details markdown="1">
 <summary>Solution</summary>
 
-There are two indices $i$ and $j$ for object $a$, so it seems to be a matrix, which we can write $\mathbf{A}$ (*cf.* the quick note on notation earlier). Assuming $i$ ranges from $1$ to some integer $I$, and $j$ from $1$ to $J$, $\mathbf{A}$ is of size $I \times J$, i.e. $\mathbf{A} \in \mathbb{R}^{I \times J}$.
+There are two indices $i$ and $j$ for object $a$, so it seems to be a matrix, which we can write $\mathbf{A}$ (*cf.* the [quick note on notation][quick-word-notation] earlier). Assuming $i$ ranges from $1$ to some integer $I$, and $j$ from $1$ to $J$, $\mathbf{A}$ is of size $I \times J$, i.e. $\mathbf{A} \in \mathbb{R}^{I \times J}$.
 
 Similarly, there is only one index $j$ for $b$, so it is probably a vector, which we can write $\mathbf{b} \in \mathbb{R}^J$.
 
@@ -682,7 +684,7 @@ $$(\mathbf{A} \odot \mathbf{B}) \mathbf{c}$$
 <summary>Solution</summary>
 This time, the quantity is expressed in matrix notation, so we are expected to convert it to index notation — which is generally easier.
 
-Let's look at our objects: since $\mathbf{A}$ and $\mathbf{B}$ are written in bold, uppercase letters, we can expect them to be matrices, as per the note *"a quick note on notation"* in the article above. The Hadamard product implies that they are of the same size: let's write $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{I \times J}$ for some $I$ and $J$.
+Let's look at our objects: since $\mathbf{A}$ and $\mathbf{B}$ are written in bold, uppercase letters, we can expect them to be matrices, as per the note [*"a quick word on notation"*][quick-word-notation] in the article above. The Hadamard product implies that they are of the same size: let's write $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{I \times J}$ for some $I$ and $J$.
 $\mathbf{c}$ is written in a bold, lowercase letter, so it's probably a vector. For the expression to make sense, we need to have $\mathbf{c} \in \mathbb{R}^{J}$.
 The result of the operation above should then be a vector of size $I$, with elements $i$ ranging from $1$ to $I$.
 
@@ -708,7 +710,13 @@ $$\sum_j b_j  a_{j,i}$$
 
 Compared to exercise 0, $a$ and $b$ have switched places, which does not impact result as scalar multiplication is commutative. More importantly, indices $i$ and $j$ have also switched places with respect to $a$: so now, each dot product applied to $\mathbf{b} \in \mathbb{R}^J$ is defined by a *column* $\mathbf{a}_{:,i}$ of a matrix $\mathbf{A} \in \mathbb{R}^{J \times I}$, not by a row as previously.
 
-To write this in terms of matrix/vector operations, we can simply *transpose* matrix $\mathbf{A}$ so that the resulting rows correspond to the previous column:
+To write this in terms of matrix/vector operations, we can simply *transpose* matrix $\mathbf{A}$ so that the resulting rows correspond to the previous columns. We can write:
+
+$$
+\sum_j b_j  a_{j,i} = \sum_j a_{i,j}^\top b_j
+$$
+
+which corresponds to
 
 $$\mathbf{A}^\top\mathbf{b} \in \mathbb{R}^I, \quad \text{with } \mathbf{A} \in \mathbb{R}^{J \times I}, \mathbf{b} \in \mathbb{R}^J$$
 
@@ -961,6 +969,41 @@ np.outer(a * b, b)
 
 ##### Exercise 12
 
+$$\sum_i a_i \mathbf{b}_i \quad\quad \text{ with } \mathbf{b}_i \in \mathbb{R}^J ~~ \forall i$$
+
+<details markdown="1">
+<summary>Solution</summary>
+
+Ooh, some small change! This time, we have a mix of index and matrix notation, as we are explicitly told that all the $\mathbf{b}_i$ are $J$-dimensional vectors.
+Since we have $I$ such vectors $\mathbf{b}_1, \dots, \mathbf{b}_I$, we may stack them in a matrix
+$\mathbf{B} = (\mathbf{b}_1, \dots, \mathbf{b}_I)^\top \in \mathbb{R}^{I \times J}$, such that $\mathbf{b}_i$ corresponds to row $i$ of this matrix.
+
+This is similar to how previously, sample $\mathbf{x}_n$ was a $K$-dimensional vector, corresponding to row number $n$ of the feature matrix $\mathbf{X} \in \mathbb{R}^{N \times K}$.
+
+OK, so, we have a weighted sum of vectors, each vector being weighted by a coefficient $a_i$. So the result should be a vector with the same dimension as any $\mathbf{b}_i$, i.e. a vector of dimension $J$.
+Element $j$ of this vector is given by
+
+$$
+\sum_i a_i b_{i,j} = \sum_i b_{j,i}^\top a_i
+$$
+
+This corresponds to the $j^\text{th}$ row of the solution:
+
+$$
+\mathbf{B}^\top\mathbf{a}
+$$
+
+I'll let you check that all the dimensions match. By the way, the fact that $\sum_i a_i \mathbf{b}_i$ corresponds to $\mathbf{B}^\top\mathbf{a}$ is useful to remember.
+
+NumPy implementation:
+```python
+B.T @ a
+```
+
+</details>
+
+##### Exercise 13
+
 $$\sum_i c_{i,k} a_j \sum_k a_{k,i} b_j$$
 
 <details markdown="1">
@@ -977,7 +1020,7 @@ So whoever wrote this probably made a mistake somewhere*.
 
 </details>
 
-##### Exercise 13
+##### Exercise 14
 
 $$\sum_i c_{i,j} a_i \sum_k b_{i,k} a_k$$
 
@@ -997,7 +1040,7 @@ $$
 
 </details>
 
-##### Exercise 14
+##### Exercise 15
 
 $$\sum_i b_i \mathbf{a}_i a_{i,j}$$
 
@@ -1010,15 +1053,17 @@ $$a_{i,j}$$.
 
 *However*, we can notice that when there is just 1 index, $\mathbf{a}$ is written in bold lowercase: we may thus interpret $\mathbf{a}_i$ as a vector corresponding to row number $i$ of matrix $\mathbf{A} \in \mathbb{R}^{I \times J}$.
 Thus, $\mathbf{a}_i \in \mathbb{R}^J$.
-This is similar to how previously, sample $\mathbf{x}_n$ was a $K$-dimensional vector, corresponding to training sample in row number $n$ of the feature matrix $\mathbf{X} \in \mathbb{R}^{N \times K}$.
 
-$b_i$ and $a_{i,j}$ are both scalars, so $b_i \mathbf{a}_i a_{i,j} = b_i i a_{i,j} \mathbf{a}_i$ is a scalar multiplied by a vector, i.e. a vector with the same size as $\mathbf{a}_i \in \mathbb{R}^J$.
+$b_i$ and $a_{i,j}$ are both scalars, so
+$$b_i \mathbf{a}_i a_{i,j} = b_i a_{i,j} \mathbf{a}_i$$ is a scalar ($b_i a_{i,j}$)
+multiplied by a vector ($$\mathbf{a}_i$$), i.e. a vector with the same size as $\mathbf{a}_i \in \mathbb{R}^J$.
 
-$$
-\mathbf{Ab} \odot \mathbf{A}
-$$
+So our final result is a weighted sum of the vectors $\mathbf{a}_i$. Its $j^\text{th}$ element is
+$$\sum_i b_i a_{i,j} a_{i,j}$$. This corresponds to
 
-(Agreed, the notation for this exercise was a bit unclear. I would in fact strongly discourage you from using such notation without first being crystal clear about the nature of every object involved and whatever it is you are referring to.)
+$$(\mathbf{A} \odot \mathbf{A})^\top \mathbf{b}$$
+
+*(Agreed, the initial notation for this exercise was quite unclear. I would in fact strongly discourage you from using such notation without first being crystal clear about the nature of every object involved and whatever it is you are referring to.)*
 
 </details>
 
@@ -1038,7 +1083,9 @@ Although it was not the main topic of this blog post, it is also particularly us
 
 And finally, you may want to check out my other blog posts. A natural continuation of this one would be the one on [matrix calculus][matrix-calculus].
 
-See you there, and thanks for reading! *(TODO: find a catchier signature catch to conclude posts)*
+See you there, and thanks for reading!
+
+*(TODO: find a catchier signature catch to conclude posts)*
 
 <!---
 This should be a hidden comment.
@@ -1047,14 +1094,13 @@ Notes: replace ref to article on tensors when ready. Same for Fibonacci bonus pa
 Same for Lagrange multiplier (maybe one day).
 #TODO A few parts left to complete.
 
-Similarly, useful to pratice sum, mean, argmin etc and getting familiar with axes in e.g. numpy (other libraires like Pytorch work the same way)
-
-Put exercises in details?
+Maybe one day explain why n-th sample is row of feature matrix, and not e.g. column?
 -->
 
 [part-speed]: {% link _posts/2025-07-21-matrix-notation.md %}#the-case-for-speed
 [part-gifts]: {% link _posts/2025-07-21-matrix-notation.md %}#other-gifts-from-the-linear-algebra-overlords
 [part-exercises]: {% link _posts/2025-07-21-matrix-notation.md %}#other-practice-exercises
+[quick-word-notation]: {% link _posts/2025-07-21-matrix-notation.md %}#quick-word-notation
 
 [part-exercise-9]: {% link _posts/2025-07-21-matrix-notation.md %}#exercise-9
 [part-exercise-4]: {% link _posts/2025-07-21-matrix-notation.md %}#exercise-4
