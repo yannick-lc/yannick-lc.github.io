@@ -7,7 +7,7 @@ update_date:  2025-07-24 11:22:40 +0200
 categories: foundations
 ---
 
-<img class="center-image" src="{{ '/assets/img/matrix-notations/matrix-illustration.png' | relative_url }}" alt="Matrix illustration" width="400"/>
+<img class="center-image" src="{{ '/assets/img/matrix-notations/matrix-illustration.jpg' | relative_url }}" alt="Matrix illustration" width="400"/>
 <div class="figure-legend" markdown="1">
 A Machine Learning Legend who can think inside the Matrix and knows when to avoid index notations.
 </div>
@@ -65,9 +65,9 @@ For a beginner, it requires some effort to visualize the actual moves of the pie
 Most of us mere mortals find it much more intuitive to understand chess moves through actual board diagrams.
 
 <div style="text-align: center;">
-    <img src="{{ '/assets/img/matrix-notations/chess1.png' | relative_url }}" alt="Chess game 1" width="200"/> &nbsp;&nbsp;
-    <img src="{{ '/assets/img/matrix-notations/chess2.png' | relative_url }}" alt="Chess game 2" width="200"/> &nbsp;&nbsp;
-    <img src="{{ '/assets/img/matrix-notations/chess3.png' | relative_url }}" alt="Chess game 2" width="200"/>
+    <img src="{{ '/assets/img/matrix-notations/chess1.jpg' | relative_url }}" alt="Chess game 1" width="200"/> &nbsp;&nbsp;
+    <img src="{{ '/assets/img/matrix-notations/chess2.jpg' | relative_url }}" alt="Chess game 2" width="200"/> &nbsp;&nbsp;
+    <img src="{{ '/assets/img/matrix-notations/chess3.jpg' | relative_url }}" alt="Chess game 2" width="200"/>
 </div>
 <div class="figure-legend" markdown="1">
 A not particularly interesting chess game.
@@ -335,7 +335,7 @@ But again, doing this can be a *really* ***really*** powerful tool when used cor
 
 ### Making use of our newly unlocked power
 
-<img class="center-image" src="{{ '/assets/img/matrix-notations/fullpower.png' | relative_url }}" alt="The full power of linear algebra (poor Sylvester)" width="400"/>
+<img class="center-image" src="{{ '/assets/img/matrix-notations/fullpower.jpg' | relative_url }}" alt="The full power of linear algebra (poor Sylvester)" width="400"/>
 
 <div class="figure-legend" markdown="1">
 A poorly disguised Sylvester equation about to be anihilated by the full power of linear algebra ([exercise 9][part-exercise-9]).
