@@ -7,16 +7,16 @@ update_date:  2025-07-24 11:22:40 +0200
 categories: foundations
 ---
 
-<img class="center-image" src="{{ '/assets/img/matrix-notations/matrix-illustration.jpg' | relative_url }}" alt="Matrix illustration" width="400"/>
+<img class="center-image" src="{{ '/assets/img/matrix-notation/matrix-illustration.jpg' | relative_url }}" alt="Matrix illustration" width="400"/>
 <div class="figure-legend" markdown="1">
-A Machine Learning Legend who can think inside the Matrix and knows when to avoid index notations.
+A Machine Learning Legend who can think inside the Matrix and knows when to avoid index notation.
 </div>
 
 One of the most underrated yet crucial skills to acquire in your machine learning journey is the ability to think and write in terms of matrices, vectors, or sometimes tensors.
 
 *What do I even mean by that?*
 
-Let's see a quick example. Below is a quantity expressed in what I call *index notations*, using sums over indices:
+Let's see a quick example. Below is a quantity expressed in what I call *index notation*, using sums over indices:
 
 $$
 \begin{equation}
@@ -24,7 +24,7 @@ $$
 \end{equation}
 $$
 
-And here is the exact same quantity, but this time expressed using matrices and linear algebra operations, in what I call *matrix notations*:
+And here is the exact same quantity, but this time expressed using matrices and linear algebra operations, in what I call *matrix notation*:
 
 $$
 \begin{equation}
@@ -32,53 +32,53 @@ $$
 \end{equation}
 $$
 
-<sup><sub>(As you may have recognized, this corresponds to the least square linear regression loss — but this is not important for now).<sup><sub>
+<sup><sub>(As you may have recognized, this corresponds to the least squares linear regression loss — but this is not important for now).<sup><sub>
 
 *Why should you care?*
 
-Well first, if you're a student of mine who I practically forced reading this blog post in a somewhat blatant conflict of interest, just know that I mainly use matrix notations during class. So you better get used to it.
+Well first, if you're a student of mine who I practically forced reading this blog post in a somewhat blatant conflict of interest, just know that I mainly use matrix notation during class. So you better get used to it.
 But, even if you're not one of my students:
 
 <div class="silverhighlight" markdown="1">
-Writing in matrix notations gives you two big advantages over writing in index notations: 
-1. **Speed**. The implementation of the former may enable *huge* speedups in code execution when compared with the latter. And by huge, I mean hundred-plus fold speedups.
+Writing in matrix notation gives you two big advantages over writing in index notation: 
+1. **Speed**. The implementation of the former may enable *huge* speedups in code execution when compared with the latter. And by huge, I mean hundred-plus-fold speedups.
 
     Don't believe me? You should read [part 3][part-speed] of this article then, you may change your mind.
 
 2. **Superpowers**. More precisely, the ability to use the unreasonable effectiveness of linear algebra. But asking the linear algebra overlords for help requires speaking their language, namely, that of matrices and matrix operations.
 This shall be demonstrated in [part 2][part-gifts].
 
-    <!--- Plus, as will be evidenced in part [part 2]({% link _posts/2025-07-21-thinking-in-matrices.md %}#other-gifts-from-the-linear-algebra-overlords), many if not most ML algorithms rely heavily on linear algebra, and can only be truly understood through this lense. -->
+    <!--- Plus, as will be evidenced in part [part 2][part-gifts], many if not most ML algorithms rely heavily on linear algebra, and can only be truly understood through this lens. -->
 </div>
 
 So, if you want to go beyond just calling *.fit* and *.predict* on your machine learning journey and become a true Machine Learning Legend, thinking in matrices is an essential step forward.
 
 <details markdown="1">
-<summary>Side note: machine learning, chess, and algebraic notations</summary>
+<summary>Side note: machine learning, chess, and algebraic notation</summary>
 
-One metaphore which I think nicely illustrates my point is chess notations.
+One metaphor which I think nicely illustrates my point is chess notation.
 
-For a beginner, it requires some effort to visualize the actual moves of the pieces on a chessboard from algebraic chess notations such as
+For a beginner, it requires some effort to visualize the actual moves of the pieces on a chessboard from algebraic chess notation such as
 
 *1. e4 e5 2. Nf3 Nc6 3. Bb5 a6...*
 
-Most of us mere mortals find it much more intuitive to understand chess moves through actual board diagrams.
+Most of us mere mortals find it much more intuitive to follow chess moves using actual board diagrams.
 
 <div style="text-align: center;">
-    <img src="{{ '/assets/img/matrix-notations/chess1.jpg' | relative_url }}" alt="Chess game 1" width="200"/> &nbsp;&nbsp;
-    <img src="{{ '/assets/img/matrix-notations/chess2.jpg' | relative_url }}" alt="Chess game 2" width="200"/> &nbsp;&nbsp;
-    <img src="{{ '/assets/img/matrix-notations/chess3.jpg' | relative_url }}" alt="Chess game 2" width="200"/>
+    <img src="{{ '/assets/img/matrix-notation/chess1.jpg' | relative_url }}" alt="Chess game 1" width="200"/> &nbsp;&nbsp;
+    <img src="{{ '/assets/img/matrix-notation/chess2.jpg' | relative_url }}" alt="Chess game 2" width="200"/> &nbsp;&nbsp;
+    <img src="{{ '/assets/img/matrix-notation/chess3.jpg' | relative_url }}" alt="Chess game 2" width="200"/>
 </div>
 <div class="figure-legend" markdown="1">
-A not particularly interesting chess game.
+An unremarkable chess game.
 </div>
 
 However, getting used to going back and forth between the two representations enables keen players to tackle more advanced chess books, ones that don't spoon-feed you with board diagrams for every move.
-Ultimately, this is  necessary to reach a certain level.
+Ultimately, this is necessary to reach a certain level.
 
-Similarly, writing quantities with sums and indices may be more intuitive to many people* at first, particularly people coming from a Computer Science background, who tends to think in terms of for loops. But being able to effortlessly translate index notations to matrix operations and vice versa is ultimately necessary to go beyond surface-level understanding of machine learning.
+Similarly, writing quantities with sums and indices may be more intuitive to many people* at first, particularly people coming from a Computer Science background, who tend to think in terms of for loops. But being able to effortlessly translate index notation to matrix operations and vice versa is ultimately necessary to go beyond surface-level understanding of machine learning.
 
-**Myself included. I personnaly only started actively developping this skill during my PhD, after a MSc in machine learning and a couple of years of professional experience as a data scientist. So whatever your current level of machine learning proficiency, there is not shame to have. It's always better to start now than never.*
+**Myself included. I personally only started actively developing this skill during my PhD, after a MSc in machine learning and a couple of years of professional experience as a data scientist. So whatever your current level of machine learning proficiency, there is nothing to be ashamed of. It's always better to start now than never.*
 
 </details>
 
@@ -96,26 +96,26 @@ To understand how all of this works, let's start with a very basic example: (mul
 
 <sup><sub>*Note: my goal here is to use linear regression as an example, not explain how it works. [I assume readers are already somehow familiar][about] with basic machine learning concepts, including linear regression.*</sub></sup>
 
-Let's say we have $K$ input variables $x_1, x_2, \dots, x_K$ — for instance, the square footage of an appartment $x_1$, its number of bedrooms $x_2$ and distance to city center $x_3$, in which case $K=3$. We want to estimate the price of this appartment.
+Let's say we have $K$ input variables $x_1, x_2, \dots, x_K$ — for instance, the square footage of an apartment $x_1$, its number of bedrooms $x_2$ and distance to city center $x_3$, in which case $K=3$. We want to estimate the price of this apartment.
 Our estimation or *prediction* $\hat{y}$ will be a linear combination of the inputs:
 
 $$
 \begin{align*}
-\hat{y} &= w_1 \cdot x_1 + w_2 \cdot x_2 + \dots + w_D \cdot x_D \\
+\hat{y} &= w_1 \cdot x_1 + w_2 \cdot x_2 + \dots + w_K \cdot x_D \\
 &= \sum_{k=1}^K w_k x_k
 \end{align*}
 $$
 
-where $w_1, \dots, w_D$ are the *parameters* or *weights* of the model.
+where $w_1, \dots, w_K$ are the *parameters* or *weights* of the model.
 
 
-In standard linear regression, the parameters are learned on a bunch of labeled training examples to minimize some training error. So let's say we have a total of $N$ different samples: for instance, we may have access to the data (square footage, bedrooms etc) of $N=100$ appartments, along with corresponding actual selling prices $y_1, y_2, \dots, y_N$.
-For appartment number $n$, we consider features $x_{n,1}, \dots, x_{n,K}$ (such that $x_{n,k}$ is the $k^\text{th}$ feature of the $n^\text{th}$ appartment), and again make a prediction with
+In standard linear regression, the parameters are learned on a bunch of labeled training examples to minimize some training error. So let's say we have a total of $N$ different samples: for instance, we may have access to the data (square footage, bedrooms etc.) of $N=100$ apartments, along with their corresponding actual selling prices $y_1, y_2, \dots, y_N$.
+For apartment number $n$, we consider features $x_{n,1}, \dots, x_{n,K}$, where $x_{n,k}$ is the $k^\text{th}$ feature of the $n^\text{th}$ apartment. The prediction is then
 
 $$\hat{y}_n = \sum_{k=1}^K w_k x_{n,k}$$
 
-In the usual least square formulation of linear regression, we want to find parameters $w_1, \dots, w_D$ which minimize the squares of the prediction errors on the training dataset.
-For appartment number $n$, the squared difference between prediction $\hat{y}_n$ and the actual price $y_n$ is $$(\hat{y}_n - y_n)^2$$.
+In the usual least squares formulation of linear regression, we want to find parameters $w_1, \dots, w_K$ which minimize the squared prediction errors on the training dataset.
+For apartment number $n$, the squared difference between prediction $\hat{y}_n$ and the actual price $y_n$ is $$(\hat{y}_n - y_n)^2$$.
 Thus,
 
 <div class="silverhighlight" markdown="1">
@@ -132,27 +132,27 @@ $$
 
 OK, looks easy enough.
 
-So then, please remind me why would there by any issue with this notation?
-Why should we prefer *matrix notations* such as
+So then, please remind me: why would there by any issue with this notation?
+Why should we prefer *matrix notation* such as
 
 $$
 ||\mathbf{Xw} - \mathbf{y}||_2^2
 $$
 
-(which we will derive shortly in part 2) over the previous nice, easy to implement double sum with *index notations* from Equation (1)?
+(which we will derive shortly in part 2) over the previous nice, easy-to-implement double sum with *index notation* from Equation (1)?
 
-Well, as I said, two things: speed, and the ability to use linear algebra results. I promise, I will make these two advantages as explicit as I possibly can in very short order. But for now, let's rather focus on how we can transform Equation (1) into Equation (2), so that we can compare the two approaches.
+Well, as I said, for two reasons: speed, and the ability to use results from linear algebra. I promise, I will make these two advantages as explicit as I possibly can in very short order. But for now, let's focus on how we can transform Equation (1) into Equation (2), so that we can compare the two approaches.
 
 ### The Golden Rule of matrix thinking
 
-Below is the central idea of matrix thinking, which I will refer to as the Golden Rule*.
+Below is the central idea of matrix thinking, which I will refer to as the Golden Rule.
 
-**I don't think that's a real name, I just made it up for dramatic purposes. But it's a neat name to really drive my point accross.*
+*I don't think that's a real name, I just made it up for dramatic effect. But it's a neat name to really drive my point across.*
 
 <div class="goldhighlight">
-A sum of products $\sum_{k=1}^K a_k b_k$ iterated over the same index $k$ can be written as a dot product $<\cdot,\cdot>$ between two $K$-dimensional vectors $\mathbf{a}$ and $\mathbf{b}$:
+A sum of products $\sum_{k=1}^K a_k b_k$ iterated over the same index $k$ can be written as a dot product $\cdot$ between two $K$-dimensional vectors $\mathbf{a}$ and $\mathbf{b}$:
 
-$$\sum_{k=1}^K a_k b_k = <\mathbf{a}, \mathbf{b}> = \mathbf{a}^\top\mathbf{b} = \mathbf{b}^\top\mathbf{a}$$
+$$\sum_{k=1}^K a_k b_k = \mathbf{a} \cdot \mathbf{b} = \mathbf{a}^\top\mathbf{b} = \mathbf{b}^\top\mathbf{a}$$
 
 with $\mathbf{a} = \begin{pmatrix} a_1 \\ \vdots \\ a_K \end{pmatrix} \in \mathbb{R}^K$
 and $\mathbf{b} = \begin{pmatrix} b_1 \\ \vdots \\ b_K \end{pmatrix} \in \mathbb{R}^K$
@@ -188,7 +188,7 @@ Let's see how we can apply the Golden Rule to get rid of the sums and indices in
 
 #### First sum over $k$
 
-From our example from earlier: for appartment/sample number $n$, the predicted price/target is given by
+From our example from earlier: for apartment/sample number $n$, the predicted price/target is given by
 
 $$
 \hat{y}_n = \sum_{k=1}^K w_k x_{n,k}
@@ -211,7 +211,7 @@ $$
 \hat{\mathbf{y}} = \begin{pmatrix} \mathbf{x}_1^\top\mathbf{w} \\ \vdots \\ \mathbf{x}_N^\top\mathbf{w} \end{pmatrix}
 $$
 
-Notice anything? A vector whose elements are given by different linear combinations $\mathbf{x}_1, \dots, \mathbf{x}_N$ of the same vector $\mathbf{w}$ is pretty much the definition of a matrix-vector multiplication.
+Notice anything? A vector whose elements are given by different linear combinations of the same vector $\mathbf{w}$ with different coefficients $\mathbf{x}_1, \dots, \mathbf{x}_N$ is pretty much the definition of a matrix-vector multiplication.
 
 Thus, we can "stack" all the $N$ sample vectors $\mathbf{x}_1, \dots, \mathbf{x}_N$ into a matrix with $N$ rows and $K$ columns:
 
@@ -228,11 +228,11 @@ x_{N,1} & x_{N,2} & \dots & x_{N,k} & \dots & x_{N,K}
 \in \mathbb{R}^{N \times K}$$
 
 <details markdown="1">
-<summary><em>A quick word on notations</em></summary>
+<summary><em>A quick word on notation</em></summary>
 
 In general throughout this blog, matrices are denoted by uppercase bold letters (e.g. $\mathbf{X}$), vectors by lowercase bold letters (e.g. $\mathbf{x}$), and scalars by non-bold letters (e.g. $k$, $N$ or $x_{n,k}$). This is a fairly common and quite useful convention, as this makes the nature of each variable/object much clearer in equations.
 
-Using this convention, the matrix $$\mathbf{X} = \begin{pmatrix} x_{1,1} & \dots & x_{1,K} \\ \vdots & \ddots & \vdots \\ x_{N,1} & \dots & x_{N,K} \end{pmatrix} \in \mathbb{R}^{N \times K}$$ can also be more succintly expressed as $$\mathbf{X} = \begin{pmatrix} \mathbf{x}_1^\top \\ \vdots \\ \mathbf{x}_N^\top \end{pmatrix}$$ *(column vectors $\mathbf{x}_n \in \mathbb{R}^{K}$ are transposed as row vectors and then vertically stacked)* or as $\mathbf{X} = \begin{pmatrix} \mathbf{x}_1 ~\dots ~ \mathbf{x}_N \end{pmatrix}^\top$ *(column vectors $\mathbf{x}_n$ are horizontally aligned next to each other, and the resulting $K \times N$ matrix is transposed to obtain the desired $N \times K$ matrix).*
+Using this convention, the matrix $$\mathbf{X} = \begin{pmatrix} x_{1,1} & \dots & x_{1,K} \\ \vdots & \ddots & \vdots \\ x_{N,1} & \dots & x_{N,K} \end{pmatrix} \in \mathbb{R}^{N \times K}$$ can also be more succinctly expressed as $$\mathbf{X} = \begin{pmatrix} \mathbf{x}_1^\top \\ \vdots \\ \mathbf{x}_N^\top \end{pmatrix}$$ *(column vectors $\mathbf{x}_n \in \mathbb{R}^{K}$ are transposed to row vectors and then vertically stacked)* or as $\mathbf{X} = \begin{pmatrix} \mathbf{x}_1 ~\dots ~ \mathbf{x}_N \end{pmatrix}^\top$ *(column vectors $\mathbf{x}_n$ are horizontally aligned next to each other, and the resulting $K \times N$ matrix is transposed to obtain the desired $N \times K$ matrix).*
 
 </details>
 
@@ -244,7 +244,7 @@ $$
 \end{equation}
 $$
 
-We can double check that $$\hat{y}_n = \sum_{k=1}^K x_{n,k} w_k$$ indeed corresponds to the formula for the $n^\text{th}$ row of a matrix-vector multiplication between a matrix $\mathbf{X}$, whose element at row $n$ and column $k$ is given by $x_{n,k}$, and the vector $\mathbf{w}$ whose $k^\text{th}$ element is $w_k$.
+We can double-check that $$\hat{y}_n = \sum_{k=1}^K x_{n,k} w_k$$ indeed corresponds to the formula for the $n^\text{th}$ row of a matrix-vector multiplication between a matrix $\mathbf{X}$ (whose element at row $n$ and column $k$ is given by $x_{n,k}$) and the vector $\mathbf{w}$ (whose $k^\text{th}$ element is $w_k$).
 
 
 <details markdown="1">
@@ -255,24 +255,24 @@ $$
 (\mathbf{Ab})_k = \mathbf{a}_k^\top\mathbf{b} = \sum_i a_{k,i} b_i
 $$
 
-In our specific case here, we would be tempted to say that the *opposite* is happening: the coefficients $\mathbf{w}$ of the linear regression define a linear map that is applied to every sample $\mathbf{x}_n$ to obtain a prediction $\hat{y}_n = \mathbf{w}^\top \mathbf{x}_n$.
+In our specific case here, we would be tempted to say that the *opposite* is happening: the coefficients $\mathbf{w}$ of the linear regression define a linear map that is applied to every sample $\mathbf{x}_n$ to obtain the prediction $\hat{y}_n = \mathbf{w}^\top \mathbf{x}_n$.
 In my explanation earlier, I stated instead that $\mathbf{x}_n$ is a linear map that is applied to $\mathbf{w}$ to obtain row $\hat{y}_n$, which may sound a bit weird.
 
 However, since $\mathbf{w}^\top \mathbf{x}_n = \mathbf{x}_n^\top\mathbf{w}$, the two formulations are equivalent in this situation, and the latter makes the matrix-vector multiplication relationship between $\hat{\mathbf{y}}$, $\mathbf{X}$ and $\mathbf{w}$ a bit more evident IMHO.
 
-Thinking in terms of tensors with covariant and contravariant coordinates may be sometimes helpful to keep ideas clear about what is an operand and what is on operator.
+Thinking in terms of tensors with covariant and contravariant coordinates may sometimes be helpful to keep ideas clear about what is an operand and what is an operator.
 A blog post on this topic should be coming soon.
 
 [comment]: # (Update when blog post on tensors is available)
 [comment]: # (For a fairly gentle introduction to tensors, you may check out my [blog post on this topic])
 
-However, I would advise that you don't try this until you are already quite familiar with matrix notations.
+However, I would advise that you don't explore this until you are already quite familiar with matrix notation.
 A good test of readiness may be your ability to effortlessly solve the exercises included at the end of this article.
 
 </details>
 
 <div class="silverhighlight" markdown="1">
-A piece of advice that will return frequently throughout this article: it is pretty much *always* a good idea to quickly check that the dimensions of our mathematical objects (matrices, vectors and others) are consistent.
+A piece of advice that will recur frequently throughout this article: it is pretty much *always* a good idea to quickly check that the dimensions of our mathematical objects (matrices, vectors, and others) are consistent.
 
 As an example, in Equation (3), $\mathbf{X} \in \mathbb{R}^{N \times K}$ and $\mathbf{w} \in \mathbb{R}^{K}$, so $\mathbf{Xw} \in \mathbb{R}^{N}$. We were supposed to have $\hat{\mathbf{y}} \in \mathbb{R}^{N}$, so all is good. ✅
 </div>
@@ -289,7 +289,7 @@ Is this a sum of products?
 
 Well, yes: $(\hat{y}_n - y_n)^2 = (\hat{y}_n - y_n)(\hat{y}_n - y_n)$ *(duh!)*
 
-So writing e.g. $\mathbf{z} = \hat{\mathbf{y}} - \mathbf{y}$ (i.e. $z_n = \hat{y}_n - y_n ~~ \forall n$), we can use the same idea as previously:
+So writing e.g. $\mathbf{z} = \hat{\mathbf{y}} - \mathbf{y}$ (i.e. $z_n = \hat{y}_n - y_n ~~ \forall n$), we can use the same idea as before:
 
 $$
 \sum_{n=1}^N (\hat{y}_n - y_n)^2
@@ -335,19 +335,19 @@ But again, doing this can be a *really* ***really*** powerful tool when used cor
 
 ### Making use of our newly unlocked power
 
-<img class="center-image" src="{{ '/assets/img/matrix-notations/fullpower.jpg' | relative_url }}" alt="The full power of linear algebra (poor Sylvester)" width="400"/>
+<img class="center-image" src="{{ '/assets/img/matrix-notation/fullpower.jpg' | relative_url }}" alt="The full power of linear algebra (poor Sylvester)" width="400"/>
 
 <div class="figure-legend" markdown="1">
-A poorly disguised Sylvester equation about to be anihilated by the full power of linear algebra ([exercise 9][part-exercise-9]).
+A poorly disguised Sylvester equation about to be annihilated by the full power of linear algebra ([exercise 9][part-exercise-9]).
 </div>
 
-What do I mean by this? Well, recall that in linear regression, we want to find weights $w_1, \dots, w_K$ that minimize our loss $\mathcal{L}$ (the sum of squared residues) on our training dataset. Directly minimizing our cost function written in index notations with respect to its parameters does not seem to be an easy problem, at least to me:
+What do I mean by this? Well, recall that in linear regression, we want to find weights $w_1, \dots, w_K$ that minimize our loss $\mathcal{L}$ (the sum of squared residues) on our training dataset. Directly minimizing our cost function written in index notation with respect to its parameters does not seem to be an easy problem, at least to me:
 
 $$
 \underset{w_1, \dots, w_K}{\text{minimize}}  \sum_{n=1}^N (y_n - \sum_{k=1}^K w_k x_{n,k})^2
 $$
 
-How about this exact same problem, but formulated with matrix notations?
+How about this exact same problem, but formulated with matrix notation?
 
 $$
 \underset{\mathbf{w}}{\text{minimize}} ~ ||\mathbf{Xw} - \mathbf{y}||_2^2
@@ -363,39 +363,39 @@ $$
 
 where $\mathbf{X}^\dagger = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top$ is called the *pseudo-inverse* of $\mathbf{X}$.
 
-*(You may also read [this other post][matrix-calculus] for more details about where this formula comes from. However, the post assumes that you are already reasonably familiar with matrix notations, so I would advise you practice with the [exercises][part-exercises] below first).*
+*(You may also read [this other post][matrix-calculus] for more details about where this formula comes from. However, the post assumes that you are already reasonably familiar with matrix notation, so I would advise you practice with the [exercises][part-exercises] below first).*
 
 So this is one possible implementation of linear regression:
 ```python
 def get_linear_regression_coefficients(samples: np.ndarray, labels: np.ndarray) -> np.ndarray:
     """
     Given training matrix of samples of shape (N,K) and vector of labels of shape (N,),
-    return the coefficients of the least square linear regression model
+    return the coefficients of the least squares linear regression model
     as an array of shape (K,).
     """
     return np.linalg.inv(samples.T @ samples) @ samples.T @ labels
 ```
 
-Boom. We just solved linear regression in one line. No need for gradient descent or any of that, we can get the optimal parameters of our model in litterally one line of code.
+Boom. We just solved linear regression in one line. No need for gradient descent or any of that: we can get the optimal parameters of our model in literally one line of code.
 
 ## Other gifts from the linear algebra overlords
 
-***Important preambule***: *This part provides additional examples of problems that seem hard when written in index notations, but become fairly easy when written in matrix notations. This section moves at a rather brisk pace: its purpose is more to show what you can do once you get familiar with matrix notations and [matrix calculus][matrix-calculus], rather than really explaining how to get there. So if you're reading this article for the first time, feel free to skip ahead to the next section for now. It is probably more relevant to do some practice exercises (graciously provided [at the end of the article][part-exercises]) first, before trying to read this section for the first time.*
+***Important preamble***: *This part provides additional examples of problems that seem hard when written in index notation, but become fairly easy when written in matrix notation. This section moves at a rather brisk pace: its purpose is more to show what you can do once you get familiar with matrix notation and [matrix calculus][matrix-calculus], rather than to really explain how to get there. So if you're reading this article for the first time, feel free to skip ahead to the next section for now. It is probably more relevant to do some practice exercises (graciously provided [at the end of the article][part-exercises]) first, before trying to read this section for the first time.*
 
 <details markdown="1">
 <summary style="font-size: 1.2em;">I'm not afraid, show me your full power!</summary>
 
-OK, so, is writing in matrix notation mostly useful to solve one problem, namely least square linear regression?
+OK, so, is writing in matrix notation mostly useful for solving one problem, namely least squares linear regression?
 
 Well, of course not. Did you really think I would make an entire post just to talk about linear regression? I mean, yeah, I absolutely *could have done that*, fair enough. But no, in this case I didn't.
 
-Getting back to our main topic: writing in matrices really is a ubiquitous tool, especially when combined with other tools like [matrix calculus]().
+Getting back to our main topic: writing in matrices really is a ubiquitous tool, especially when combined with other tools like [matrix calculus][matrix-calculus].
 
 ### Principal Component Analysis
 
 Let's quickly consider another example: Principal Component Analysis (a.k.a. PCA for family and friends). In PCA, given $N$ unlabeled training samples $(\mathbf{x}_1, \dots, \mathbf{x}_N)^\top$ in $K$ dimensions, we want to find a direction $\mathbf{w} \in \mathbb{R}^K$ (a unit-norm vector) along which variance is maximized when points are projected onto this direction.
 
-<img class="center-image" src="{{ '/assets/img/matrix-notations/pca.png' | relative_url }}" alt="Principal Component Analysis" width="300"/>
+<img class="center-image" src="{{ '/assets/img/matrix-notation/pca.png' | relative_url }}" alt="Principal Component Analysis" width="300"/>
 <div class="figure-legend" markdown="1">
 Illustration of the principal components of a 2-dimensional multivariate Gaussian distribution, from [Wikipedia](https://en.wikipedia.org/wiki/Principal_component_analysis).
 </div>
@@ -408,7 +408,7 @@ $$
 \quad \text{such that } ||\mathbf{w}||_2=1
 $$
 
-If we insist on writing this is full index notations, this is our problem:
+If we insist on writing this in full index notation, this is our problem:
 
 $$
 \underset{w_1, \dots, w_K}{\text{maximize }}
@@ -436,11 +436,11 @@ i.e. if $\mathbf{w}$ is an eigenvector of the covariance matrix $\mathbf{X}^\top
 
 Wanna try getting this result without explicitly writing $\mathbf{X}$ as matrix? Good luck with that.
 
-And we could even continue further with PCA: once we have computed the first $C$ principal components $\mathbf{P} = (\mathbf{p}_1, \dots, \mathbf{p}_C)^\top \in \mathbb{R}^{C \times K}$ as the first $C$ eigenvectors of the covariance matrix $\mathbf{X}^\top\mathbf{X} \in \mathbb{R}^{K \times K}$ (one line of code using numpy), the *transform* operation is $\mathbf{Z} = \mathbf{XP}^\top$. The *inverse transform* operation is $\hat{\mathbf{X}} = \mathbf{ZP}$.
+And we could even continue further with PCA: once we have computed the first $C$ principal components $\mathbf{P} = (\mathbf{p}_1, \dots, \mathbf{p}_C)^\top \in \mathbb{R}^{C \times K}$ as the first $C$ eigenvectors of the covariance matrix $\mathbf{X}^\top\mathbf{X} \in \mathbb{R}^{K \times K}$ (one line of code using NumPy), the *transform* operation is $\mathbf{Z} = \mathbf{XP}^\top$. The *inverse transform* operation is $\hat{\mathbf{X}} = \mathbf{ZP}$.
 
 So there you have it: once you speak the language of the gods (i.e. the language of matrices, in case you haven't been following *at all*), deriving PCA is a few lines of calculations. A working implementation is a few lines of code.
 
-### Syvester equations
+### Sylvester equations
 
 OK, one last (optional) example to really hammer it in.
 
@@ -460,25 +460,25 @@ $$
 
 Boom! That's a [Sylvester equation](https://en.wikipedia.org/wiki/Sylvester_equation). It's as good as solved.
 
-Now, I need to refrain myself from going on and on about how the exact same trick can be applied to low-rank matrix factorization for recommendation systems, to Support Vector Machines, to everything related to deep learning...
+Now, I need to refrain from going on and on about how the exact same trick can be applied to low-rank matrix factorization for recommendation systems, to Support Vector Machines, to everything related to deep learning...
 I think you get my point.
 
 ### The point.
 
-Hopefully, I managed to convince you that many machine learning methods can only be truly understood through the lense of linear algebra.
+Hopefully, I managed to convince you that many machine learning methods can only be truly understood through the lens of linear algebra.
 
-But, what is really the point of all of this? Is being able to derive the analytical solution to least square linear regression or similar problems of any practical use? After all, there are litteraly dozens of libraries that can do this automatically for us.
+But, what is really the point of all of this? Is being able to derive the analytical solution to least squares linear regression or similar problems of any practical use? After all, there are literally dozens of libraries that can do this automatically for us.
 
 Well, I'm glad you asked!
 
 First, I 100% guarantee that someone mindlessly *.fit.predicting* (yes, that's a word now) their way to predictions using existing implementations without understanding how the underlying algorithm works is bound to make some dumb mistakes sooner or later. I could tell you quite a few horror stories on this topic, and I probably will in a future blog post. So in general, the more you know, the less likely you are to do something stupid.
 
-Second, truly mastering the basics is a pre-requisite to identifying situations where the same ideas can be applied to obtain non-trivial results.
+Second, truly mastering the basics is a prerequisite to identifying situations where the same ideas can be applied to obtain non-trivial results.
 After all, this is what this blog is supposed to be about — and this should hopefully be illustrated soon enough with real case studies on e.g. 3D facial shape estimation from photos, or internal bone shape estimation from 3D surface mesh. So stay tuned!
 
-And of course, mastering the basics is also a pre-requisite to work on cutting-edge topics. Mastering PCA is a first step in mastering auto-encoders. Auto-encoders lead to VAEs. VAEs lead to diffusion models; diffusion models lead to <del>the dark side</del> image generation models — which are great to generate awesome illustrations for ridiculously technical blog posts.
+And of course, mastering the basics is also a prerequisite to work on cutting-edge topics. Mastering PCA is a first step in mastering auto-encoders. Auto-encoders lead to VAEs. VAEs lead to diffusion models, diffusion models lead to <del>the dark side</del> image generation models — which are great to generate awesome illustrations for ridiculously technical blog posts.
 
-And guess what? Being really confortable with matrix notations can be of *huge* help when learning about these topics. So let's continue!
+And guess what? Being really comfortable with matrix notation can be of *huge* help when learning about these topics. So let's continue!
 
 </details>
 
@@ -490,7 +490,7 @@ So, let's do a very quick test that should hopefully help me convert any remaini
 
 ### Implementation with index notation
 
-Let's first create a reasonably large dummy dataset for test purposes using [numpy](https://numpy.org/).
+Let's first create a reasonably large dummy dataset for test purposes using [NumPy](https://numpy.org/).
 
 ```python
 # Let's define some randomly generated test data
@@ -537,7 +537,7 @@ Notice that there is nothing particularly wrong with this code, it is a mostly s
 
 ### Implementation with matrix notation
 
-Now let's compute the exact same thing, this time using linear algebra operations from numpy to implement the loss directly from matrix notation:
+Now let's compute the exact same thing, this time using linear algebra operations from NumPy to implement the loss directly from matrix notation:
 
 $$
 \mathcal{L} = ||\mathbf{Xw} - \mathbf{y}||_2^2
@@ -564,17 +564,17 @@ The numerical result we obtain is exactly the same, but this time the code ran i
 <details markdown="1">
 <summary>Why is it so fast?</summary>
 
-Very briefly: Python is an interpreted language that is quite slow overall, whereas there are hyper-optimised linear algebra libraries (on top of which Python wrappers such as numpy are built) which make smart use of CPU caches and specific CPU instructions to do matrix multiplication very, very efficiently. Hence the performance difference when we use the latter, even when they are called from our slow Python code.
+Very briefly: Python is an interpreted language that is quite slow overall, whereas there are hyper-optimised linear algebra libraries (on top of which Python wrappers such as NumPy are built) which make smart use of CPU caches and specific CPU instructions to do matrix multiplication very, very efficiently. Hence the performance difference when we use the latter, even when they are called from our slow Python code.
 
 And we did not even go into GPU territory! Writing native, efficient CUDA code is a huge pain in the *gluteus maximus*, but simply writing everything in terms of matrices/tensors makes it super easy to run our pipeline with Pytorch or other specialised frameworks that do all the heavy-lifting for us.
 
 </details>
 
-Also, it is noteworthy that *we are not even solving the linear regression problem yet*. We were merely computing the cost. If we instead compare our analytical solution from earlier with a multistep gradient descent solver with a numerical gradient estimation implemented using sums over indices, we're not talking about a 100-fold performance gain anymore. More likely a 10000-fold. To emphasize, this is not an instance where I'm deliberately exagerating to prove a point: I quite literally mean that the latter approach would converge approximately 10000 times more slowly.
+Also, it is noteworthy that *we are not even solving the linear regression problem yet*. We were merely computing the cost. If we instead compare our analytical solution from earlier with a multistep gradient descent solver with numerical gradient estimation implemented using sums over indices, we're not talking about a 100-fold performance gain anymore. More likely a 10000-fold. To emphasize, this is not an instance where I'm deliberately exaggerating to prove a point: I quite literally mean that the latter approach would converge approximately 10,000 times more slowly.
 
-Don't believe me? I am currently in the process of writing a bonus part to this (already way too long) blog post, in which I should hopefully be able to demonstrate a *billion*-fold speed-up thanks to the power of matrix notations. So stay tuned!
+Don't believe me? I am currently in the process of writing a bonus part to this (already way too long) blog post, in which I should hopefully be able to demonstrate a *billion*-fold speed-up thanks to the power of matrix notation. So stay tuned!
 
-OK, we are running short on time, so we only have time for one more question from the imaginary audience. Mmmmh, you there, please go ahead.
+OK, we are running short on time, so we only have time for one more question from the imaginary audience. Umm, you there, please go ahead.
 
 *"One toy example is nice, but my question is: does this translate to actual improvements in practice?"*
 
@@ -582,14 +582,14 @@ OK, we are running short on time, so we only have time for one more question fro
 
 ## Practice time!
 
-Congrats on following so far! Hang in there, you only have a few steps left before completing your initiation to the divine language of matrix notations. But first, I have some good news and some bad news.
+Congrats on following so far! Hang in there, you only have a few steps left before completing your initiation to the divine language of matrix notation. But first, I have some good news and some bad news.
 
-The bad news: seamlessly translating sums and loops to vector and matrix operations or vice versa is (generally) not an innate ability — at least it wasn't for me. As with everything worth doing, it takes some practice to get confortable in this exercise.
+The bad news: seamlessly translating sums and loops to vector and matrix operations or vice versa is (generally) not an innate ability — at least it wasn't for me. As with everything worth doing, it takes some practice to get comfortable in this exercise.
 
 The good news: practice is what this section is for! 
-For each of the examples below, try to either write it in matrix notation if it is written with sums over indices, or vice versa. As a bonus, you can also try to write the corresponding code with a linear algebra library such as numpy.
+For each of the examples below, try to either write it in matrix notation if it is written with sums over indices, or vice versa. As a bonus, you can also try to write the corresponding code with a linear algebra library such as NumPy.
 
-You may look at the solution of the first exercise (which is a really basic example) to clarify what is being asked if you want. But ideally, you should try to do the other ones yourself.
+You may look at the solution to the first exercise (which is a really basic example) to clarify what is being asked if you want. But ideally, you should try to do the others yourself.
 
 <div class="silverhighlight" markdown="1">
 Hints: some of these exercises may require the use of:
@@ -599,7 +599,7 @@ $$||\cdot||_1$$: for vector $\mathbf{a} \in \mathbb{R}^K$,
 
 $$||\mathbf{a}||_1 = \sum_k |a_k| $$
 
-- The element-wise or *Hadamart* product $\odot$: for matrices $\mathbf{A}$ and $\mathbf{B}$ with compatible dimensions:
+- The element-wise or *Hadamard* product $\odot$: for matrices $\mathbf{A}$ and $\mathbf{B}$ with compatible dimensions:
 
 $$(\mathbf{A} \odot \mathbf{B})_{m,n} = a_{m,n} b_{m,n}$$
 
@@ -609,9 +609,9 @@ $$ \boldsymbol{0} = \begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}, \quad \bolds
 
 </div>
 
-A final piece of advice: before diving headfirst into the calculations, questions that should be asked include: what is the nature of the result and the different operands involved? Are they scalars, vectors, matrices? Are their dimensions compatible?
+A final piece of advice: before diving headfirst into the calculations, ask yourself: what is the nature of the result and the different operands involved? Are they scalars, vectors, matrices? Are their dimensions compatible?
 
-All right! I have been doing all the work so far, now it is your turn!
+All right! I have been doing all the work so far; now it's your turn!
 
 #### Exercise 0 (demo)
 
@@ -620,17 +620,17 @@ $$\sum_j a_{i,j} b_j$$
 <details markdown="1">
 <summary>Solution</summary>
 
-There are two indices $i$ and $j$ for object $a$, so it seems to be a matrix, which we can write $\mathbf{A}$ (*cf.* the quick note on notations earlier). Assuming $i$ ranges from $1$ to some integer $I$, and $j$ from $1$ to $J$, $\mathbf{A}$ is of size $I \times J$, i.e. $\mathbf{A} \in \mathbb{R}^{I \times J}$.
+There are two indices $i$ and $j$ for object $a$, so it seems to be a matrix, which we can write $\mathbf{A}$ (*cf.* the quick note on notation earlier). Assuming $i$ ranges from $1$ to some integer $I$, and $j$ from $1$ to $J$, $\mathbf{A}$ is of size $I \times J$, i.e. $\mathbf{A} \in \mathbb{R}^{I \times J}$.
 
 Similarly, there is only one index $j$ for $b$, so it is probably a vector, which we can write $\mathbf{b} \in \mathbb{R}^J$.
 
-We are summing over index $j$, multiplying $a_{i,j}$ with $b_j$. This is a dot product between $\mathbf{a}_i$, the $i^\text{th}$ row of $\mathbf{A}$, and $\mathbf{b}$. We are not summing over $i$, so we can assume that we are doing this operation for every $i$ in $\{1, \dots, I\}$, resulting in a vector of size $I$.
+We are summing over index $j$, multiplying $a_{i,j}$ with $b_j$. This is a dot product between $\mathbf{a}_i$, the $i^\text{th}$ row of $\mathbf{A}$, and $\mathbf{b}$. Since we are not summing over $i$, we can assume that we perform this operation for every $i$ in $\{1, \dots, I\}$, resulting in a vector of size $I$.
 
-Performing $I$ distinct dot products, each defined by the row of a matrix, is the definition of a matrix-vector multiplication, so we can rewrite this as
+Performing $I$ distinct dot products, each defined by the row of a matrix, is the definition of a matrix-vector multiplication. So, we can rewrite this as
 
 $$\mathbf{A}\mathbf{b} \in \mathbb{R}^I, \quad \text{with } \mathbf{A} \in \mathbb{R}^{I \times J} \text{ and } \mathbf{b} \in \mathbb{R}^J$$
 
-Numpy implementation: assuming variables `A` and `b` have been previously defined, for example with:
+NumPy implementation: assuming variables `A` and `b` have been previously defined, for example with:
 ```python
 # Initialize random matrix and vector
 I, J = 3, 4
@@ -666,7 +666,7 @@ $$
 (\mathbf{a} - \mathbf{b})^\top \mathbf{b}
 $$
 
-Numpy implementation: assuming variables `a` and `b` have been defined in a manner similar to previously, we can express this as:
+NumPy implementation: assuming variables `a` and `b` have been defined as before, we can express this as:
 ```python
 # Dot product of (a - b) and b
 (a - b).T @ b
@@ -682,17 +682,17 @@ $$(\mathbf{A} \odot \mathbf{B}) \mathbf{c}$$
 <summary>Solution</summary>
 This time, the quantity is expressed in matrix notation, so we are expected to convert it to index notation — which is generally easier.
 
-Let's look at our objects: since $\mathbf{A}$ and $\mathbf{B}$ are written in bold, uppercase letters, we can expect them to be matrices, as per the note *"a quick note on notations"* in the article above. The Hadamart product implies that they are of the same size: let's write $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{I \times J}$ for some $I$ and $J$.
+Let's look at our objects: since $\mathbf{A}$ and $\mathbf{B}$ are written in bold, uppercase letters, we can expect them to be matrices, as per the note *"a quick note on notation"* in the article above. The Hadamard product implies that they are of the same size: let's write $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{I \times J}$ for some $I$ and $J$.
 $\mathbf{c}$ is written in a bold, lowercase letter, so it's probably a vector. For the expression to make sense, we need to have $\mathbf{c} \in \mathbb{R}^{J}$.
 The result of the operation above should then be a vector of size $I$, with elements $i$ ranging from $1$ to $I$.
 
-Each element $i,j$ of $\mathbf{A} \odot \mathbf{B}$ is given by $a_{i,j}b_{i,j}$ according to the definition of the Hadamart/element-wise product above. We then perform a matrix-vector multiplication between this matrix and vector $\mathbf{c}$, resulting in a vector whose $i^\text{th}$ element is given by
+Each element $i,j$ of $\mathbf{A} \odot \mathbf{B}$ is given by $a_{i,j}b_{i,j}$ according to the definition of the Hadamard/element-wise product above. We then perform a matrix-vector multiplication between this matrix and vector $\mathbf{c}$, resulting in a vector whose $i^\text{th}$ element is given by
 
 $$
 \sum_{j=1}^J a_{i,j}b_{i,j}c_j
 $$
 
-Numpy implementation assuming `A`, `B` and `c` have been defined:
+NumPy implementation assuming `A`, `B` and `c` have been defined:
 ```python
 (A * B) @ c
 ```
@@ -712,7 +712,7 @@ To write this in terms of matrix/vector operations, we can simply *transpose* ma
 
 $$\mathbf{A}^\top\mathbf{b} \in \mathbb{R}^I, \quad \text{with } \mathbf{A} \in \mathbb{R}^{J \times I}, \mathbf{b} \in \mathbb{R}^J$$
 
-Numpy implementation:
+NumPy implementation:
 ```python
 A.T @ b
 ```
@@ -734,7 +734,7 @@ $$
 $$
 which is actually the definition of the vector projection of $\mathbf{a}$ onto $\mathbf{b}$ (and a useful formula to remember).
 
-Numpy implementation:
+NumPy implementation:
 ```python
 a @ b / np.linalg.norm(b)**2 * b
 # or equivalently, since np.linalg.norm(b) = b @ b:
@@ -774,7 +774,7 @@ $$
 
 (This may seem a bit over-the-top, but this trick is sometimes useful).
 
-Numpy implementation:
+NumPy implementation:
 ```python
 # Direct implementation of the formula above:
 ONE = np.ones(A.shape[0])
@@ -794,7 +794,7 @@ $$\sum_i a_i b_i c_i$$
 
 We have $\mathbf{a}, \mathbf{b}, \mathbf{c} \in \mathbb{R}^{I}$.
 
-For a sum-product of the elements of 3 vectors, we need to multiply two of them pairwise with the Hadamart product:
+For a sum-product of the elements of 3 vectors, we need to multiply 2 of them pairwise with the Hadamard product:
 
 $$
 (\mathbf{a} \odot \mathbf{b})^\top \mathbf{c}
@@ -809,7 +809,7 @@ $$
 = \dots
 $$
 
-Numpy implementation:
+NumPy implementation:
 ```python
 # Direct implementation :
 (a * b) @ c
@@ -825,10 +825,10 @@ $$\sum_i \sum_j b_{i,j} a_i a_j$$
 <details markdown="1">
 <summary>Solution</summary>
 
-At first glance, we seem to be summing over all listed indices $i$ and $j$ of present objects $a$ and $b$, so we can expect the result to be scalar. Here, $b$ has two indices so is probably a matrix $\mathbf{B} \in \mathbb{R}^{I \times J}$, and $a$ is a vector $\mathbf{a} \in \mathbb{R}^{J}$.
+At first glance, we seem to be summing over all listed indices $i$ and $j$ of present objects $a$ and $b$, so we can expect the result to be a scalar. Here, $b$ has two indices so is probably a matrix $\mathbf{B} \in \mathbb{R}^{I \times J}$, and $a$ is a vector $\mathbf{a} \in \mathbb{R}^{J}$.
 
 The identity can first be rewritten as $\sum_i a_i \sum_j b_{i,j} a_j$, since $a_i$ does not depend on $j$. We can notice that $\sum_j b_{i,j} a_j$ corresponds to element $i$ of vector $\mathbf{Ba} \in \mathbb{R}^I$ (see exercise 0), which we may write $(\mathbf{Ba})_i$.
-Identity is thus $\sum_i a_i (Ba)_i$: this is simply a dot product between vector $\mathbf{a}$ and vector $\mathbf{Ba}$.
+The identity is thus $\sum_i a_i (Ba)_i$: this is simply a dot product between vector $\mathbf{a}$ and vector $\mathbf{Ba}$.
 
 One important thing to notice: vector $\mathbf{a}$ must have as many elements as matrix $\mathbf{B}$ has columns for product $\mathbf{Ba}$ to be defined. But $\mathbf{a}$ must also have as many elements as vector $\mathbf{Ba}$ for $\sum_i a_i (\mathbf{Ba})_i$ to be defined, *i.e.* have as many elements as $\mathbf{B}$ has rows. So $I=J$ and $\mathbf{B}$ must be a square matrix.
 
@@ -838,7 +838,7 @@ $$\mathbf{a}^\top\mathbf{B}\mathbf{a} \in \mathbb{R}, \quad \text{with } \mathbf
 
 In general, $\mathbf{a}^\top\mathbf{B}\mathbf{c}$ is called a [bilinear form](https://en.wikipedia.org/wiki/Bilinear_form).
 
-Numpy implementation:
+NumPy implementation:
 ```python
 a.T @ B @ a
 ```
@@ -861,7 +861,7 @@ $$
 
 (where $\cdot$ is the usual scalar-vector multiplication)
 
-Numpy implementation:
+NumPy implementation:
 ```python
 a @ b * b
 ```
@@ -901,7 +901,7 @@ $$
 
 Equations of the form $\mathbf{AX} + \mathbf{XB} = \mathbf{D}$ are called [Sylvester equations](https://en.wikipedia.org/wiki/Sylvester_equation), and are easy to solve.
 
-Numpy implementation:
+NumPy implementation:
 ```python
 A @ X + X @ B + I * J * C
 ```
@@ -918,7 +918,7 @@ Here, $\mathbf{a}$ and $\mathbf{b}$ are implied to be vectors.
 
 This is a (deliberately) slightly tricky question as the notation may be a bit ambiguous, but let's see if we can infer something.
 
-I mentionned in comment *"Where does this notation come from?"* that $\mathbf{a}^{\top}\mathbf{b}$, a possible notation for the dot product of vectors $\mathbf{a}$ and $\mathbf{b}$, can be understood as initially considering the two vectors as $K \times 1$ matrices, transposing $\mathbf{a}$ to a $1 \times K$ matrix, performing a dot product and "casting" the resulting $1 \times 1$ matrix as a scalar.
+I mentioned in comment *"Where does this notation come from?"* that $\mathbf{a}^{\top}\mathbf{b}$, a possible notation for the dot product of vectors $\mathbf{a}$ and $\mathbf{b}$, can be understood as initially considering the two vectors as $K \times 1$ matrices, transposing $\mathbf{a}$ to a $1 \times K$ matrix, performing a dot product and "casting" the resulting $1 \times 1$ matrix as a scalar.
 
 We can do the exact same thing here: consider the matrix multiplication of implicit matrices $\mathbf{a} \in \mathbb{R}^{K \times 1}$ and $\mathbf{b}^\top \in \mathbb{R}^{1 \times K}$, whose result is e.g. $\mathbf{C} \in \mathbb{R}^{K \times K}$, a matrix with elements $c_{i,j}$ equal to:
 
@@ -926,7 +926,7 @@ $$a_i b_j \quad \text{with } (i, j) \in \{1, \dots, K\} \times \{1, \dots, K\}$$
 
 $\mathbf{a}\mathbf{b}^\top$ is the *outer product* of vectors $\mathbf{a}$ and $\mathbf{b}$, as opposed to $\mathbf{a}^\top\mathbf{b}$ which is the *inner product*.
 
-Numpy implementation:
+NumPy implementation:
 ```python
 # Does a @ b.T work?
 # It looks like it should, but unfortunately, it does not work if a and b have been defined as vectors.
@@ -952,7 +952,7 @@ $$
 (\mathbf{a} \odot \mathbf{b}) \mathbf{b}^\top
 $$
 
-Numpy implementation:
+NumPy implementation:
 ```python
 np.outer(a * b, b)
 ```
@@ -1018,7 +1018,7 @@ $$
 \mathbf{Ab} \odot \mathbf{A}
 $$
 
-(Agreed, the notation for this exercise was a bit unclear. I would in fact strongly discourage you from using such notations without first being cristal clear about the nature of every object involved and whatever it is you are talking about.)
+(Agreed, the notation for this exercise was a bit unclear. I would in fact strongly discourage you from using such notation without first being crystal clear about the nature of every object involved and whatever it is you are referring to.)
 
 </details>
 
@@ -1034,11 +1034,11 @@ First and foremost, don't hesitate to let me know in the comments that you made 
 
 After that, I'd suggest you continue practicing with the exercises, until they feel easy.
 You can also invent new exercises if you want — and leave them in comments below, or email them to me.
-Although it was not the main topic of this blog post, it is also particularly useful to practice using numpy functions like sum, mean, argmin etc. in conjunction with numpy axes. Other libraires like Pytorch work in a very similar way.
+Although it was not the main topic of this blog post, it is also particularly useful to practice using NumPy functions like sum, mean, argmin etc., in conjunction with NumPy axes. Other libraries like PyTorch work in a very similar way.
 
 And finally, you may want to check out my other blog posts. A natural continuation of this one would be the one on [matrix calculus][matrix-calculus].
 
-See you there, and thanks for reading! *(todo: find a catchier signature catch to conclude posts)*
+See you there, and thanks for reading! *(TODO: find a catchier signature catch to conclude posts)*
 
 <!---
 This should be a hidden comment.
@@ -1052,12 +1052,12 @@ Similarly, useful to pratice sum, mean, argmin etc and getting familiar with axe
 Put exercises in details?
 -->
 
-[part-speed]: {% link _posts/2025-07-21-thinking-in-matrices.md %}#the-case-for-speed
-[part-gifts]: {% link _posts/2025-07-21-thinking-in-matrices.md %}#other-gifts-from-the-linear-algebra-overlords
-[part-exercises]: {% link _posts/2025-07-21-thinking-in-matrices.md %}#other-practice-exercises
+[part-speed]: {% link _posts/2025-07-21-matrix-notation.md %}#the-case-for-speed
+[part-gifts]: {% link _posts/2025-07-21-matrix-notation.md %}#other-gifts-from-the-linear-algebra-overlords
+[part-exercises]: {% link _posts/2025-07-21-matrix-notation.md %}#other-practice-exercises
 
-[part-exercise-9]: {% link _posts/2025-07-21-thinking-in-matrices.md %}#exercise-9
-[part-exercise-4]: {% link _posts/2025-07-21-thinking-in-matrices.md %}#exercise-4
+[part-exercise-9]: {% link _posts/2025-07-21-matrix-notation.md %}#exercise-9
+[part-exercise-4]: {% link _posts/2025-07-21-matrix-notation.md %}#exercise-4
 
 [about]: {% link about.md %}
 [matrix-calculus]: {% link _posts/2025-07-22-matrix-calculus.md %}
