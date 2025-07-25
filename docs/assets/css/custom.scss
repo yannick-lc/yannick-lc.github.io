@@ -1,11 +1,11 @@
 // Custom CSS for the blog
 
 details {
-  background-color: #f8f9fa;         // fond gris très clair
-  border: 1px solid #dee2e6;         // bord discret
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
   // display: block;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);  // ombre légère
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 1em;
   margin: 1.5em 0;
   font-size: 0.9em;
@@ -29,7 +29,7 @@ details summary:hover {
   color: #0d6efd;  // bleu discret à l’hover
 }
 
-.myhighlight {
+.goldhighlight {
   // background-color: #fef3d5;
   // background-color: #fef6df;
   background-color: #fff9ea;
@@ -42,10 +42,31 @@ details summary:hover {
   margin: 1.5em 0;
 }
 
+.silverhighlight {
+  // background-color: #fef3d5;
+  // background-color: #fef6df;
+  background-color: #ffffff;
+  // border: 1px solid #dee2e6;
+  border: 1px solid #dcdcdc;
+  // display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  // padding: 1em;
+  padding: 1em;
+  margin: 1em 0;
+}
+
 .center-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  object-fit: contain;
+}
+
+.figure-legend {
+  text-align: center;
+  font-size: 0.9em;
+  font-style: italic;
 }
 
 #toc {
