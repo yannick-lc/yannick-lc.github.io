@@ -25,7 +25,7 @@ $$
 I mean, yes, it's true. But I'd say it's really not *that* obvious.
 
 In fact, this result is something I used to try to memorize before my first machine learning interviews. You know, in case this came up in the discussion.
-I think it was mentionned in the slides on linear regressions in a course I took at university. But at the time, I did not fully understand where this result came from, partly because I was not well-versed in matrix calculus.
+I think it was mentionned in the slides on linear regressions in a course I took at university, but at the time, I did not fully understand where this result came from — partly because I was not well-versed in matrix calculus.
 
 This article is thus meant to be a gentle introduction to vector/matrix calculus for past [Yannick][yannick]. Or, more generally, for people who never took a formal math class in multivariate calculus, and who, when first confronted with the idea of taking the derivative of something with respect to a matrix, reacted with:
 
@@ -744,17 +744,22 @@ OK sure, but how can we do that?
 
 Anyway, let's try to see if we can express $\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$ in terms of $\mathbf{X}$, $\mathbf{y}$ and $\mathbf{w}$. You may give it a try first if you want.
 
-<details>
+<details markdown="1">
 <summary>Show me how it's done</summary>
 
-First, a useful thing to notice: $||\mathbf{Xw} - \mathbf{y}||_2^2 = (\mathbf{Xw} - \mathbf{y})^\top(\mathbf{Xw} - \mathbf{y})$<br/>
+<a id="least-squares-gradient-derivation"></a>
+
+First, a useful thing to notice:
+$$||\mathbf{Xw} - \mathbf{y}||_2^2 = (\mathbf{Xw} - \mathbf{y})^\top(\mathbf{Xw} - \mathbf{y})$$
 
 From exercise 3, we have:
+
 $$
 \frac{\partial \mathbf{a}^\top\mathbf{b}}{\partial \mathbf{x}} = \left(\frac{\partial \mathbf{a}}{\partial \mathbf{x}}\right)^\top \mathbf{b} + \left(\frac{\partial \mathbf{b}}{\partial \mathbf{x}}\right)^\top \mathbf{a}
 $$
 
 Applied to our problem, this yields:
+
 $$
 \begin{align*}
 \frac{\partial}{\partial \mathbf{w}} \left( (\mathbf{Xw} - \mathbf{y})^\top(\mathbf{Xw} - \mathbf{y}) \right)
@@ -765,11 +770,13 @@ $$
 $$
 
 We have
+
 $$
 \frac{\partial (\mathbf{Xw} - \mathbf{y})}{\partial \mathbf{w}} = \frac{\partial (\mathbf{Xw})}{\partial \mathbf{w}} - \frac{\partial \mathbf{y}}{\partial \mathbf{w}}
 $$
 
 From exercise 1, $\frac{\partial (\mathbf{Xw})}{\partial \mathbf{w}} = \mathbf{X}$. $\mathbf{y}$ does not depend on $\mathbf{w}$ so $\frac{\partial \mathbf{y}}{\partial \mathbf{w}} = \boldsymbol{0}$, and thus 
+
 $$
 \frac{\partial (\mathbf{Xw} - \mathbf{y})}{\partial \mathbf{w}} = \mathbf{X}
 $$
@@ -892,6 +899,8 @@ And *there*, we finally have it! This is where the analytical solution to least 
 
 <details markdown="1">
 <summary><em>"Wow wow, not so fast, cowboy!"</em> — a math purist (probably)</summary>
+
+<a id="not-so-fast"></a>
 
 ***Preamble:*** *If you're reading this article for the first time, this more technical passage may be skipped.*
 
