@@ -19,7 +19,7 @@ But, more to the point of this article: all these tasks can be reduced to the sa
 So I figured this is a topic that *might* deserve its own article — partly so that I can point to it from pretty much all future articles on this blog.
 
 Similarly to the articles on [matrix notation][matrix-notation] and [matrix calculus][matrix-calculus], this post is another bastard child between machine learning and applied math: too basic and not rigorous enough to be fully math, but too generic and foundational to directly be machine learning.
-Still, this is a super convenient and ubiquitous tool, that any Machine Learning Legend should have in its toolbox.
+Still, this is about a super convenient and ubiquitous tool, that any Machine Learning Legend should have in its toolbox.
 
 <!--- While I'm at it, I'll also generalize... -->
 
@@ -536,6 +536,11 @@ Probably one of the most useful properties. I use it all the time.
 With the ability to [increase performance 100-fold], it's another very cool way to come accross as a machine learning wizard.
 (That's a cool title, maybe I should change my LinkedIn title to "machine learning wizard").
 Rest of the article is not as essential so you may stop reading now if you want. Although it is still interesting and on the same topic.
+
+
+Soon: links to applications of pseudo-inverse.
+Also add a "standalone" example (e.g. 3D hand landmark?)
+
 -->
 
 [matrix-notation]: {% link _posts/2025-07-21-matrix-notation.md %}

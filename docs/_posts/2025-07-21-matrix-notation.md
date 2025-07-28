@@ -9,7 +9,7 @@ categories: foundations
 
 <img class="center-image" src="{{ '/assets/img/matrix-notation/matrix-illustration.jpg' | relative_url }}" alt="Matrix illustration" width="400"/>
 <div class="figure-legend" markdown="1">
-A Machine Learning Legend who can think inside the Matrix and knows when to avoid index notation.
+Figure 1: A Machine Learning Legend who can think inside the Matrix and knows when to avoid index notation.
 </div>
 
 One of the most underrated yet crucial skills to acquire in your machine learning journey is the ability to think and write in terms of matrices, vectors, or sometimes tensors.
@@ -340,7 +340,7 @@ But again, doing this can be a *really* ***really*** powerful tool when used cor
 <img class="center-image" src="{{ '/assets/img/matrix-notation/fullpower.jpg' | relative_url }}" alt="The full power of linear algebra (poor Sylvester)" width="400"/>
 
 <div class="figure-legend" markdown="1">
-A poorly disguised Sylvester equation about to be annihilated by the full power of linear algebra ([exercise 9][part-exercise-9]).
+Figure 2: A poorly disguised Sylvester equation about to be annihilated by the full power of linear algebra ([exercise 9][part-exercise-9]).
 </div>
 
 What do I mean by this? Well, recall that in linear regression, we want to find weights $w_1, \dots, w_K$ that minimize our loss $\mathcal{L}$ (the sum of squared residues) on our training dataset. Directly minimizing our cost function written in index notation with respect to its parameters does not seem to be an easy problem, at least to me:

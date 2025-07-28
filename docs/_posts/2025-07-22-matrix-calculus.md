@@ -8,7 +8,7 @@ categories: foundations
 
 <img class="center-image" src="{{ '/assets/img/matrix-calculus/neo-confused2.jpg' | relative_url }}" alt="Confused Neo" width="300"/>
 <div class="figure-legend">
-Poor Neo didn't know the Matrix had a derivative with respect to a vector and is all confused.<br/>
+Poor Neo doesn't know the Matrix has a derivative with respect to a vector and is all confused.<br/>
 But he won't be anymore if he reads this article.
 </div>
 
@@ -25,17 +25,17 @@ $$
 I mean, yes, it's true. But I'd say it's really not *that* obvious.
 
 In fact, this result is something I used to try to memorize before my first machine learning interviews. You know, in case this came up in the discussion.
-I think it was mentionned in the slides on linear regressions in a course I took at university, but at the time, I did not fully understand where this result came from — partly because I was not well-versed in matrix calculus.
+I think it was mentioned in the slides on linear regression in a course I took at university, but at the time, I did not fully understand where this result came from — partly because I was not well-versed in matrix calculus.
 
 This article is thus meant to be a gentle introduction to vector/matrix calculus for past [Yannick][yannick]. Or, more generally, for people who never took a formal math class in multivariate calculus, and who, when first confronted with the idea of taking the derivative of something with respect to a matrix, reacted with:
 
 *"Wait... What? You can do that?"*
 
-I will try to explain how we can go from simple definitions, that only rely on basic calculus and algebra, to deriving more interesting and useful results like the one above. This should hopefully be useful to:
+I will try to explain how we can go from simple definitions, that rely only on basic calculus and algebra, to deriving more interesting and useful results like the one above. This should hopefully be useful to:
 1. Get a better understanding of standard machine learning algorithms and results
 2. Develop the ability to identify situations where matrix calculus may be useful to derive analytical solutions
 
-Similarly to the habit of [writing everything in matrix notation][matrix-notation], the latter skill has helped me achieve 100-fold speedups of machine learning code quite a few times, in both academic and industrial projects. So I'd say that it's a trick that any Machine Learning Legend should have up their sleave.
+Similarly to the habit of [writing everything in matrix notation][matrix-notation], the latter skill has helped me achieve 100-fold speedups of machine learning code quite a few times, in both academic and industrial projects. So I'd say that it's a trick that any Machine Learning Legend should have up their sleeve.
 
 <details markdown="1">
 <summary>Disclaimer for math purists</summary>
@@ -43,7 +43,7 @@ Similarly to the habit of [writing everything in matrix notation][matrix-notatio
 The objective of this article is to provide a *gentle* introduction to the topic of matrix calculus as used in the field of machine learning.
 As such, I focus mainly on providing basic definitions and the intuitions behind those, as well as a few applications of matrix calculus.
 
-I apologize in advance to pure math majors for lacking mathematical rigor in some/most parts of the article. I particular, I generally won't bother to first question if the derivative of a function exists etc etc: I just assume it does and that what we are doing makes sense, as doing otherwise would unnecessarily complexify an already fairly long article.
+I apologize in advance to pure math majors for lacking mathematical rigor in some/most parts of the article. In particular, I generally won't bother to first question if the derivative of a function exists etc etc: I just assume it does and that what we are doing makes sense, as doing otherwise would unnecessarily complexify an already fairly long article.
 
 Finally, I focus mostly on the algebraic aspect of matrix calculus, mostly skipping the geometric intuition for now.
 </details>
@@ -157,7 +157,7 @@ $$\begin{pmatrix}
 \frac{\partial f(x,y)}{\partial x} \\
 \frac{\partial f(x,y)}{\partial y}
 \end{pmatrix}
-$$, also written $\left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)^\top$ to decluter notations\*,
+$$, also written $\left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)^\top$ to declutter notation\*,
 is called the *gradient* of $f$ with respect to $$\begin{pmatrix}x \\ y\end{pmatrix} \in \mathbb{R}^2$$, the vector of input variables.
 
 *\*You may want to check [this article][matrix-notation] on matrix notations if this notation is unclear. In fact, you should probably read it first.*
@@ -303,7 +303,7 @@ An example of such a function or expression could be
 $$\mathbf{f}(x) = \begin{pmatrix}2x^2 \\ 2 \\ -x\end{pmatrix}$$, in which case the derivative would be
 $$\frac{\partial \mathbf{f}(x)}{\partial x} = \begin{pmatrix}4x \\ 0 \\ -1\end{pmatrix}$$.
 
-Again, note the dimensions of each entity: the derivative $\frac{\partial \mathbf{f}}{\partial x}$ has as many dimensions as the output of the function $\mathbf{f}(x)$. Also note that since $x$ is a scalar, it is written in a non bold fold, whereas the output of $\mathbf{f}$ is a vector, so it is written with a bold lowercase letter, in adequation with the conventions explicited in [this blog post][matrix-notation-notation].
+Again, note the dimensions of each entity: the derivative $\frac{\partial \mathbf{f}}{\partial x}$ has as many dimensions as the output of the function $\mathbf{f}(x)$. Also note that since $x$ is a scalar, it is written in a non bold fold, whereas the output of $\mathbf{f}$ is a vector, so it is written with a bold lowercase letter, in accordance with the conventions explained in [this blog post][matrix-notation-notation].
 
 The outputs of the function can also be arranged in a matrix:
 
@@ -399,7 +399,7 @@ $$\left( \frac{\partial \mathbf{f}}{\partial \mathbf{x}}\right)_{n,m} = \frac{\p
 
 If you asked me this question before 9AM, my answer would probably have been *"Mrmpf that's the convention, I don't make the rules. Where's my coffee?"*.
 
-Fortunately, I am now more woken up and in a good mood, so: one way to see why it makes sense is to consider the function $\mathbf{f}(\mathbf{x}) = \mathbf{Ax}$, with $\mathbf{x} \in \mathbb{R}^N$, $\mathbf{A} \in \mathbb{R}^{M \times N}$ and thus $\mathbf{f}(\mathbf{x}) \in \mathbb{R}^M$.
+Fortunately, I am now more awake and in a good mood, so: one way to see why it makes sense is to consider the function $\mathbf{f}(\mathbf{x}) = \mathbf{Ax}$, with $\mathbf{x} \in \mathbb{R}^N$, $\mathbf{A} \in \mathbb{R}^{M \times N}$ and thus $\mathbf{f}(\mathbf{x}) \in \mathbb{R}^M$.
 
 With our initial definition
 $$\left( \frac{\partial \mathbf{f}}{\partial \mathbf{x}}\right)_{m,n} = \frac{\partial f_{m}}{\partial x_n}$$,
@@ -409,7 +409,7 @@ $$
 \frac{\partial \mathbf{Ax}}{\partial \mathbf{x}} = \mathbf{A}
 $$
 
-which pleasantly reminds us of the identity $\frac{\partial ax}{\partial x} = a$ for scalars. What a delightful extension from the unidimensional scalar world to the multi-dimensional matrix universe! Isn't nature wonderful?
+which pleasantly reminds us of the identity $\frac{\partial ax}{\partial x} = a$ for scalars. What a delightful extension from the one-dimensional scalar world to the multi-dimensional matrix universe! Isn't nature wonderful?
 
 With the definition
 $$\left( \frac{\partial \mathbf{f}}{\partial \mathbf{x}}\right)_{n,m} = \frac{\partial f_{m}}{\partial x_n}$$ however, we would get
@@ -428,7 +428,7 @@ There are also other reasons for why it makes more sense to define it the way we
 
 ### Derivatives of other things with respect to other things
 
-Ok, we have covered most of the things we will typically need in practice.
+OK, we have covered most of the things we will typically need in practice.
 
 But I feel like stopping there would leave a bit of an itch, as some tempting generalizations were kept under the rug: what about derivatives of matrices with respect to vectors? And vectors w.r.t. matrices, matrices w.r.t. matrices, etc?
 
@@ -559,7 +559,7 @@ $$
 
 Absolutely not.
 
-This equation does not even seem to make sense:  assuming as in the previous exercise that $\mathbf{A} \in \mathbb{R}^{N \times K}$ and $\mathbf{x} \in \mathbb{R}^K$, then $\mathbf{Ax} \in \mathbb{R}^{N}$. So $\frac{\partial \mathbf{Ax}}{\partial \mathbf{A}}$ should be a rank-3 tensor, with
+This equation does not even seem to make sense:  assuming as in the previous exercise that $\mathbf{A} \in \mathbb{R}^{N \times K}$ and $\mathbf{x} \in \mathbb{R}^K$, then $\mathbf{Ax} \in \mathbb{R}^{N}$. So $\frac{\partial \mathbf{Ax}}{\partial \mathbf{A}}$ should be a rank-3 tensor in $\mathbb{R}^{N \times N \times K}$, with
 $$\left(\frac{\partial \mathbf{Ax}}{\partial \mathbf{A}}\right)_{i,j,k} = \frac{\partial (\mathbf{Ax})_{i}}{\partial a_{j,k}}$$. Here, $\mathbf{x} \in \mathbb{R}^K$ is a vector, so the two cannot be equal.
 
 </details>
@@ -653,14 +653,14 @@ $$
 <details markdown="1">
 <summary>Solution</summary>
 
-OK, before we dive in the calculations, there's a lot to unravel here, starting with the dimensions of every object.
+OK, before we dive into the calculations, there's a lot to unravel here, starting with the dimensions of every object.
 
 As a dot product between two vectors, $\mathbf{a}^\top\mathbf{b} \in \mathbb{R}$. So $\frac{\partial \mathbf{a}^\top\mathbf{b}}{\partial \mathbf{x}}$ is the gradient of a scalar w.r.t. a vector $\mathbf{x}$, so it should be a vector with the same dimension as $\mathbf{x}$, i.e. $\frac{\partial \mathbf{a}^\top\mathbf{b}}{\partial \mathbf{x}} \in \mathbb{R}^K$.
 
 $\frac{\partial \mathbf{a}}{\partial \mathbf{x}}$ is the derivative of $\mathbf{a} \in \mathbb{R}^{N}$ w.r.t. $\mathbf{x} \in \mathbb{R}^{K}$, so it is a matrix of size $N \times K$. So as its transpose, $\left(\frac{\partial \mathbf{a}}{\partial \mathbf{x}}\right)^\top \in \mathbb{R}^{K \times N}$. And finally, $\left(\frac{\partial \mathbf{a}}{\partial \mathbf{x}}\right)^\top \mathbf{b} \in \mathbb{R}^{K}$ as a matrix-vector product.
 Similarly, $\left(\frac{\partial \mathbf{b}}{\partial \mathbf{x}}\right)^\top \mathbf{a} \in \mathbb{R}^{K}$.
 
-All is right, dimensions seem to check out! Notice that in this example, we are again considering *the gradient of a scalar with respect to a vector* as in result 1, only this time matrices appear in the solution. But since they are multiplied with vectors, the final result is indeed a vector.
+All is good, dimensions seem to check out! Notice that in this example, we are again considering *the gradient of a scalar with respect to a vector* as in result 1, only this time matrices appear in the solution. But since they are multiplied with vectors, the final result is indeed a vector.
 All right, onto the calculations then.
 
 <!-- To slightly simplify notations, we will write $\mathbf{A} = \frac{\partial \mathbf{a}}{\partial \mathbf{x}} \in \mathbb{R}^{N \times K}$ the matrix whose coordinates are given by
@@ -689,7 +689,7 @@ $$
 
 *Is that all? I want more!*
 
-Wow, I really appreciate your enthusiasm. I'll just continue to the next section for now as the clock is ticking and we need to move on, but I added [a couple of exercises][additional-exercises] at the end in case you want to continue practicing.
+Wow, I really appreciate your enthusiasm! I'll just move on to the next section for now as time is running out, but I added [a couple of exercises][additional-exercises] at the end in case you want to continue practicing.
 
 ## *Le plat de résistance*
 
@@ -906,20 +906,20 @@ And *there*, we finally have it! This is where the analytical solution to least 
 
 Before claiming victory, there are a few additional checks that we should have done: so far, we just proved that *if* there is a global extremum, then it occurs at the point $\mathbf{w} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\mathbf{y}$.
 
-So a first question could be: does this point actually exist? I.e., is it true that $\mathbf{X}^\top\mathbf{X}$ is inversible? It turns out that yes, as long $N \geq K$ and the columns of $\mathbf{X}$ are linearly independent, i.e. $\text{rank}(\mathbf{X}) = K$. This is one reason why you may have heard that having colinear features is bad in linear regression: these make the rank of $\mathbf{X}$ $\text{rank}(\mathbf{X}) < K$, meaning that $(\mathbf{X}^\top\mathbf{X})^{-1}$ is no longer inversible and the solution may not be unique. To be fair, this is usually not a huge problem, as numerical solver typically used for this kind of problem will usually still find a solution, but this may cause issues regarding e.g. interpretability *(blog post coming soon)*.
+So a first question could be: does this point actually exist? I.e., is it true that $\mathbf{X}^\top\mathbf{X}$ is invertible? It turns out that yes, as long as $N \geq K$ and the columns of $\mathbf{X}$ are linearly independent, i.e. $\text{rank}(\mathbf{X}) = K$. This is one reason why you may have heard that having collinear features is bad in linear regression: these make the rank of $\mathbf{X}$ $\text{rank}(\mathbf{X}) < K$, meaning that $(\mathbf{X}^\top\mathbf{X})^{-1}$ is no longer invertible and the solution may not be unique. To be fair, this is usually not a huge problem, as numerical solvers typically used for this kind of problem will usually still find a solution, but this may cause issues regarding e.g. interpretability *(blog post coming soon)*.
 <!--- You can actually check out [this other blog post]() for more information about this. -->
 
 Second, is this extremum a minimum or a maximum? Is it a local one or a global one? One intuitive way to think about it is to see that $\mathcal{L}$ does seem to have a global minimum, as it makes sense that a set of parameters which minimizes our loss $\mathcal{L}$ exists. On the other hand, there is no "worst" set of parameters, because parameters can get arbitrarily bad: if $10^{100}$ is not a bad enough value for one of the coefficients of the linear regression, we can always use $10^{10^{100}}$, or $10^{10^{10^{100}}}$ and so on. So $\mathcal{L}$ does not seem to have a maximum.
 
 To prove this in a more rigorous way, in 1 dimension, we could compute the second order derivative and prove that $\frac{\partial^2 \mathcal{L}(w)}{\partial w^2} > 0$.
 More generally, in $K$ dimensions, we could compute the Hessian matrix $\mathbf{H}$ defined by
-$H_{i,j} = \frac{\partial^2 \mathcal{L}(\mathbf{w})}{\partial w_i \partial w_j}$ and show that is is positive definite, i.e. $\forall \mathbf{x} \in \mathbb{R}^K, \mathbf{x} \neq \mathbf{0} \implies \mathbf{x}^\top \mathbf{H} \mathbf{x} > 0$. But this is outside of the scope of this article.
+$H_{i,j} = \frac{\partial^2 \mathcal{L}(\mathbf{w})}{\partial w_i \partial w_j}$ and show that it is positive definite, i.e. $\forall \mathbf{x} \in \mathbb{R}^K, \mathbf{x} \neq \mathbf{0} \implies \mathbf{x}^\top \mathbf{H} \mathbf{x} > 0$. But this is outside of the scope of this article.
 
 </details>
 
 ## Now what?
 
-OK, we are done with the main result from this article. Are there any question from the imaginary audience?
+OK, we are done with the main result from this article. Are there any questions from the imaginary audience?
 
 *"Was this article just about linear regression?"*
 
@@ -936,7 +936,7 @@ In fact, this problem has been so ubiquitous in my work recently that it warrant
 
 *"OK, so the article was mostly about the problem above then?"*
 
-Also no. This problem was used as an example of how we can apply matrix calculus to derive an (arguably) interesting result, using least squares linear regression as an example. But, the set of tools we familiarized ourselves with along the way have a much, much broader possible set of applications.
+Also no. This problem was used as an example of how we can apply matrix calculus to derive an (arguably) interesting result, using least squares linear regression as an example. But, the set of tools we familiarized ourselves with along the way has a much, much broader possible set of applications.
 In machine learning, this includes Principal Component Analysis ([exercise 8][exercise-pca]), Ridge Regression ([exercise 10][exercise-ridge]), Support Vector Machines, Expectation-Maximization for Mixtures of Gaussians, Backpropagation in Deep Learning...
 
 *"But solutions to all these problems are already available on the Internet and have been implemented in many libraries, right?"*
@@ -1196,7 +1196,7 @@ $$
 = 2\mathbf{A}^\top(\mathbf{AXB+C})\mathbf{B}^\top
 $$
 
-One possible solution can be viewed section *1.2.2 Ridge regression*, page 47 of my [PhD dissertation](https://theses.hal.science/tel-03153445), along with a few examples of applications of this type of results. Be warned though, my thesis was written in 2020, so in pre-historical times in terms of AI. Since the field has been advancing mind-boggingly, superluminally quickly in the last few years, the models presented in that section are pretty dated and of no practical use nowadays as far as I know.
+One possible solution can be viewed section *1.2.2 Ridge regression*, page 47 of my [PhD dissertation](https://theses.hal.science/tel-03153445), along with a few examples of applications of this type of results. Be warned though, my thesis was written in 2020, so in pre-historic times in terms of AI. Since the field has been advancing mind-bogglingly, superluminally quickly in the last few years, the models presented in that section are pretty dated and of no practical use nowadays as far as I know.
 
 *(The mathematical tools themselves are still relevant though).*
 </details>
@@ -1212,7 +1212,7 @@ $$
 <details markdown="1">
 <summary>Solution</summary>
 
-We have already establised in section *Le plat de résistance* that
+We have already established in section *Le plat de résistance* that
 
 $$
 \frac{\partial ||\mathbf{Xw} - \mathbf{y}||_2^2}{\partial \mathbf{w}} = 2\mathbf{X}^\top (\mathbf{Xw} - \mathbf{y})
