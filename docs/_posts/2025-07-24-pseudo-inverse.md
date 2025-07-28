@@ -11,15 +11,15 @@ categories: foundations
 You may be laughing now, SpongeBob, but the joke might be on you after reading this article.
 </div><br/>
 
-What is the common thread between (least squares) linear regression, 3D hand landmarks localization, 3D facial shape estimation and wrist bone reconstruction from skin surface mesh?
+What is the common thread between (least squares) linear regression, 3D hand-landmarks localization, 3D facial shape estimation, and wrist bone reconstruction from skin surface mesh?
 
 Yes, these are all topics I worked on and for which blog posts are planned.
 
 But, more to the point of this article: all these tasks can be reduced to the same mathematical problem, and solved with what is called a *pseudo-inverse*.
 So I figured this is a topic that *might* deserve its own article — partly so that I can point to it from pretty much all future articles on this blog.
 
-Similarly to the articles on [matrix notation][matrix-notation] and [matrix calculus][matrix-calculus], this post is another bastard child between machine learning and applied math: too basic and not rigorous enough to be fully math, but too generic and foundational to directly be machine learning.
-Still, this is about a super convenient and ubiquitous tool, that any Machine Learning Legend should have in its toolbox.
+Similarly to the articles on [matrix notation][matrix-notation] and [matrix calculus][matrix-calculus], this post is another bastard child between machine learning and applied math: too basic and not rigorous enough to be pure math, but too generic and foundational to be purely machine learning.
+Still, this is about a super convenient and ubiquitous tool, that any Machine Learning Legend should have in their toolbox.
 
 <!--- While I'm at it, I'll also generalize... -->
 
@@ -34,7 +34,7 @@ A quick recap of this article is available [at the end][tldr].
 
 Let's start with the basics: simple  systems of equations.
 
-Consider this system of 2 equations with 2 unknowns $x_1$ and $x_2$:
+Consider this system of 2 equations in 2 unknowns $x_1$ and $x_2$:
 
 $$
 \begin{equation}
@@ -58,7 +58,7 @@ x_1 + x_2 = 6
 
 we could simply express $x_2$ as a function of $x_1$ using the first line (e.g. $x_2 = 2x_1 - 6$), replace the value of $x_2$ in the second line by this expression and develop to obtain $3x_1 = 12$ i.e. $x_1 = 4$. And *voilà*!
 
-More generally, given a system of $N$ equations with $N$ unknown $x_1, \dots, x_N$
+More generally, given a system of $N$ equations in $N$ unknown $x_1, \dots, x_N$
 
 $$
 \begin{equation}
@@ -99,7 +99,7 @@ $$\mathbf{A} = \begin{pmatrix}
 2 & 1 \\
 1 & 0
 \end{pmatrix} \in \mathbb{R}^{2 \times 2}$$
-and $$\mathbf{y} = \begin{pmatrix} 6 \\ 4 \end{pmatrix} \in \mathbb{R}^{2}$$.
+and $$\mathbf{b} = \begin{pmatrix} 6 \\ 4 \end{pmatrix} \in \mathbb{R}^{2}$$.
 
 The solution to this system is $$\mathbf{x} = \begin{pmatrix} 4 \\ 2 \end{pmatrix} \in \mathbb{R}^{2}$$, and indeed we can check that $\mathbf{Ax} = \mathbf{b}$.
 
@@ -109,9 +109,9 @@ Now, we can remember from linear algebra classes that:
 
 <div class="silverhighlight" markdown="1">
 The system $\mathbf{A}\mathbf{x} = \mathbf{b}$ has a unique solution if and only any of these is true:
-- the rows of $\mathbf{A}$ are linearly independant
-- the columns of $\mathbf{A}$ are linearly independant
-- $\mathbf{A}$ is inversible
+- the rows of $\mathbf{A}$ are linearly independent
+- the columns of $\mathbf{A}$ are linearly independent
+- $\mathbf{A}$ is invertible
 - $\text{det}(\mathbf{A}) \neq 0$
 - etc. etc.
 
@@ -150,7 +150,7 @@ The rest of this series of articles explores what happens when we have either "t
 
 ### A seemingly impossible system
 
-OK, so what if we add one more "constraint" in the system from Equation (1), for instance:
+OK, so what if we add one more "constraint" to the system from Equation (1), for instance:
 
 $$
 \begin{equation}
@@ -162,7 +162,7 @@ x_1 = 6
 \end{equation}
 $$
 
-Wait... How can that make any sense, [Yannick][yannick]? You must have made a typo or something: this system obviously can't be solved anymore, as $x_1$ cannot be simultaneoulsy equal to 4 *and* to 6.
+Wait... How can that make any sense, [Yannick][yannick]? You must have made a typo or something: this system obviously can't be solved anymore, as $x_1$ cannot be simultaneously equal to 4 *and* to 6.
 
 True, true. If we look at the corresponding matrix
 $$
@@ -172,7 +172,7 @@ $$
 1 & 0
 \end{pmatrix}
 $$,
-we see that it is not even a square matrix, so its rows cannot be linearly independent and it cannot be invertible, so indeed there is not one unique solution. This would also be true even if we added a "virtual" variable $x_3$ to make $\mathbf{A}$ a square matrix, such that
+we see that it is not even a square matrix, so its rows cannot be linearly independent and it cannot be invertible, so indeed there is not one unique solution. This would also be true even if we added a "virtual" variable $x_3$ and a corresponding column of zeros to make matrix $\mathbf{A}$ square, such that
 $$
 \mathbf{A} = \begin{pmatrix}
 2 & -1 & 0 \\
@@ -190,7 +190,7 @@ But I find you rather pessimistic, dear reader. You say there is no solution. I 
 Intuitively, choosing $x_1=5$ seems closer to a solution than choosing $x_1 = 10^{10^{100}}$, since 5 is fairly close to both 4 and 6 (constraints of lines 2 and 3 in Equation (4)), whereas $10^{10^{100}}$ is not by any reasonable measure.
 So, how could we formulate this idea in a more mathematical way?
 
-Perhaps we could "loosen" our constraints a bit: instead of requiring that $\mathbf{x}$ must exactly satisfy each equality, we could merely ask that it is kind of close to satisfying each constraint. This would be analoguous to rewriting our system from Equation (4) as:
+Perhaps we could "loosen" our constraints a bit: instead of requiring that $\mathbf{x}$ must exactly satisfy each equality, we could merely ask that it is kind of close to satisfying each constraint. This would be analogous to rewriting our system from Equation (4) as:
 
 $$
 \begin{equation}
@@ -211,7 +211,7 @@ $$\mathbf{A}\mathbf{x}  \approx  \mathbf{b}$$
 
 Notice that this time, $\mathbf{A}$ is not a square matrix: in general, assuming that we have a total of $N$ constraints for $K$ unknowns $(x_1, \dots, x_K)^\top = \mathbf{x} \in \mathbb{R}^K$, then $\mathbf{A} \in \mathbb{R}^{N \times K}$ and $\mathbf{b} \in \mathbb{R}^N$.
 
-<sup><sub>(Since we are considering "over-constrained" systems of equations in this section, we assume for now that $N > K$).</sub></sup>
+<sup><sub>Since we are considering "over-constrained" systems of equations in this section, we assume for now that $N > K$.</sub></sup>
 
 OK, how do we find $\mathbf{x}$ such that $\mathbf{A}\mathbf{x}  \approx  \mathbf{b}$? Actually, what do we even *mean* by that mathematically speaking?
 
@@ -252,7 +252,7 @@ $$
 <details markdown="1">
 <summary><em>Side note: why the *square* of the residues?</em></summary>
 
-This quickly leads to a pretty deep rabbit hole, but very briefly, the argument is the same as for linear regression: we assume that the *residues*, or the training errors in the case of linear regression, are independant and are normally distributed. In this case, using maximum likelihood to estimate the parameters of the model, which are our unknowns $x_1, \dots, x_K$ in this case, is equivalent to minimizing the squares of the errors.
+This quickly leads to a pretty deep rabbit hole, but very briefly, the argument is the same as for linear regression: we assume that the *residues*, or the training errors in the case of linear regression, are independent and are normally distributed. In this case, using maximum likelihood to estimate the parameters of the model, which are our unknowns $x_1, \dots, x_K$ in this case, is equivalent to minimizing the squares of the errors.
 
 Maybe I'll write a more detailed blog post about this topic some day. But for now, you don't really need to bother with any of that. Just know that there is a reason why we are doing that.
 </details>
@@ -260,7 +260,7 @@ Maybe I'll write a more detailed blog post about this topic some day. But for no
 <details markdown="1">
 <summary>A few interesting* observations</summary>
 
-**at least according to me at, but I'm sure you'll agree.*
+**at least according to me, but I'm sure you'll agree.*
 
 First, if our system of equations is not overconstrained and does admit a unique solution
 
@@ -282,7 +282,7 @@ But the general idea and its mathematical formulation remain exactly the same.
 
 ### Solving the optimization problem
 
-All of this may be nice conceptually but of very little practical use if we can't solve Equation (8). But as you may expect, I was not going to [rant] for multiple pages to conclude by *"This problem has no solution, too bad, all we just did was utterly useless"*.
+All of this may be nice conceptually, but is of very little practical use if we can't solve Equation (8). But as you may expect, I was not going to ramble for multiple pages to conclude by *"This problem has no solution, too bad, all we just did was utterly useless"*.
 
 So spoiler, alert:
 
@@ -330,7 +330,9 @@ $$||\mathbf{A}\mathbf{x} - \mathbf{b}||_2^2$$ with respect to $\mathbf{x}$, you 
 Now, we want this gradient to be equal to $\boldsymbol{0}$: this is the case if
 
 $$
+\begin{equation}
 \mathbf{x} = (\mathbf{A}^\top\mathbf{A})^{-1}\mathbf{A}^\top\mathbf{b}
+\end{equation}
 $$
 
 <details>
@@ -358,11 +360,11 @@ And there we have it! $\mathbf{x} = (\mathbf{A}^\top\mathbf{A})^{-1}\mathbf{A}^\
 <details markdown="1">
 <summary>*A couple of precisions</summary>
 
-Now, I admitedly took a few shortcuts in the "proof" above.
+Now, I admittedly took a few shortcuts in the "proof" above.
 
 First, one assumption that we implicitly made is that $\mathbf{A}^\top\mathbf{A}$ is invertible. But is it true?
 
-It turns out that yes, as long $N \geq K$ and the columns of $\mathbf{A}$ are linearly independent, i.e. $\text{rank}(\mathbf{A}) = K$. Or, simply speaking and slightly oversimplifying things: the constraints on $\mathbf{x}$ must be strong enough so that there is at most one possible value for each unknown, and possibly zero value.
+It turns out that yes, as long as $N \geq K$ and the columns of $\mathbf{A}$ are linearly independent, i.e. $\text{rank}(\mathbf{A}) = K$. Or, to put it simply and slightly oversimplify things: the constraints on $\mathbf{x}$ must be strong enough so that there is at most one possible value for each unknown, or possibly no solution at all.
 
 Second, assuming that $\mathbf{A}^\top\mathbf{A}$ is indeed invertible, we found a point where the gradient is zero, i.e. we found a local extremum of $\mathcal{L}$. But is this extremum is a minimum or a maximum? Is it a local one or a global one?
 
@@ -377,7 +379,7 @@ For a little bit more information about why this true based on a reasoning that 
 
 OK, let's compare the solution to our "impossible" system of equations with the solution of a "well-behaved" system of equations from earlier.
 
-Let's start with the "well-behaved" system: for square matrix $\mathbf{A} \in \mathbb{R}^{N \times N}$, if
+Let's start with the "well-behaved" system: for a square matrix $\mathbf{A} \in \mathbb{R}^{N \times N}$, if
 
 $$
 \mathbf{Ax}=\mathbf{b}
@@ -397,7 +399,7 @@ $$
 \mathbf{Ax} \approx \mathbf{b}
 $$
 
-Writing $\mathbf{A}^\dagger = (\mathbf{A}^\top\mathbf{A})^{-1}\mathbf{A}^\top \in \mathbb{R}^{K \times N}$ and based on Equation (X), the solution to our optimization problem can be obtained with*:
+Writing $\mathbf{A}^\dagger = (\mathbf{A}^\top\mathbf{A})^{-1}\mathbf{A}^\top \in \mathbb{R}^{K \times N}$ and based on Equation (9), the solution to our optimization problem can be obtained with*:
 
 $$
 \mathbf{x}=\mathbf{A}^\dagger\mathbf{b}
@@ -411,7 +413,7 @@ Given matrix $\mathbf{A} \in \mathbb{R}^{N \times K}$ and provided the following
 
 $$\mathbf{A}^\dagger = (\mathbf{A}^\top\mathbf{A})^{-1}\mathbf{A}^\top \in \mathbb{R}^{K \times N}$$
 
-$\mathbf{A}^\dagger $ is called the *pseudo-inverse* of matrix $\mathbf{A}$.
+$\mathbf{A}^\dagger$ is called the *pseudo-inverse* of matrix $\mathbf{A}$.
 </div>
 
 *\* i.e. provided $\text{rank}(\mathbf{A}) = K$, cf. subsection "A couple of precisions" above.*
@@ -453,7 +455,7 @@ b = np.array([6, 4, 6])
 The solution is then given by this very long, one-full-line of code implementation:
 ```python
 x = np.linalg.pinv(A) @ b
-# or equivalently: x = np.linalg.inv(A.T @ A) @ A.T @ b
+# or somehow equivalently: x = np.linalg.inv(A.T @ A) @ A.T @ b
 ```
 This yields $(x_1,x_2) = (5,4)$, which is exactly what we expected!
 
@@ -525,7 +527,7 @@ $$
 is very, *very* useful, as this has *many* applications.
 Practical examples of such applications are coming soon.
 
-A second part to this article, dealing with *under*-constrained, i.e. systems of equations with *too few* constraints to have a unique solution, is also "dans les cartons".
+A second part to this article, dealing with *under*-constrained, i.e. systems of equations with *too few* constraints to have a unique solution, is also in the pipeline.
 
 So stay tuned!
 
