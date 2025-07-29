@@ -3,7 +3,11 @@ layout: post
 title:  "Matrix Reloaded: introduction to matrix calculus"
 date:   2025-07-24 10:22:40 +0200
 update_date:  2025-07-24 11:22:40 +0200
+last_modified_at:  2025-07-29
 categories: foundations
+permalink: /blog/matrix-calculus/
+description: "A gentle introduction to matrix calculus for machine learning. Learn derivatives of scalars, vectors and matrices w.r.t. one another. With examples & exercises."
+image: /assets/img/matrix-calculus/neo-confused2.jpg
 ---
 
 <img class="center-image" src="{{ '/assets/img/matrix-calculus/neo-confused2.jpg' | relative_url }}" alt="Confused Neo" width="300"/>

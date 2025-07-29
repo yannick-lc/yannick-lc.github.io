@@ -4,7 +4,11 @@ title:  "Thinking inside the Matrix"
 rendered_title: "Thinking <del>outside</del> <em>inside</em> the Matrix"
 date:   2025-07-21 11:22:40 +0200
 update_date:  2025-07-24 11:22:40 +0200
+last_modified_at:  2025-07-29
 categories: foundations
+permalink: /blog/matrix-notation/
+description: "Master matrix notation for machine learning: convert sums/loops to vector operations and achieve massive performance gains. With examples and exercises."
+image: /assets/img/matrix-notation/matrix-illustration.jpg
 ---
 
 <img class="center-image" src="{{ '/assets/img/matrix-notation/matrix-illustration.jpg' | relative_url }}" alt="Matrix illustration" width="400"/>
@@ -1085,7 +1089,7 @@ And finally, you may want to check out my other blog posts. A natural continuati
 
 See you there, and thanks for reading!
 
-*(TODO: find a catchier signature catch to conclude posts)*
+*(TODO: find a catchier signature sentence to conclude posts)*
 
 <!---
 This should be a hidden comment.

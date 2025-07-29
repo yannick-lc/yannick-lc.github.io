@@ -2,8 +2,11 @@
 layout: post
 title:  "\"Impossible\" systems of equations and pseudo-inverse"
 date:   2025-07-24 10:22:40 +0200
-update_date:  2025-07-24 11:22:40 +0200
+last_modified_at:  2025-07-29
 categories: foundations
+permalink: /blog/pseudo-inverse/
+description: "A gentle introduction to pseudo-inverse for solving \"impossible\" systems of equations with no exact solution. Applications to machine learning included."
+image: /assets/img/pseudo-inverse/mocking-spongebob.jpg
 ---
 
 <img class="center-image" src="{{ '/assets/img/pseudo-inverse/mocking-spongebob.jpg' | relative_url }}" alt="Confused Neo" width="300"/>
