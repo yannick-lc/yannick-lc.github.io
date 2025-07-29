@@ -3,12 +3,12 @@ layout: post
 title:  "Thinking inside the Matrix"
 rendered_title: "Thinking <del>outside</del> <em>inside</em> the Matrix"
 date:   2025-07-21 11:22:40 +0200
-update_date:  2025-07-24 11:22:40 +0200
-last_modified_at:  2025-07-29
+last_modified_at:  2025-07-29 11:22:40 +0200
 categories: foundations
-permalink: /blog/matrix-notation/
+permalink: /matrix-notation/
 description: "Master matrix notation for machine learning: convert sums/loops to vector operations and achieve massive performance gains. With examples and exercises."
 image: /assets/img/matrix-notation/matrix-illustration.jpg
+comments: true
 ---
 
 <img class="center-image" src="{{ '/assets/img/matrix-notation/matrix-illustration.jpg' | relative_url }}" alt="Matrix illustration" width="400"/>

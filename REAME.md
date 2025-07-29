@@ -8,7 +8,19 @@ Created and hosted using [Jekyll](https://jekyllrb.com/) and [Github Pages](http
 
 ## Structure
 
-Published content is in */docs* folder.
+Jekyll root is in */docs* folder.
+
+For now, hosted on [manifold.fr](https://manifold.fr)
+
+Blog itself is located in manifold.fr/blog (index is at this location)
+
+manifold.fr redirects to manifold.fr/blog for now.
+
+Comments are handled via [Disqus](https://disqus.com/), using
+Shortname is set in `_config.yml`.
+
+
+## Run
 
 To run locally:
 ```bash
@@ -19,6 +31,11 @@ bundle exec jekyll serve
 To install plugins added in `/docs/_config.yml`:
 ```bash
 bundle install
+```
+
+To build (supposed so generate `sitemap.xml`):
+```bash
+bundle exec jekyll build
 ```
 
 ## Ideas
@@ -37,11 +54,15 @@ Add a couple of exercises in matrix notation article
 
 Standalone example of pseudo inverse: 3D hand landmarks
 
+Add a more explicit link to my Twitter profile.
+
 ## Check list before go live
 
 - Comments
 v Permalinks 
-- Blog email address
-- Twitter and LinkedIn profiles (+ Twitter handle?)
+v Blog email address
+v Twitter and LinkedIn profiles (+ Twitter handle?)
 v SEO and meta tags? + robot.txt (also, ask ChatGPT)
-- Domain and /blog
+v Domain and /blog
+
+Left to check (live): robots.txt, sitemap.xml and redirection.

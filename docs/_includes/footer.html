@@ -16,7 +16,21 @@
             {%- endif -%}
             </li>
             {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <!-- <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li> -->
+            <div class="email-contact">
+              <span id="email-link"></span>
+              <noscript>
+                <em>No JavaScript, no email.</em>
+              </noscript>
+            </div>
+            
+            <script>
+              const user = "legends";
+              const domain = "manifold.fr";
+              const mail = `${user}@${domain}`;
+              const link = `<a href="mailto:${mail}" class="email-link">${mail}</a>`;
+              document.getElementById("email-link").innerHTML = link;
+            </script>
             {%- endif -%}
         </ul>
       </div>
