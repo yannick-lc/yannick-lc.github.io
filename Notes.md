@@ -2,6 +2,8 @@
 
 These are my notes.
 
+## Equations
+
 I didn't like the rendering of equations with Mathjax, so I added the following so that it's rendered with Katex instead (same renderer as in VSCode apparently):
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -23,18 +25,21 @@ Regarding the rendering of equations in `<details>` sections, there are two opti
 - Or, write `<details markdown="1">` so that content is parsed as Markdown, but for some reasons column vectors are f*cked up: line breaks `\\` are interpreted as escaped `\`, so they should be doubled instead: `\\\\`
   - Update: actually, writing `$$ ... $$` (with double dollar sign) does the trick. There is no new line unless a double line break is added in markdown.
 
+## Structure
 
+Structure: things got slightly messy because when another domain points to page.github.io, baseurl in _config.yml is not correctly taken into account (Github Pages does not serve from this baseurl, but from the root domain).
+So I add to recreate the structure manually in Permalinks, and add a redirection from www.manifold.fr to www.manifold.fr/blog
+
+## Misc
 
 Idea: for collapsible sections in details tag, maybe add emojis like ℹ️ to indicate interesting precisions, off-topic comment and details of computations?
 
-Use Yann LeCac as a Twitter handle
-
 Should I buy machinelearningforlegends.com? 
-
-Em dash: —
 
 Ideas of improvements:
 Banner image (that shrinks to persisent header when scrolling)
 Possibility to change language?
 Better preview of posts: image, start of text
 + Group by categories
+
+Em dash: —

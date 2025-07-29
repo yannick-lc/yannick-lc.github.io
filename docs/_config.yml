@@ -23,10 +23,13 @@ email: legends@manifold.fr
 description: >- # this means to ignore newlines until "baseurl:"
   This is a blog about machine learning, data science, and stuff.
   All opinions are strictly my own.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-# baseurl: ""
+
 url: "https://www.manifold.fr" # the base hostname & protocol for your site, e.g. http://example.com
 # url: "https://yannick-lc.github.io" # for GitHub Pages, temporary
+# baseurl: "/blog" # not working with GitHub Pages
+baseurl: "" #
+index_permalink: "/blog" # added this instead as a workaround
+
 author: Yannick Le Cacheux
 twitter_username: yannlecac
 github_username:  yannick-lc
