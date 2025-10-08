@@ -105,6 +105,8 @@ $$
 \end{align*}
 $$
 
+Precision about why E step and M step.
+
 These two problems are actually pretty easy to solve. Indeed, we could prove that the solution to the E step is
 
 $$
@@ -160,11 +162,11 @@ $$
 
 i.e. we still want to find centroids $\mathcal{C}$ and assignments $\mathcal{A}$ that minimizes the (squared) distance from each point to its cluster center, with the added constraint that the sets of points $\mathcal{X}_k$ assigned to each cluster *must* all have the same number of points.
 
-OK, we have defined our problem. Now, how do we solve it?
+OK, we have defined the problem we are actually interested in. Now, how do we solve it?
 
 ## An alternative formulation of K-Means
 
-Let's start by making some small changes to our K-Means problem formulation.
+I promise we'll get there soon. For now, allow me to start by making some small changes to our K-Means problem formulation.
 
 We will replace our $N$ integer variables $a_n \in \{ 1, \dots, K\}$ by $N \times K$ dummy variables $\alpha_{n,k} \in \{0, 1\}$, such that
 
@@ -307,7 +309,42 @@ Why put ourself through that?
 
 Well, the neat thing is: we can now easily add further constraints in our intermediate linear programming problem! 
 
-In particular, recall from last time 
+In particular, recall from earlier that our new objective, clustering with balance constraints, can for example be written as
+
+$$
+\underset{\mathcal{C},\mathcal{\Alpha}}{\text{minimize}} ~~
+J_\mathcal{X}(\mathcal{C},\mathcal{\Alpha}) = 
+\sum_{n=1}^N \sum_{k=1}^K 
+\alpha_{n,k}
+|| \mathbf{x}_n - \mathbf{c}_{k} ||_2^2
+\quad\quad \text{s.t.} ~ |\mathcal{X}_k| = N_k ~~\forall k
+$$
+
+meaning that we want to minimize the inertia $J$ with the constraint that cluster $k$ contains exactly $N_k$ elements. Or, to provide our optimizer with a bit more room for maneuver, we may instead want to ask that each cluster contains *at least* $N_k$ elements instead, with a slightly smaller $N_k$, i.e. $|\mathcal{X}_k| \geq N_k ~~\forall k$.
+
+Similarly to K-Means, we don't have a reliable way to directly solve this problem. But we may use the same alternating optimization trick: 
+
+$$
+\begin{align*}
+\text{(E step)} \quad\quad
+& \underset{\mathcal{A}}{\text{minimize}} \quad J_{\mathcal{X},\mathcal{C}}(\mathcal{A})
+\quad \text{s.t.} ~ |\mathcal{X}_k| \geq N_k ~~\forall k
+\\
+\text{(M step)} \quad\quad
+& \underset{\mathcal{C}}{\text{minimize}} \quad J_{\mathcal{X},\mathcal{A}}(\mathcal{C})
+\quad \text{s.t.} ~ |\mathcal{X}_k| \geq N_k ~~\forall k
+\end{align*}
+$$
+
+The solution to the M step is not impacted by the constraints, and we end up with the same ... as in Equation (XXX).
+
+The solution to the E step.
+
+Here is our modified K-Means algorithm:
+
+## Results
+
+Set $N_k=150 ~~\forall k$
 
 ## Misc
 
