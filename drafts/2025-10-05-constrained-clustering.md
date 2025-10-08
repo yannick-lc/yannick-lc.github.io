@@ -135,8 +135,8 @@ All that is missing is a starting position to begin our alternating optimization
 
 This finally gives us the familiar K-Means algorithm:
 1. Initialize $K$ centroids randomly
-2. Assign each point to the cluster whose centroids is closest
-3. Update centroids as the means of the corresponding assigned points
+2. Assign each point to the cluster whose centroids is closest (E step)
+3. Update centroids as the means of the corresponding assigned points (M step)
 4. Repeat 2 and 3 until convergence
 
 <img class="center-image" src="" alt="K-Means illustration" width="400"/>
@@ -217,13 +217,13 @@ $$
 || \mathbf{x}_n - \mathbf{c}_{k} ||_2^2 \\
 &\text{such that} \quad
 \sum_k \alpha_{n,k} = 1 ~ \forall n \\
-& \implies
-\alpha_{n,k} =
-\begin{cases}
-1 \quad \text{if} ~ k = \underset{i}{\text{argmin}} ~ ||\mathbf{x}_n - \mathbf{c}_i||_2^2  \\
-0 \quad \text{otherwise}
-\end{cases}
-~~ \forall n,k
+% & \implies
+% \alpha_{n,k} =
+% \begin{cases}
+% 1 \quad \text{if} ~ k = \underset{i}{\text{argmin}} ~ ||\mathbf{x}_n - \mathbf{c}_i||_2^2  \\
+% 0 \quad \text{otherwise}
+% \end{cases}
+% ~~ \forall n,k
 \end{align*}
 $$
 
@@ -233,12 +233,12 @@ So far, the algorithm is exactly the same as in the previous part. However, ther
 
 Details about linear programming
 
-In general, linear programming problem are of this form:
+In general, linear programming problems are of this form:
 $$
 \begin{align*}
-\text{minimize} ~ & \sum_i x_i c_i \quad \text{w.r.t.} ~~ x_1, \dots, x_N \\
-\text{such that} ~ & \sum_i x_i p_i \geq p_0 \\
-& \sum_i x_i q_i \geq q_0 \\
+\text{minimize} ~ & \sum_k x_k c_k \quad \text{w.r.t.} ~~ x_1, \dots, x_K \\
+\text{such that} ~ & \sum_k x_k p_k \geq p_0 \\
+& \sum_k x_k q_k \geq q_0 \\
 & \quad \vdots
 \end{align*}
 $$
@@ -246,7 +246,7 @@ $$
 Without getting into too many details, there are efficient ways to solve linear programming problems, e.g. using [Dantzig's simplex algorithm][#].
 For now, all we need to know is that some libraries such as [pulp][#] nicely provide easy-to-use solvers for this kind of problems.
 
-In our specific case, we want to minimize $\sum_{n,k} \alpha_{n,k} ||\mathbf{x}_n - \mathbf{c}_k||_2^2$ with respect to the $\alpha_{n,k}$. The $\alpha_{n,k}$ play the role of the variables $x_i$ in Equation (X) above, and the $||\mathbf{x}_n - \mathbf{c}_k||_2^2$ play the role of the constants $c_i$.
+In our specific case, we want to minimize $\sum_{n,k} \alpha_{n,k} ||\mathbf{x}_n - \mathbf{c}_k||_2^2$ with respect to the $\alpha_{n,k}$. The $\alpha_{n,k}$ play the role of the variables $x_k$ in Equation (X) above, and the $||\mathbf{x}_n - \mathbf{c}_k||_2^2$ play the role of the constants $c_k$.
 
 The $\sum_k \alpha_{n,k} = 1 ~ \forall n$ correspond to the constraints.
 
@@ -314,13 +314,13 @@ In particular, recall from earlier that our new objective, clustering with balan
 $$
 \underset{\mathcal{C},\mathcal{\Alpha}}{\text{minimize}} ~~
 J_\mathcal{X}(\mathcal{C},\mathcal{\Alpha}) = 
-\sum_{n=1}^N \sum_{k=1}^K 
+\sum_{n,k} 
 \alpha_{n,k}
 || \mathbf{x}_n - \mathbf{c}_{k} ||_2^2
 \quad\quad \text{s.t.} ~ |\mathcal{X}_k| = N_k ~~\forall k
 $$
 
-meaning that we want to minimize the inertia $J$ with the constraint that cluster $k$ contains exactly $N_k$ elements. Or, to provide our optimizer with a bit more room for maneuver, we may instead want to ask that each cluster contains *at least* $N_k$ elements instead, with a slightly smaller $N_k$, i.e. $|\mathcal{X}_k| \geq N_k ~~\forall k$.
+meaning that we want to minimize the inertia $J$ with the constraint that cluster $k$ contains exactly $N_k$ elements. Or, to provide our optimizer with a bit more room for maneuver, we may instead merely ask that each cluster contains *at least* $N_k$ elements instead, with a slightly smaller $N_k$, i.e. $|\mathcal{X}_k| \geq N_k ~~\forall k$.
 
 Similarly to K-Means, we don't have a reliable way to directly solve this problem. But we may use the same alternating optimization trick: 
 
@@ -336,15 +336,136 @@ $$
 \end{align*}
 $$
 
-The solution to the M step is not impacted by the constraints, and we end up with the same ... as in Equation (XXX).
+The solution to the M step is not impacted by the constraints, and we end up with the same solution
+$\mathbf{c}_k = \frac{\sum_n \alpha_{n,k} \mathbf{x}_n}{\sum_n \alpha_{n,k}} ~~ \forall k$
+as in Equation (XXX).
 
-The solution to the E step.
+Since $|\mathcal{X}_k|$, the size of cluster $k$, can be expressed as $\sum_n \alpha_{n,k}$, the objective to the E step can now be written as
+
+$$
+\begin{align*}
+\text{(E step)}\quad
+& \underset{\mathcal{\Alpha}}{\text{minimize}} \quad
+% ~ J_{\mathcal{X},\mathcal{C}}(\mathcal{\Alpha}) =
+\sum_{n,k} \alpha_{n,k}
+|| \mathbf{x}_n - \mathbf{c}_{k} ||_2^2 \\
+&\text{such that} \quad
+\sum_k \alpha_{n,k} = 1 \quad \forall n \\
+&\phantom{\text{such that} \quad}
+\sum_n \alpha_{n,k} \geq N_k ~~ \forall k \\
+\end{align*}
+$$
+
+This is still a linear programming problem! Although we don't have a direct generic formula for the corresponding optimal assignements $\alpha_{n,k}$ as in Equation (XXX),
+a linear programming solver can still easily find these optimal $\alpha_{n,k}$ for us.
+
+So, we have a way to solve the E step and M step corresponding to our modified, constrained objective (Equation XXX). Similarly to K-Means, we can alternate between the E and M step until we obtain an (approximate) solution to our global (constrained) optimization problem.
 
 Here is our modified K-Means algorithm:
+1. Initialize $K$ centroids randomly
+2. Solve the E step: find the $\alpha_{n,k}$.s corresponding to our objective from Equation (XXX) using a linear programming solver
+3. Solve the M step: update centroids as the means of the corresponding assigned points
+4. Repeat 2 and 3 until convergence
 
-## Results
+## Bringing balance to the (sales)force
 
-Set $N_k=150 ~~\forall k$
+OK, sounds good in theory. Does it work in practice?
+
+Only one way to find out!
+Let's implement this algorithm. Since we have a total of 500 points, let's set $N_k=150 ~~\forall k$ so that each cluster contains at least 150 points. This should lead to approximately the same number of clients in each portfolio, while still leaving the solver with enough wiggle room to find a good geographical partitioning.
+
+Aaaaand, we get...
+
+<img class="center-image" src="" alt="Constrained clustering results" width="400"/>
+<div class="figure-legend" markdown="1">
+Figure 1: Good results.
+</div>
+
+Awesome! This is pretty much *exactly* what we wanted. Now we have good geographical clusters, while ensuring that these clusters are fairly balanced. If this is not balanced enough for you, we also have the option to select a higher value of $N_k$, for instance $N_k=167$.
+
+At last, we may take some rest!
+
+## Unhappy representatives strike back 
+
+Eh? What now?
+
+Rep. Blue is unhappy? But they're the one with the highest number of clients in their portfolio! How can they be unhappy? Something about the revenue you say? Fine, fine, let's have a look...
+
+<img class="center-image" src="" alt="Constrained clustering results" width="400"/>
+<div class="figure-legend" markdown="1">
+Figure 1: Revenue distribution. Not good.
+</div>
+
+Oh, I see... Blue's clients typically have low revenue, so blue's portfolio has the lowest revenue despite having the highest number of clients.
+
+Bummer. How can we make it so that the number of clients *and* the revenue are balanced?
+
+That's right, pretty much exactly the same way we solved our previous problem.
+
+Assuming revenue for customer $n$ is given by $r_n$, total revenue for cluster $k$ is given by $\sum_n \alpha_{n,k} r_n$. Assuming we want revenue at least $R_k$ in cluster $k$, we get the constraints  $\sum_n \alpha_{n,k} r_n \geq R_k ~\forall k$.
+
+This is again linear with respect to the $\alpha_{n,k}$.s. So we simply add the $K$ constraints $\sum_n \alpha_{n,k} r_n \geq R_k$ in the objective from Equation (XXX), which now becomes:
+
+$$
+\begin{align*}
+\text{(E step)}\quad
+& \underset{\mathcal{\Alpha}}{\text{minimize}} \quad
+% ~ J_{\mathcal{X},\mathcal{C}}(\mathcal{\Alpha}) =
+\sum_{n,k} \alpha_{n,k}
+|| \mathbf{x}_n - \mathbf{c}_{k} ||_2^2 \\
+&\text{such that} \quad
+\sum_k \alpha_{n,k} = 1 \quad\quad~~ \forall n \\
+&\phantom{\text{such that} \quad}
+\sum_n \alpha_{n,k} \geq N_k \quad\quad \forall k \\
+&\phantom{\text{such that} \quad}
+\sum_n \alpha_{n,k} r_n \geq R_k \quad~ \forall k
+\end{align*}
+$$
+
+We then repeat the other steps exactly as previously.
+For instance, let's say that we want each cluster to have at least 30% of the total revenue $R = \sum_n r_n$. Then we can choose $R_k = 0.3 R ~\forall k$, which would be $R_k=1005$ in my made up dataset.
+
+Which leads to:
+
+<img class="center-image" src="" alt="Constrained clustering results" width="400"/>
+<div class="figure-legend" markdown="1">
+Figure 1: This is getting easy.
+</div>
+
+Mmmh? Clients from cluster dudecomeonwhatnow are on average less friendly than clients from cluster whatever?
+
+You guessed it: introduce friendliness score $f_n$ for client $n$, add $K$ constraints $\sum_n \alpha_{n,k} f_n \geq F_k$ and there you go.
+
+Coffee tastes better at some clients' than others, and this is somehow really really important? Time for some koffee scores $k_n$ then.
+
+## No more jokes, only actually important constraints this time
+
+All right, you may have guessed that the friendliness or coffee scores were kind of made up and not real constraints from the actual project. However, I would still like to address two further, slightly different constraints that were of considerable *actual* importance to the project.
+
+The first one is related to special client-representative relationships. Let's say Rep. Brown spent a considerable amount of time developing the two largest clients, Hugh and Hugo, and understandably does not want to give up this special relationship.
+This can be addressed by specifying 
+
+$$
+\begin{align*}
+\alpha_{\text{Brown}, \text{Hugh}} = 1 \\
+\alpha_{\text{Brown}, \text{Hugo}} = 1
+\end{align*}
+$$
+
+Adding this along with the other constraints ensures that these two clients will necessarily be assigned to Rep. Brown.
+The rest of the parameters can then be adjusted to take this constraint into account, leading to e.g.:
+
+<img class="center-image" src="" alt="Constrained clustering results" width="400"/>
+<div class="figure-legend" markdown="1">
+Figure 1: Hugh and Hugo belong to the Brown realm.
+</div>
+
+The second one is related to the acceptable degree of change on a portfolio on a given year.
+Sales representatives may be OK with having *some* of their portfolio modified in exchange for improved travel times — provided this doesn't jeopardize their yearly bonus of course. But changing almost *all* their portfolio may still be too much, as getting to know a new client takes some time.
+
+Fortunately, assuming
+
+## Practical considerations
 
 ## Misc
 
@@ -353,3 +474,6 @@ Project was not just 500 clients in one territory: it was dozens of such territo
 Good example of why in-depth understanding of ML algorithms useful.
 
 Comment about why the fact that K-Means is NP-complete is not that big of a deal in general?
+
+State that some linear programming problems don't have solution (e.g Nk = 167). Or less obvious combinations of constraints.
+
