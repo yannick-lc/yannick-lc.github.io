@@ -6,13 +6,13 @@ last_modified_at:  2025-10-09 17:34:00 +0200
 categories: practical
 permalink: /blog/constrained-clustering/
 description: "Learn how to solve real-world clustering problems with business constraints. This article shows how to modify K-Means to balance clusters by client count, revenue, etc."
-image: /assets/img/matrix-notation/matrix-illustration.jpg
+image: /assets/img/constrained-clustering/clusters-revenue.jpg
 comments: true
 ---
 
 A promise made, a debt unpaid: here is finally a blog post about a concrete business problem that I worked on.
 
-In my not-so-humble opinion, this article describes a fairly elegant solution to a tricky problem. It is also a good example of why *really* understanding how standard machine learning algorithms work may lead to solutions unreachable with a fitpredict® approach — which is supposed to be what [this blog is all about][about]. But I might be *slightly* biased, so I will let you judge by yourself.
+In my not-so-humble opinion, this article describes a fairly elegant solution to a tricky problem. It is also a good example of why *really* understanding how standard machine learning algorithms work may lead to solutions that are out of reach a fitpredict® approach — which is supposed to be what [this blog is all about][about]. But I might be *slightly* biased, so I will let you judge for yourself.
 
 As usual, below is a brief synthesis of the article.
 
@@ -65,7 +65,7 @@ $$
 \end{align*}
 $$
 
-This gives us the familiar K-Means algorithm: initialize centroids, assign each point to the cluster whose centroids is closest (E step), update centroids as the means of the corresponding assigned points (M step), and repeat the E and M steps until convergence.
+This gives us the familiar K-Means algorithm: initialize centroids, assign each point to the cluster whose centroid is closest (E step), update centroids as the means of the corresponding assigned points (M step), and repeat the E and M steps until convergence.
 
 *This formulation does not allow any control on e.g. the size of the clusters.*
 
@@ -98,13 +98,13 @@ This gives us a modified K-Means algorithm:
 3. Solve the M step: update centroids as the means of the corresponding assigned points
 4. Repeat 2 and 3 until convergence
 
-This constitutes a powerfull framework, which enables to find "good" clusters while satisfying a number of constraints.
+This constitutes a powerful framework, which enables to find "good" clusters while satisfying a number of constraints.
 
 </details>
 
 ## Problem statement
 
-Without further ado, here is the problem statement: we have 3 mobile sales representatives, going from client to client over a fixed territory containing a total of e.g. 500 clients*.
+Without further ado, here is the problem statement: we have 3 mobile sales representatives, going from client to client across a fixed territory containing a total of e.g. 500 clients*.
 Not all salesperson visits all customers: each salesperson has a portfolio of dedicated clients, and only visits their own clients.
 
 <sup><sub>**as indicated [here][fictitious], all figures and data presented in this article are of course fictitious.*</sub></sup>
@@ -120,7 +120,7 @@ Figure 1: Random client assignments for the 3 Sales Representatives, Rep. Brown,
 Probably not optimal in terms of travel times.
 </div>
 
-**We have been missioned to do just that**: (re)assign the 500 clients to the 3 salespersons' portfolios in a way that reduces travel times.
+**We have been commissioned to do just that**: (re)assign the 500 clients to the 3 salespersons' portfolios in a way that reduces travel times.
 
 Finally, some additional info which may or may not be relevant:
 - Some clients are bigger than others in terms of generated revenue.
@@ -137,7 +137,7 @@ Sounds a lot like what [K-Means](https://en.wikipedia.org/wiki/K-means_clusterin
 So let's just convert the clients GPS coordinates into 2D cartesian coordinates, and run K-means with $K=3$.
 Aaaand, here is the result:
 
-<img class="center-image" src="{{ '/assets/img/constrained-clustering/clusters-kmeans.jpg' | relative_url }}" alt="Assignments with K-Means" width="500"/>
+<img class="center-image" src="{{ '/assets/img/constrained-clustering/clusters-kmeans.jpg' | relative_url }}" alt="Clients assignments with K-Means" width="500"/>
 <div class="figure-legend" markdown="1">
 Figure 2: K-Means results. Travel times have been reduced. Good job everyone.
 </div>
@@ -147,18 +147,18 @@ Boom, problem solved. Easiest money we've ever made.
 💰💰💰
 
 Mmmh? What's that you say? Rep. Cyan is furious?
-Apparently, they're saying the new assignement is really unfair, deprives them of clients, jeopardizes their annual bonus and are threatening to quit.
+Apparently, they're saying the new assignment is really unfair, deprives them of clients, jeopardizes their annual bonus and are threatening to quit.
 
 All right, all right, let's take a quick look at the client distribution before we fly away to our well-deserved vacation.
 
-<img class="center-image" src="{{ '/assets/img/constrained-clustering/distrib-clients-KO.png' | relative_url }}" alt="Client distribution" width="200"/>
+<img class="center-image" src="{{ '/assets/img/constrained-clustering/distrib-clients-KO.png' | relative_url }}" alt="Clients distribution" width="200"/>
 <div class="figure-legend" markdown="1">
 Figure 3: Clients repartition in clusters after K-Means optimization. Woops.
 </div>
 
-Woops, indeed! It looks like after we applied our brilliant optimization procedure, Rep. Cyan ended up with a meager 78 clients, whereas Rep. Blue generously got 265 clients. One of them sure is going to have an easier time generating high revenue from their clients porfolio.
+Woops, indeed! It looks like after we applied our brilliant optimization procedure, Rep. Cyan ended up with a meager 78 clients, whereas Rep. Blue generously got 265 clients. One of them sure is going to have an easier time generating high revenue from their clients portfolio.
 
-Indeed, the implicit objective of our almighty K-Means is to minimize the (squares) of the distances within each cluster.
+Indeed, the implicit objective of our almighty K-Means is to minimize the (squared) distances within each cluster.
 Nowhere does it state that these clusters should have the same number of points.
 And indeed, there does not seem to be an option for that in the [scikit-learn implementation](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) we just so cleverly used.
 
@@ -259,7 +259,7 @@ All that is missing is a starting position to begin our alternating optimization
 <div class="silverhighlight" markdown="1">
 This finally gives us the familiar K-Means algorithm:
 1. Initialize $K$ centroids randomly
-2. Assign each point to the cluster whose centroids is closest (E step)
+2. Assign each point to the cluster whose centroid is closest (E step)
 3. Update centroids as the means of the corresponding assigned points (M step)
 4. Repeat 2 and 3 until convergence
 </div>
@@ -276,14 +276,14 @@ The fact that the inertia-minimization objective is NP-Complete naturally raises
 
 </details>
 
-*"Right, right. I already (kinda) knew how K-Means works. It's quite easy to understand from the figure above. Why over-complicate things with all the previous obscure formalism?"*
+*"Right, right. I already (kinda) knew how K-Means works. It's quite easy to understand from Figure 4 above. Why over-complicate things with all the previous obscure formalism?"*
 
 The point was to precisely define our objective, so that we can then (hopefully) solve the problem that we are actually interested in.
 For instance, we have seen that nowhere in the formulation of the K-Means objective or its resolution method is there any mention of the number of elements a cluster should have.
 Hence the unsuitable results that we obtained in the previous section.
 
-What if we wanted to change that? Having balanced cluster is important in our use case, so let's explicitly take that into account in the problem we want to solve.
-One way to express this is to modify the objective from Equation (2) into:
+What if we wanted to change that? Having balanced clusters is important in our use case, so let's explicitly take that into account in the problem we want to solve.
+One way to express this is to modify the objective from Equation (2) to:
 
 $$
 \begin{equation}
@@ -306,7 +306,7 @@ I promise we'll get there soon. For now, allow me to start by making some small 
 
 We will replace our $N$ integer variables
 $$a_n \in \{ 1, \dots, K\}$$
-by $N \times K$ dummy variables
+with $N \times K$ dummy variables
 $$\alpha_{n,k} \in \{0, 1\}$$, such that
 
 $$
@@ -326,7 +326,7 @@ $$\mathbf{A} =
 \alpha_{N,1} & \dots & \alpha_{N,K} \\
 \end{pmatrix}
 \in \{0,1\}^{N \times K}$$
-the set of all the $N \times K$ binary variables $\alpha_{n,k}$.
+the set of all $N \times K$ binary variables $\alpha_{n,k}$.
 
 The inertia $J$ can thus be rewritten as
 
@@ -379,9 +379,9 @@ $$
 \end{align}
 $$
 
-The $N$ constraints $\sum_k \alpha_{n,k} = 1$ are necessary to ensure that for a given point $n$, exactly one $k$ is such that $\alpha_{n,k} = 1$, i.e. to ensure that each point is assigned to precisely one cluster. (Otherwise, simply choosing $ \alpha_{n,k} = 0 ~ \forall n,k$ would be a trivial (and entirely useless) way to minimize the inertia $J$).
+The $N$ constraints $\sum_k \alpha_{n,k} = 1$ are necessary to ensure that for a given point $n$, exactly one $k$ is such that $\alpha_{n,k} = 1$, i.e. to ensure that each point is assigned to precisely one cluster. (Otherwise, simply choosing $\alpha_{n,k} = 0 ~ \forall n,k$ would be a trivial (and entirely useless) way to minimize the inertia $J$).
 
-So far, the problem is exactly the same as in the previous part. However, there is something interesting about the reformulated E step objective: it can be viewed as a [linear optimization](https://en.wikipedia.org/wiki/Linear_programming) problem!
+So far, the problem is exactly the same as in the previous part. However, there is something interesting about the reformulated E step objective: it can be viewed as an (integer) [linear programming](https://en.wikipedia.org/wiki/Linear_programming) problem!
 
 <details markdown="1">
 <summary>Linear programming</summary>
@@ -399,11 +399,12 @@ $$
 \end{align}
 $$
 
-i.e. we want to find variables $x_m$s which minimize a linear combination, subject to a number of inequality constraints which are also linear combination of the variables $x_m$s.
+i.e. we want to find variables $x_m$s that minimize a linear combination, subject to a number of inequality constraints which are also linear combination of the variables $x_m$s.
 
 *Bonus exercise: write Equation (8) in [matrix notation][matrix-notation].*
 
 Without getting into too many details, there are efficient ways to solve linear programming problems, e.g. using [Dantzig's simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm).
+The fact that our variables $\alpha_{n,k}$s need to be binary/integers slightly complicates things, but again, [practical solutions exist](https://en.wikipedia.org/wiki/Integer_programming).
 For now, all we need to know is that some libraries such as [pulp](https://github.com/coin-or/pulp) nicely provide easy-to-use solvers for this kind of problems.
 
 In our specific case, we want to minimize
@@ -411,8 +412,6 @@ $$\sum_{n,k} \alpha_{n,k} ||\mathbf{x}_n - \mathbf{c}_k||_2^2$$
 with respect to the $\alpha_{n,k}$s. The $\alpha_{n,k}$s play the role of the variables $x_m$ in Equation (8) above, and the $||\mathbf{x}_n - \mathbf{c}_k||_2^2$ play the role of the constants $c_m$.
 
 The $\sum_k \alpha_{n,k} = 1 ~ \forall n$ in Equation (7) corresponds to $N$ constraints.
-
-The fact that our variables $\alpha_{n,k}$s need to be binary/integers slightly complicates things, but again, libraries such as [pulp](https://github.com/coin-or/pulp) nicely handle this for us.
 
 <details markdown="1">
 <summary>How do we go from $\sum_i x_i p_i \geq p_0$ to $\sum_k \alpha_{n,k} = 1$ ?</summary>
@@ -433,7 +432,7 @@ p_{i,k} =
 \end{cases}
 $$
 
-as well as $p_0$ = 1.
+as well as $p_0 = 1$.
 
 This way, we end up with
 
@@ -468,7 +467,7 @@ The only possibility to enforce this constraint as well as the constraint from E
 
 We continue adding two such constraints for every $n$, and *voilà*! We have defined our objective and our constraints such that the E step optimization problem from K-Means has been reframed as a linear programming problem.
 
-*Note: most linear programming solvers actually enable to directly specify equality constraints instead, so in practice we generally only need to write a single constraint for every $n$.*
+*Note: most linear programming solvers actually enable to directly specify equality constraints instead, so in practice we generally only need to write a single constraint for each $n$.*
 
 </details>
 
@@ -477,7 +476,7 @@ We continue adding two such constraints for every $n$, and *voilà*! We have def
 ## Adding constraints
 
 All right, let me recap: we already had a perfectly good way to (approximately) solve the K-Means objective. Now we have a new, more complicated way to solve it with intermediate linear programming problems.
-Why put ourself through that?
+Why put ourselves through that?
 
 Well, the neat thing is: we can now easily add further constraints in our intermediate linear programming problem! 
 
@@ -511,7 +510,7 @@ $$
 \end{align*}
 $$
 
-The solution to the M step is not impacted by the $K$ constraints: whether or not they are satisfied, there is nothing we can do about that by changing the centroids' locations.
+The solution to the M step is not affected by the $K$ constraints: whether or not they are satisfied, there is nothing we can do about that by changing the centroids' locations.
 So we end up with the same solution as in Equation (6):
 
 $$\mathbf{c}_k = \frac{\sum_n \alpha_{n,k} \mathbf{x}_n}{\sum_n \alpha_{n,k}} ~~ \forall k$$
@@ -539,7 +538,7 @@ $$
 $$
 
 *This is still a linear programming problem!*
-Although we don't have a direct generic formula for the corresponding optimal assignements $\alpha_{n,k}$ as in Equation (3),
+Although we don't have a direct generic formula for the corresponding optimal assignments $\alpha_{n,k}$ as in Equation (3),
 a linear programming solver can still easily find these optimal $\alpha_{n,k}$s for us.
 
 So, we have a way to solve the E step and M step corresponding to our modified, constrained objective (Equation 11). Similarly to K-Means, we can alternate between the E and M step until we obtain an (approximate) solution to our global constrained optimization problem.
@@ -564,8 +563,8 @@ Let's implement this algorithm. Since we have a total of 500 points, let's set $
 Aaaaand, we get...
 
 <div style="display:flex; gap:12px; justify-content:center; align-items:center">
-<img src="{{ '/assets/img/constrained-clustering/clusters-size.jpg' | relative_url }}" alt="Constrained clustering results" width="400"/>
-<img src="{{ '/assets/img/constrained-clustering/distrib-clients-OK.png' | relative_url }}" alt="Constrained clustering results" width="200"/>
+<img src="{{ '/assets/img/constrained-clustering/clusters-size.jpg' | relative_url }}" alt="Clusters with size constraints" width="400"/>
+<img src="{{ '/assets/img/constrained-clustering/distrib-clients-OK.png' | relative_url }}" alt="New clients distribution" width="200"/>
 </div>
 <div class="figure-legend" markdown="1">
 Figure 5. Left: geographical distribution of portfolios' clients. <br/>
@@ -582,7 +581,7 @@ Eh? What now?
 
 Rep. Blue is angry? But they're the one with the highest number of clients in their portfolio! How can they be unhappy? Something about the revenue you say? Fine, fine, let's have a look...
 
-<img class="center-image" src="{{ '/assets/img/constrained-clustering/distrib-revenue-KO.png' | relative_url }}" alt="Constrained clustering results" width="200"/>
+<img class="center-image" src="{{ '/assets/img/constrained-clustering/distrib-revenue-KO.png' | relative_url }}" alt="Revenue distribution" width="200"/>
 <div class="figure-legend" markdown="1">
 Figure 6: Total revenue for each cluster.
 </div>
@@ -615,25 +614,25 @@ $$
 
 We then repeat the other steps exactly as previously.
 
-As an example, let's say that we want each cluster to have at least 30% of the total revenue $R = \sum_n r_n$. Then we can choose $R_k = 0.3 R ~\forall k$, which would be $R_k=1005$ in my example dataset.
+As an example, let's say we want each cluster to have at least 30% of the total revenue $R = \sum_n r_n$. Then we can choose $R_k = 0.3 R ~\forall k$, which would be $R_k=1005$ in my example dataset.
 
 This leads to:
 
 <div style="display:flex; gap:12px; justify-content:center; align-items:center">
-<img src="{{ '/assets/img/constrained-clustering/clusters-revenue.jpg' | relative_url }}" alt="Constrained clustering results" width="400"/>
-<img src="{{ '/assets/img/constrained-clustering/distrib-clients-revenue-OK.png' | relative_url }}" alt="Constrained clustering results" width="180"/>
+<img src="{{ '/assets/img/constrained-clustering/clusters-revenue.jpg' | relative_url }}" alt="Clusters with size and revenue constraints" width="400"/>
+<img src="{{ '/assets/img/constrained-clustering/distrib-clients-revenue-OK.png' | relative_url }}" alt="New clients and revenue distributions" width="180"/>
 </div>
 <div class="figure-legend" markdown="1">
-Figure 6. Left: geographical distribution of portfolios' clients. <br/>
+Figure 7. Left: geographical distribution of portfolios' clients. <br/>
 Right: number of clients and revenue for each cluster/portfolio. <br/>
 This is getting easy.
 </div>
 
 Mmmh? Clients from cluster *dudecomeonwhatnow* are on average less friendly than clients from cluster *whatever*, and this is somehow really really important?
 
-You guessed it: introduce friendliness score $f_n$ for client $n$, add $K$ constraints $\sum_n \alpha_{n,k} f_n \geq F_k$ and there you go.
+You guessed it: introduce friendliness score $f_n$ for client $n$, add $K$ constraints $\sum_n \alpha_{n,k} f_n \geq F_k$, and there you go.
 
-Coffee tastes better at some clients' than others? Time for some koffee scores $k_n$ then.
+Coffee tastes better at some clients' than at others? Time for some koffee scores $k_n$ then.
 
 ## No more jokes, only actually important constraints this time
 
@@ -652,12 +651,12 @@ $$
 Adding this along with the other constraints ensures that these two clients will be assigned to Rep. Brown.
 The rest of the parameters will be adjusted to take this constraint as well as the others into account, leading to e.g.:
 
-<img class="center-image" src="{{ '/assets/img/constrained-clustering/clusters-hugh.jpg' | relative_url }}" alt="Constrained clustering results" width="400"/>
+<img class="center-image" src="{{ '/assets/img/constrained-clustering/clusters-hugh.jpg' | relative_url }}" alt="Clusters added hard assignments constraints" width="400"/>
 <div class="figure-legend" markdown="1">
-Figure 7: Hugh and Hugo belong to the Brown realm.
+Figure 8: Hugh and Hugo belong to the Brown realm.
 </div>
 
-The second concern is related to the acceptable degree of change of a portfolio on a given year.
+The second concern is related to the acceptable degree of change of a portfolio in a given year.
 Sales representatives may be OK with having *some* of their clients portfolio modified in exchange for improved travel times — provided this doesn't jeopardize their yearly bonus of course. But changing almost *all* of their portfolio may still be too much, as getting to know a new client takes time.
 
 Fortunately, this can again be addressed fairly easily using our framework. Writing $t_{n,k}$ the pre-existing binary assignments at time $t$ (before our optimization) such that
@@ -682,37 +681,37 @@ specifies that a ratio of at least $S_k$ of the assignments in cluster $k$ must 
 
 ## A word of caution
 
-To recap, we have a really powerful framework: it can lead to balanced clusters, but as we have seen, it is much more expressive than that. For instance, we can also deliberately keep or create an unbalance for a subset of clusters, as e.g. a way to incentivize sales representatives to find new clients to add in their own portfolio — otherwise, finding new clients would not really be worth it if portfolios were completely rebalanced every year.
+To recap, we have a really powerful framework: it can lead to balanced clusters, but as we have seen, it is much more expressive than that. For instance, we can also deliberately keep or create an unbalance for a subset of clusters, as e.g. a way to incentivize sales representatives to find new clients to add to their own portfolio — otherwise, finding new clients would not really be worth it if portfolios were completely rebalanced every year.
 
 Yet, there are two things that I would like to emphasize regarding the constraints.
 
-First, constraints expressed within this framework are *hard* constraints: no compromise can be found by having a constraint that is *almost* satisfied. This is entirely by design: doing otherwise would open a deep rabbit hole about the importance that each constraint should have with respect to every others, which is typically a *terrible* idea — and maybe a topic for a future blog post.
+First, constraints expressed within this framework are *hard* constraints: no compromise can be found by having a constraint that is *almost* satisfied. This is entirely by design: doing otherwise would open a deep rabbit hole about the importance that each constraint should have with respect to every other, which is typically a *terrible* idea — and maybe a topic for a future blog post.
 
-However, this has implications: most visibly, the fact that some sets of constraints may not have *any* feasible solution. As an example, requiring that each of the 3 clusters contains at least 200 clients would obviously not work if the total number of clients is 500. But some more subtle combinations of constraints may also lead to less obviously intractable problems.
+However, this has implications: most notably, some sets of constraints may not have *any* feasible solution. As an example, requiring that each of the 3 clusters contains at least 200 clients would obviously not work if the total number of clients is 500. But some more subtle combinations of constraints may also lead to less obviously intractable problems.
 
 <details markdown="1">
 <summary>Example of an impossible combination of constraints</summary>
 
-As a very quick example: let's say that the initial distribution of the 500 clients between clusters is $(100, 200, 200)$. We require that each cluster now has at least $150$ clients, and that each portfolio keeps at least $90\%$ of its existing clients. Taken separately, each of these two (sets of) constraints is feasible. But they cannot be satisfied at the same time: having 150 clients in cluster 1 would require that 50 clients are transfered to this portfolio; but the most we can take from clusters 2 and 3 is 10% of the existing clients, would thus cannot be more than 20 + 20 = 40 clients.
+As a very quick example: let's say the initial distribution of the 500 clients between clusters is $(100, 200, 200)$. We require that each cluster now has at least $150$ clients, and that each portfolio keeps at least $90\%$ of its existing clients. Taken separately, each of these two (sets of) constraints is feasible. But they cannot be satisfied at the same time: having 150 clients in cluster 1 would require that 50 clients are transferred to this portfolio; but the most we can take from clusters 2 and 3 is 10% of the existing clients, which thus cannot be more than 20 + 20 = 40 clients.
 
 </details>
 
-Second, even under the assumption that the constraints do not lead to an untractable problem, adding new constraints typically comes at a cost regarding the quality of the geographical clustering. This is starting to be visible in Figure 7, where we can see that the homogeneity of the clusters is starting to suffer from all the constraints that were added.
+Second, even under the assumption that the constraints do not lead to an intractable problem, adding new constraints typically comes at a cost regarding the quality of the geographical clustering. This is starting to be visible in Figure 8, where we can see that the homogeneity of the clusters is starting to suffer from all the constraints that were added.
 
 Measuring the inertia after our successive additions of constraints, this is what we get:
 
-<img class="center-image" src="{{ '/assets/img/constrained-clustering/inertia.png' | relative_url }}" alt="Constrained clustering results" width="500"/>
+<img class="center-image" src="{{ '/assets/img/constrained-clustering/inertia.png' | relative_url }}" alt="Inertia growing with added constraints" width="500"/>
 <div class="figure-legend" markdown="1">
-Figure 8: Inertia with no constraint, a single size constraint, then more and more constraints.
+Figure 9: Inertia with no constraint, a single size constraint, then more and more constraints.
 </div>
 
-So in general, one should be wary about adding too many constraints, and try to limit oneself to those which are really necessary.
+So in general, one should be wary about adding too many constraints, and try to limit oneself to those that are really necessary.
 
 ## Final words
 
-OK, that's pretty much it.
+OK, that's about it.
 
-A couple of words regarding the actual project: as you may have guessed, it was not limited to just 500 clients in one territory. The idea was more to create a general framework that would enable to optimize dozens of territories of varying sizes for different subsidiaries of my client. But the overall idea was generally the same. To be honest, this is work I am reasonably proud of.
+A couple of words regarding the actual project: as you may have guessed, it was not limited to just 500 clients in one territory. The idea was more to create a general framework that would enable optimizing dozens of territories of varying sizes for different subsidiaries of my client. But the overall idea was generally the same. To be honest, this is work I am reasonably proud of.
 
 The method described here was implemented in Python, using [pulp](https://github.com/coin-or/pulp) as the linear optimization solver.
 I have not yet cleaned or published the code I used to solve the problems of this blog post and to generate the corresponding visuals, but I may consider doing so in the future. Let me know if this might be of interest to you.
@@ -723,12 +722,6 @@ Thanks for reading, and see you next time!
 
 Todo: find a beginner-friendly introduction to K-Means?
 Add copyright/license on blog?
-
-Left todo:
-Change image in metadata/prefix part/whatever
-Check images' alt
-Redraw K-Means figure
-Check that all \mathcal{C} have been replaced by \mathbf{C}
 
 -->
 
