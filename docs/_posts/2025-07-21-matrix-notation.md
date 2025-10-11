@@ -3,7 +3,7 @@ layout: post
 title:  "Thinking inside the Matrix"
 rendered_title: "Thinking <del>outside</del> <em>inside</em> the Matrix"
 date:   2025-07-21 11:22:40 +0200
-last_modified_at:  2025-07-29 11:22:40 +0200
+last_modified_at:  2025-10-11 19:00:00 +0200
 categories: foundations
 permalink: /blog/matrix-notation/
 description: "Master matrix notation for machine learning: convert sums/loops to vector operations and achieve massive performance gains. With examples and exercises."
@@ -1089,7 +1089,7 @@ And finally, you may want to check out my other blog posts. A natural continuati
 
 See you there, and thanks for reading!
 
-*(TODO: find a catchier signature sentence to conclude posts)*
+*Don't want to miss the next post? You can follow me on [Twitter](https://x.com/yannlecac)!*
 
 <!---
 This should be a hidden comment.

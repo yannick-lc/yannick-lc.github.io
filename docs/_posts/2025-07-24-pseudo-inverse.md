@@ -2,7 +2,7 @@
 layout: post
 title:  "\"Impossible\" systems of equations and pseudo-inverse"
 date:   2025-07-24 10:22:40 +0200
-last_modified_at:  2025-07-29 11:22:40 +0200
+last_modified_at:  2025-10-11 19:00:00 +0200
 categories: foundations
 permalink: /blog/pseudo-inverse/
 description: "A gentle introduction to pseudo-inverse for solving \"impossible\" systems of equations with no exact solution. Applications to machine learning included."
@@ -531,8 +531,9 @@ is very, *very* useful, as this has *many* applications.
 Practical examples of such applications are coming soon.
 
 A second part to this article, dealing with *under*-constrained, i.e. systems of equations with *too few* constraints to have a unique solution, is also in the pipeline.
-
 So stay tuned!
+
+*Don't want to miss the next post? You can follow me on [Twitter](https://x.com/yannlecac)!*
 
 
 <!-- Comment

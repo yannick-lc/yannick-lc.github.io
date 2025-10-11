@@ -9,8 +9,52 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  <h2 class="post-list-heading">{{ page.list_title | default: "Case studies" }}</h2>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+      {%- if post.categories contains "case-study" -%}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+          <p class="post-description">{{ post.description }}</p>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+  <h2 class="post-list-heading">{{ page.list_title | default: "Foundational concepts" }}</h2>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+      {%- if post.categories contains "foundations" -%}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+          <p class="post-description">{{ post.description }}</p>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+  <p><em>Don't want to miss the next post? Follow me on <a href="https://x.com/yannlecac">Twitter</a>!</em></p>
+
+  <!-- {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Case studies" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
@@ -28,7 +72,7 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
-  {%- endif -%}
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%} -->
 
 </div>

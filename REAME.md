@@ -56,6 +56,12 @@ Standalone example of pseudo inverse: 3D hand landmarks
 
 Add a more explicit link to my Twitter profile.
 
+Edit "last modified at" dates
+Double check that robots.txt is OK.
+
+Add icon.
+
+
 ## Check list before go live
 
 - Comments
