@@ -2,17 +2,17 @@
 layout: post
 title:  "Constrained clustering: bringing balance to the (sales)force"
 date:   2025-10-09 17:34:00 +0200
-last_modified_at:  2025-10-09 17:34:00 +0200
-categories: practical
+last_modified_at:  2025-10-11 19:00:00 +0200
+categories: case-study
 permalink: /blog/constrained-clustering/
-description: "Learn how to solve real-world clustering problems with business constraints. This article shows how to modify K-Means to balance clusters by client count, revenue, etc."
+description: "A deep dive into constrained clustering: reformulating K-Means as a linear programming problem to enforce cluster size, revenue or other constraints."
 image: /assets/img/constrained-clustering/clusters-revenue.jpg
 comments: true
 ---
 
 A promise made, a debt unpaid: here is finally a blog post about a concrete business problem that I worked on.
 
-In my not-so-humble opinion, this article describes a fairly elegant solution to a tricky problem. It is also a good example of why *really* understanding how standard machine learning algorithms work may lead to solutions that are out of reach a fitpredict® approach — which is supposed to be what [this blog is all about][about]. But I might be *slightly* biased, so I will let you judge for yourself.
+In my not-so-humble opinion, this article describes a fairly elegant solution to a tricky problem. It is also a good example of why *really* understanding how standard machine learning algorithms work may lead to solutions beyond the reach of a fitpredict® approach — which is supposed to be what [this blog is all about][about]. But I might be *slightly* biased, so I will let you judge for yourself.
 
 As usual, below is a brief synthesis of the article.
 
@@ -716,12 +716,13 @@ A couple of words regarding the actual project: as you may have guessed, it was 
 The method described here was implemented in Python, using [pulp](https://github.com/coin-or/pulp) as the linear optimization solver.
 I have not yet cleaned or published the code I used to solve the problems of this blog post and to generate the corresponding visuals, but I may consider doing so in the future. Let me know if this might be of interest to you.
 
-Thanks for reading, and see you next time!
+All right, thanks for reading, and see you next time!
+
+*Don't want to miss the next post? You can follow me on [Twitter](https://x.com/yannlecac)!*
 
 <!--- Comment
 
 Todo: find a beginner-friendly introduction to K-Means?
-Add copyright/license on blog?
 
 -->
 

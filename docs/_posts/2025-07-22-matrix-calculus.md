@@ -2,7 +2,7 @@
 layout: post
 title:  "Matrix Reloaded: introduction to matrix calculus"
 date:   2025-07-24 10:22:40 +0200
-last_modified_at:  2025-07-29 11:22:40 +0200
+last_modified_at:  2025-10-11 19:00:00 +0200
 categories: foundations
 permalink: /blog/matrix-calculus/
 description: "A gentle introduction to matrix calculus for machine learning. Learn derivatives of scalars, vectors and matrices w.r.t. one another. With examples & exercises."
@@ -1245,6 +1245,8 @@ with the same reasoning as previously regarding the fact that this does correspo
 Couple of interesting notes:
 $\mathbf{X}^\top\mathbf{X}$ is symmetric positive semi-definite, $\lambda\mathbf{I}_K$ is symmetric positive definite, so $(\mathbf{X}^\top\mathbf{X} + \lambda\mathbf{I}_K)$ is positive definite and as such always invertible.
 </details>
+
+*Don't want to miss the next post? You can follow me on [Twitter](https://x.com/yannlecac)!*
 
 <!--- Comment
 

@@ -41,13 +41,13 @@ Yes, this blog includes (or will soon include) practical case studies inspired b
 Yes, but mostly no.
 
 There is obviously no private client data used on this blog: all datasets are either publicly available or artificially generated to somehow resemble real data.
-The same goes for the technical methods described here: they are typically fairly straightforward—although  not necessarily obvious—ideas that have been simplified compared to the actual work done for my clients.
+The same goes for the technical methods described here: they are typically fairly straightforward—although not necessarily obvious—ideas that have been simplified compared to the actual work done for my clients.
 
 So you won't find any trade secrets here, sorry.
 
 ### What's up with this weird blog name?
 
-Hey, watch your mouth! The domain name is my own company's, Manifold Technology. Turns out, the initials almost perfectly match a great blog name about machine learning, with just a teeny tiny bit of stretching to make it fit.
+Hey, watch your mouth! The domain name is my own company's, Manifold Technology. Turns out, the initials *almost* perfectly match a great blog name about machine learning, with just a teeny tiny bit of stretching to make it fit.
 
 Other domain names were expensive, so that's the one I kept.
 
@@ -55,6 +55,10 @@ Other domain names were expensive, so that's the one I kept.
 ### How much do you make?
 Wow, you're not afraid to ask direct questions. I may write a blog post about this topic one of these days.
 -->
+
+### How can I make sure I don't miss the next blog post?
+
+You can follow me on [Twitter](https://x.com/yannlecac) or [LinkedIn](https://www.linkedin.com/in/lecacheux/). I sometimes write about machine learning there as well.
 
 ### Can I hire you as a consultant?
 
