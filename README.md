@@ -17,6 +17,26 @@ manifold.fr redirects to manifold.fr/blog for now.
 Comments are handled via [Disqus](https://disqus.com/).
 Shortname is set in `_config.yml`.
 
+## Install
+
+To install all packages on new machine:
+
+Install Ruby (may require make etc if not already installed):
+```bash
+sudo apt install ruby-full build-essential zlib1g-dev
+```
+
+Install Jekyll:
+```bash
+gem install bundler jekyll
+```
+
+then `cd docs`, then `bundle install`
+
+If error stating that no permission to write in /var/lib/gems/3.3.0 or something, specify to install gems locally:
+bundle config set path vendor/bundle
+
+Then `bundle exec jekyll serve` should hopefully work to start local server.
 
 ## Run
 
