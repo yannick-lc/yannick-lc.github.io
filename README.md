@@ -2,8 +2,6 @@
 
 Repository for the content of Yannick Le Cacheux's blog.
 
-Available at https://yannick-lc.github.io/ (for now)
-
 Created and hosted using [Jekyll](https://jekyllrb.com/) and [Github Pages](https://docs.github.com/en/pages/quickstart).
 
 ## Structure
@@ -16,7 +14,7 @@ Blog itself is located in manifold.fr/blog (index is at this location)
 
 manifold.fr redirects to manifold.fr/blog for now.
 
-Comments are handled via [Disqus](https://disqus.com/), using
+Comments are handled via [Disqus](https://disqus.com/).
 Shortname is set in `_config.yml`.
 
 
@@ -50,13 +48,14 @@ For collapsible sections in details tag, maybe add emojis like ℹ️ to indicat
 
 Maybe better handle ToC scroll bar on mobile (or disable?)
 
-Add a couple of exercises in matrix notation article
-
 Standalone example of pseudo inverse: 3D hand landmarks
 
 Add a more explicit link to my Twitter profile.
 
+Add copyright/license on blog?
+
 Edit "last modified at" dates
+
 Double check that robots.txt is OK.
 
 Add icon.
