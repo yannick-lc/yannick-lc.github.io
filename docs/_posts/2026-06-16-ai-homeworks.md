@@ -4,7 +4,7 @@ title:  "How AI will destroy the world (through homeworks)"
 rendered_title: "How AI will destroy the world (through homeworks)"
 date:   2026-06-16 21:32:00 +0200
 last_modified_at:  2026-06-16 21:32:00 +0200
-categories: foundations
+categories: essay
 permalink: /blog/ai-homeworks/
 description: "AI may put an end to civilization, but not the way you think. It will be because of homeworks."
 image: /assets/img/matrix-notation/matrix-illustration.jpg
@@ -18,7 +18,7 @@ So far, so good. Yay science!
 But, there's a teeny tiny problem: *students also know this*.
 
 <details markdown="1">
-<summary>TL;DR</summary>
+<summary>TL;DR (click me to expand)</summary>
 
 <a id="tldr"></a>
 
@@ -27,6 +27,12 @@ But, there's a teeny tiny problem: *students also know this*.
 <div class="goldhighlight" markdown="1">
 
 Students cheat. This is bad.
+
+More precisions are coming.
+
+[Double check that I what I used to do, what I now do and what I propose is clear and consistent.]
+
+[Argue that problem same everywhere: danger is not to ML students at CentraleSupélec, but all students including middle and high school students.]
 
 </div>
 
@@ -67,7 +73,7 @@ To save the world, we must find a way to ensure students continue thinking hard 
 There's an elephant in the (class)room that I somehow failed to address so far: *do students actually use AI?* In other words, does the world really need saving?
 Two points.
 
-First: based on the stellar quality of this year's homework submissions, either I have the brightest cohort ever by far, *or* many students have been using AI.
+First, and based on the absolutely stellar quality of this year's average homework submission: either I have the brightest cohort ever by far, *or* many students have been using AI.
 The average quality of the supervised, on paper final exam copy was somewhere around *meh*, tipping the scale towards the latter hypothesis.
 
 Second: some students are *really bad* at covering their tracks. Some of the things that I've seen in homework submissions include:
@@ -82,21 +88,31 @@ I you'd like to laugh/cry at additional examples, I've compiled a list of real-l
 
 *If you're already convinced that students use AI for homework assignments and that it is indeed a problem, you may skip this part and continue reading.*
 
-Cf. Stanford example.
+For a start, this problem is not limited to my university/students: similar cases have been reported at or by [Stanford][stanford-cheating], [Harvard][harvard-cheating], [Cornell][cornell-cheating]...
 
-I teach graduate-level classes at arguably the [best university in France][shanghai-ranking]. Even there, many if not most students are willing to take shortcuts to get a good grade if they think they can get away with it.
-So again, I think it's reasonable to assume that this is true for almost all universities/schools.
+Even ignoring this: I teach graduate-level classes at arguably the [best university in France][shanghai-ranking]. Even there, many if not most students are willing to take shortcuts to get a good grade if they think they can get away with it.
+So I think it's reasonable to assume that this is true for almost all educational institutions.
 
-I don't have detailed stats about every single uni in the world, but as an example, [Stanford][stanford-cheating], the MIT and [Harvard][harvard-cheating] all seem to encounter the same problem.
+So, student AI use is on the rise, fine.
 
-Does using LLM to do homework actually impeach learning?
+But, is this really a bad thing?
+I.e., does using LLMs to do homework actually impeach learning?
 
-Yes, inverse correlation between AI-ness of submissions and actual performance on final exam.
-(I know that correlation is not causation, as there may be confounding factors, like intrinsic motivation, which influence both homework dedication and final exam result. Still, my own intuition is that it does)
+I'm convinced this is true to some extent at least.
 
-Paradoxically, worse initial grades (before adjusting for AI) correspond to best performance on final exam. This used to be the opposite.
+For a start, in my classes, there is an inverse correlation between the "AI-ness" of homework submissions, and the actual performance on the AI-free final exam.
+Thus and quite paradoxically, the worse (non-AI adjusted) initial grades are often obtained by the students who end up with best performance on the final exam. This used to be the complete opposite.
+
+I know that correlation is not causation, and there may be confounding factors, like intrinsic motivation, which influence both homework dedication and final exam result.
+Still, I believe this still counts as [something-worthy] evidence [to be considered] that unchecked AI-use actively hurts students learning [abilities].
+
+Second, even though this question is fairly new, studies that tend to indicate that this is indeed the case are slowly starting to emerge.
+A recent study in Nature even argues that AI-induced "deskilling" affects not only students, but even established professionals.
+
+So, IMHO, this stinks.
 
 </details>
+
 
 All of this is despite the fact that at the beginning of the semester, I humbly tell my students that I
 - have a PhD in AI
@@ -119,25 +135,34 @@ In other situations, it is in practice impossible to tell AI from non-AI -- e.g.
 <details markdown="1">
 <summary>What about AI detectors?</summary>
 
-Short answer: they're not reliable. You can now close this [modal] and resume reading [the main article].
+Short answer: they're not reliable. *You may now close this collapsible section and resume reading [the main article]*.
 
 Still here? Fine, I'll elaborate.
 
-To get it out of the way first: they don't solve the issue of probabilistic estimates, and cannot magically determine whether "4" was written by an AI or a human.
+First, to get it out of the way: even if we had access to a very reliable AI detector, this wouldn't solve the issue that many estimates are probabilistic by nature, and also could'nt magically determine whether the digit "4" was typed by an AI or a human.
 
-AI detectors are not that infaillible. They should NOT be used as definitive evidence that something was created by AI or a human.
-There are e.g. PhD thesis written well before AI-generated text which are detected as mostly AI, because scientific writing style is somehow specific, and AI writing and human writing are fairly similar in this situation.
-On the other hand, adding typos and gramar mistakes to AI generated text may be enough to fool AI detector (and occasionaly the teacher too, to be honest)
+Even then: existing AI detectors are not reliable, and can lead to both false positive and false negative.
+This has been documented by a number of studies.
+But the strongest argument is probably that OpenAI, the company behind ChatGPT, has notoriously [discontinued their own AI-detection tool][openai-detection-discontinued] because of its poor accuracy.
 
-(There are horror stories of students who were seemingly unfairly denied graduation because of false flags from AI detector, on what appeared to be honest work).
+<!-- On the one hand, there are e.g. PhD thesis written well before AI-generated text [existed] which are detected as mostly AI.
+This is because scientific writing style is somehow specific, and AI writing and human writing are fairly similar in this situation.
+On the other hand, adding typos and gramar mistakes to AI generated text may be enough to fool AI detector (and occasionaly the teacher too, to be honest). -->
 
-So I mostly rely on myself.
+It's not that everyone at OpenAI and all the referenced AI-detection companies is incompetent: creating an AI detector that cannot be fooled is fundamentally doomed to failure, for reasons outside the scope of this essay.
 
-Many of these examples are specific to MY class however, and not directly transposable to other classes. Unfortunately, I don't yet have a general solution for AI detection.
+There are [horror stories][reddit-horror]* of students facing severe academic consequences because of false flags from AI detectors, despite being willing to prove that no malpractice occured.
+I think we can all agree that this is not a [desirable] situation for anyone.
+
+<sub><sup>*I have no way of knowing how accurate this specific story is, but I have no doubts that similar situations did and will occur.</sup></sub>
+
+So, the conclusion is: AI detectors alone should ***NOT*** be used as definitive evidence that a text was written by an AI or a human.
 
 </details>
 
-So, to sum up: students do tend to use AI. Unfortunately, although reliable/conclusive AI detection is sometimes possible, it is difficult in general.
+So, to sum up: students do tend to use AI for homeworks.
+In rare cases, we can get conclusive evidence that AI was used to write at least part of a text.
+But in general, AI detection is unfortunately not feasible.
 
 Are we cooked?
 
@@ -209,7 +234,7 @@ Behold, for after years of tireless field studies,
 I have at long last succeeded in distilling the entirety of student psychology into this [elegant equation][spherical-cow]:
 
 <div class="silverhighlight" markdown="1">
-<ins>Grand Axiom of Student's Psychology:</ins>
+<ins>Grand Axiom of Student's Psychology</ins> (GASP):
 
 A student's objective is to get the best possible grade $G$ while minimizing effort spent $E$.
 
@@ -630,6 +655,8 @@ As a result, it may be worth it to dedicate significant more resources to the is
 
 In case the evidence of AI is already strong: I suggest asking for a second opinion to a neutral third-party, who has been briefed on the fact that one single piece of strong enough evidence is all that's needed.
 
+[Time stamps and chance to prove mistake.]
+
 If there was some doubt from the start or the third-party cannot conclusively estimate whether the submissions contain AI,
 I believe a decent solution is to organize an oral examination.
 From experience, if a student did not write their solution themselves, it is fairly easy to pock holes in their [demonstration] by asking them to clarify certains concepts that I suspect they may not be familiar with.
@@ -693,7 +720,16 @@ I'd be glad if someone could clarify if that's the case.
 [Side bonus: using this approach and assuming teacher is not too bad at detecting AI, the grade reflects the actual effort/learning that took place.
 So students are incentivized to maximize learning to maximize grade. This is exactly what we want.]   
 
-I dunno lol.
+Parts that were removed from a section but may not to be put elsewhere:
+
+I mostly rely on myself for AI detection.
+
+Many of these examples are specific to MY class however, and not directly transposable to other classes. Unfortunately, I don't yet have a general solution for AI detection.
+
+Oxford agrees that efforts are better spent on deterrence than detection.
+
+
+## Appendix
 
 
 <!---
@@ -712,10 +748,11 @@ This should be a hidden comment.
 [categorical-imperative]: https://en.wikipedia.org/wiki/Categorical_imperative
 [force-dissuasion]: https://en.wikipedia.org/wiki/Force_de_dissuasion
 [platt-calibration]: https://en.wikipedia.org/wiki/Platt_scaling
-
 [mercer-theorem]: https://en.wikipedia.org/wiki/Mercer%27s_theorem
 
 [shanghai-ranking]: https://www.shanghairanking.com/institution?n&r=France
 [stanford-cheating]: https://ed.stanford.edu/news/what-do-ai-chatbots-really-mean-students-and-cheating
 [harvard-cheating]: https://www.thecrimson.com/article/2026/4/24/students-ai-usage-by-the-numbers/
-
+[cornell-cheating]: https://news.cornell.edu/stories/2026/05/widespread-ai-misuse-means-higher-ed-must-rethink-assessment
+[openai-detection-discontinued]: https://decrypt.co/149826/openai-quietly-shutters-its-ai-detection-tool
+[reddit-horror]: https://www.reddit.com/r/tech_x/comments/1trs1bt/new_york_university_student_spends_6_months/
