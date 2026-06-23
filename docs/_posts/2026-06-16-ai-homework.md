@@ -54,12 +54,18 @@ Similarly, if current students don't put in intellectual effort anymore, they wo
 
 I might be slightly exaggerating here, but honestly not that much.
 
-So, as a (not so) humble teacher, what can I do to save the world?
+Incidentally, I also see problems related to uncritical reliance on AI at work.
+Some people use it fruitfully, while others use it to avoid a week's work by presenting slides visibly copy-pasted from ChatGPT, instead of actually thinking about the topic at hand.
+I generally argue that since the latter group brings about as much value as a ChatGPT subscription, but typically costs way more, there are big savings just waiting to be made.
+
+Therefore, *training students to belong to this group is not helping them.*
+
+So, as a (not so) humble teacher, what can I do to save my students and, more generally, the world?
 There are a couple of immediate possibilities I could consider to solve my AI problem:
 
 1. **Completely remove these now obsolete homework assignments.** This would be equivalent to stopping making trainees do physical exercise altogether: see the previous part about the collapse of civilization.
 2. **Keep homework assignments, but stop grading them.** Let's be honest, in practice this would be equivalent to proposition n°1. Civilization collapses again.
-3. **Continue grading homework assignments as I used to.** Then students continue using AI. Civilization goes boom.
+3. **Continue grading homework assignments as I used to.** Then students continue using AI. Civilization goes boom. 🏛️💥
 4. **Book special slots to have students work on the homework assignments while under my constant scrutiny.** Well... while I *should* be concerned about civilizational collapse, I also have a life outside of work. So I'd rather not do that
 <sub><sup>(see [this part][goal])</sup></sub>.
 
@@ -352,13 +358,13 @@ But crafting rules for the entirety of society may be slightly too ambitious for
 
 </details>
 
-There is one problem: the students' objective is somehow misaligned with my own GOAL, as learning typically requires effort. Which they'd rather not put in.
+There is one problem: the students' objective is somehow conflicting with my own GOAL, as learning typically requires effort. Which they'd rather not put in.
 
 However, as the teacher, I have one ace up my sleeve: *I* set the rules in my class.
 
 Thus, I should define rules such that while trying to achieve their objective, students will actually achieve *MY* goal
 <sub><sup>(yeah, no more [common good][common-good], just MY own goals now 😈)</sup></sub>.
-That is, in general, I should set incentives such that when trying to maximize their grade while minimizing effort, students will learn as much as possible -- while also keeping my involvement at a manageable level.
+That is, I should set incentives such that when trying to maximize their grade while minimizing effort, students will learn as much as possible -- while also keeping my involvement at a manageable level.
 
 <!-- Hopefully, this should involve them working on hard problems presented in HW assignments. -->
 
@@ -423,9 +429,9 @@ So, really not effective as a deterrent.
 
 
 <!-- One additional comment: while [hatching] this rule, we have mostly focused on the first part of the GOAL, namely setting incentives so that students learn (by thinking themselves instead of delegating their intelligence to a machine). -->
-One important comment: while devising this rule, we have mostly focused on the 1<sup>st</sup> component $L$ of the GOAL.
+One important comment: while devising this rule, we mostly focused on the 1<sup>st</sup> component $L$ of the GOAL.
  <!-- by trying to make cheating irrational from a cost/benefit analysis. -->
-But the 2<sup>nd</sup> component $E$ of the GOAL -- keeping the teacher's workload reasonable -- is *just as critical* for our solution to be viable.
+But the 2<sup>nd</sup> component -- keeping the teacher's workload reasonable -- is *just as critical* for our solution to be viable.
 
 <!-- In particular, I believe it is necessary to take the following problem into account: the misalignment between students' and teachers' objectives is severely asymmetric with respect to their effort component.  -->
 <!-- In particular, I believe it is necessary to take the following into account: when considering the misalignment between students' and teachers' objectives, there is a severe asymmetry in the effort components $E^s$ and $E^t$.  -->
@@ -454,24 +460,30 @@ Proving that a text is AI-generated is not just harder than generating it -- it'
 
 Thus, it is paramount that the teacher-side effort to detect and penalize AI content remains tightly contained, lest the effort required becomes unsustainable, the probability of getting caught and penalized plummets, and civilization collapses.
 
-Good news, for once: even taking this into account, the proposed rule still holds up from a game-theoretic perspective.
+Good news, for once: even taking this into account, the proposed first rule still holds up from a game-theoretic perspective.
 
-To recap: it acts as a strong deterrent, making AI use unattractive from a risk-reward analysis (significant risk of getting caught, high cost to pay if so). This results in students hopefully doing homework the good old-fashioned way, namely, using their brain. Consequently, students learn more: $L \nearrow$.
+To recap: the class policy acts as a strong deterrent against AI use, making it unattractive from a risk-reward analysis (significant risk of getting caught, high cost to pay if so). This results in students hopefully doing homework the good old-fashioned way, namely, using their brain. Consequently, students learn more: $L \nearrow$.
 And, should the need arise, identifying a single piece of evidence of AI use should remain manageable from a teacher's effort perspective. Consequently, $E \leq E_{max}$.
 
 Therefore, everything seems to be aligned with the GOAL.
-
-Among all the solutions that I have seen proposed, [the one above is one of the only ones] that accomplishes this.
+<!-- Among all the solutions that I have seen proposed, [the one above is one of the only ones] that accomplishes this. -->
 
 <!-- <br/> -->
 <div style="text-align: center;">...</div>
 <br/><br/><br/>
 
 
-
 Now, this begs the question: did I really need to write all this simply to justify why I have a strict no-AI rule in my class?
 
-As it turns out, there's still an insidious problem left. So this essay is not entirely finished yet (sorry).
+Well, first, very few of the solutions that I have seen proposed actually manage to handle both the $L$ and the $E$ component of the GOAL. So getting there wasn't *that* simple.
+But as it turns out, there's still an insidious problem left. So this essay is not entirely finished yet. Sorry.
+
+
+
+
+
+<!-- ## The impossible fight part 2: after getting caught -->
+## Dura lex sed lex, but sadly not really
 
 <!-- As I said, the teacher gets to set the rules in their class. Which makes them a commander <sub><sup>(kindof I guess? I dunno man, I'm just trying to make a transition here)</sup></sub>. And thus subject themselves to a different first rule: -->
 
@@ -485,20 +497,17 @@ Never give an order you know won't be obeyed.
 
 Or, to be more specific to our setting: never make a threat you can't follow through on.
 
-
-<!-- ## The impossible fight part 2: after getting caught -->
-## Dura lex sed lex, but sadly not really
-
 <!-- Why am I bringing up this so-called rule of command? Didn't we say earlier that reinventing society's organization was outside the scope of this essay? -->
 
 <!-- Well, let me get there. -->
 
-Here's the thing: I can promise you from experience that whatever your initial warnings and the harshness of the promised sanctions, at least *some* students will think they are smart enough to cheat and get away with it.
+Here's the thing: I can promise you from experience that whatever your initial warnings and however harsh the promised sanctions, at least *some* students will think they are smart enough to cheat and get away with it.
 
-So, in theory, the previous rule deters students from using AI.
-In practice, some of them will still try their luck.
+So, in theory, the previous rule deters students from using AI. In practice, some of them will still try their luck.
+And we're now forced to consider a scenario that wasn't even supposed to happen.
 
-And now, we are forced to consider what happens in this scenario, even though *it was not even supposed to happen in our model!*
+<!-- So now, we are forced to consider what happens in this scenario, even though *it was not even supposed to happen in our model!* -->
+
 
 <details markdown="1">
 <summary>What went wrong with our model?</summary>
@@ -529,8 +538,7 @@ I actually have good reason to believe at least some of the submissions I receiv
 
 </details>
 
-Why is this an issue?
-After all, students were warned; some cheated anyway, got caught and are now simply facing the consequences.
+<!-- Why is this an issue? After all, students were warned; some cheated anyway, got caught and are now simply facing the consequences. -->
 
 <!-- <div style="color: red; font-size: 50%;">
 As we've seen, large asymetry time wise.
@@ -543,12 +551,15 @@ To make things worse, the tyranny of Yayanini's law [somethign something], becau
 
 <!-- In particular, I believe it is necessary to take the following into account: . -->
 
-Well, we've seen that when considering the effort component of the students' and teachers' conflicting objectives, the scales can tip heavily against the teacher, because 1. there are more students than teachers and 2. proving misconduct may take longer than misconducting.
-Yet, even facing the tyranny of Yayanini's law
-<sub><sup>(yes, that's a thing now)</sup></sub>,
-we managed to propose a rule that should keep the required effort under control. Until now.
+Why is this an issue?
+<!-- Well, we've seen that when considering the effort component of the students' and teachers' conflicting objectives, the scales can tip heavily against the teacher, because -->
+Well, we've seen that the effort component of the students' and teachers' conflicting objectives is heavily asymmetric and tipping against the teacher, because 1. there are more students than teachers and 2. proving misconduct may take longer than misconducting.
+Yet, even facing the tyranny of Yayanini's law <sub><sup>(yes, that's a thing now)</sup></sub>,
+<!-- we managed to propose a rule that should keep the required effort under control. -->
+we managed to keep the required effort under control.
 
-Because here lies the remaining issue: when a student is caught, this effort asymmetry is compounded by yet another one: this time in terms of personal stakes.
+Until now.
+Because when a student is caught, this dual effort asymmetry is compounded by yet another asymmetry, this time in terms of personal stakes.
 
 <!-- For a student, the personal impact of crossing the passing/failing grade boundary is enormous. As a result, failed students have a huge incentive to spend time disputing accusations and challenging the validity of the (agreed-upon) rules, even in bad faith, if it has a chance to improve their grade.
 For the teacher, ensuring that an undeserving student fails the class is worthwhile, but not nearly as immediately and personally consequential.
@@ -556,7 +567,7 @@ So given their GOAL, the teacher has only so much energy they are willing to spe
 
 For the teacher, ensuring that an undeserving student fails the class is worthwhile, but not nearly as immediately and personally consequential as for the affected student, for whom the impact of crossing the pass/fail boundary is enormous. As a result, failed students have a huge incentive to dispute accusations and challenge the validity of the (agreed-upon) rules, even in bad faith, if it has a chance to improve their grade.
 
-Wasting the teacher's time is not simply collateral damage here: it may be the entire point of this deliberate attrition war, based on the hope that the enemy (i.e., *me* in this instance) will eventually give up due to lack of energy.
+Wasting the teacher's time is not simply collateral damage here: it may be the entire point of this deliberate attrition war, based on the hope that the enemy (a.k.a. *me* in this instance) will eventually give up due to lack of energy.
 
 <div style="font-size: 70%;">
 To be clear, this whole situation is <em>not</em> purely hypothetical: despite making the no-AI rule and its consequences clear from the start, I still had to waste a <em>lot</em> of time dealing with peevish cheaters.
@@ -614,27 +625,53 @@ So, detecting and punishing cheaters may be initially cheap, but handling the co
 
 I'll let you in on a secret: in practice, here is what I do.
 If there is significant evidence of at least *some* AI-generated content, I grade based on my own estimate of what is AI and what is not.
-For example, the ~50% the homework I estimate is AI-generated gets a 0, and the rest I grade normally albeit a bit more harshly than usual.
+For example, the ~50% of the homework I estimate is AI-generated gets a 0, and the rest I grade normally albeit a bit more harshly than usual.
 
-The advantage is that I don't need to justify each deduction individually, or *prove* AI use for each question, which as we've seen isn't feasible.
+<details markdown="1">
+<summary>To my current students: a friendly <del>threat</del> note</summary>
+
+Dear Student,
+
+You somehow managed to learn one of my secrets. Well done. Very well done.
+
+However, allow me to offer a friendly warning: it would be unwise to assume that I will continue to use this exact grading scheme.
+Nothing, absolutely *nothing*, requires me to do so.
+
+I may change my mind tomorrow. I may have changed it already. And when I do, I may not feel any particular need to update my blog.
+Should that happen, I am afraid there will be precisely nothing you can do about it.
+
+I truly hope you shall be wise enough to keep assuming that a single trace of AI may earn you a nice, round zero.
+It is the safest assumption you have.
+
+I have the high ground. Don't try it.
+
+With pedagogical affection,
+
+Your Benevolent Teacher
+
+</details>
+
+One advantage is that I don't need to justify each deduction individually, or prove AI use for each question, which as we've seen isn't feasible.
 So the effort component of the GOAL is safe. There is also reasonable incentive for the students to *not* use AI, as it is still likely to result in a bad grade.
 
 However, in these aspects, it is not really better than the previous rule. It is even a bit worse in terms of incentives.
 
 <!-- The thing is, I also include two additional changes to the previous policy: -->
 <!-- What I didn't tell you is that I also surreptitiously included two changes to the previous policy: -->
-There is a catch, though. Two of them, actually:
-- *If* there is any dispute related to the grade given, particularly regarding the extent of AI use, I rollback to the previous strict policy: mere suspicion of AI use is not penalized, but one [conclusively] proven AI sentence results in an automatic 0.
+There is a catch, though. Two of them, even:
 - The official policy is updated so that repeated cheating now warrants a failing grade for the entire course.
+- *If* there is any dispute about the grade, particularly about the extent of AI use, I roll back to the previous strict policy: mere suspicion of AI use is not penalized, but one indisputably proven AI sentence results in an automatic 0.
 <!-- This serves to strenghten deterrence, which was slightly weakened by the more leniant approach to grading. -->
 
-The whole idea of this approach is that for caught cheaters, spending a lot of time arguing in bad faith is not a winning strategy anymore.
-Most cheaters know this is likely to result in an actively worse situation -- at least, that's been the case for all the ones I've encountered so far.
+<!-- The whole idea of this approach is that for caught cheaters, spending a lot of time arguing in bad faith is not a winning strategy anymore.
+Most cheaters know this is likely to result in an actively worse situation -- at least, that's been the case for all the ones I've encountered so far. -->
+
+The whole idea is that arguing in bad faith is no longer a winning strategy for caught cheaters. On the contrary, it is likely to make things actively worse for them.
 
 <details markdown="1">
 <summary>What about students who used AI for 100% of the homework?</summary>
 
-It is true that cheaters who from my estimate did 100% of the homework with AI on all assignments still receive an average homework grade of 0. As such, they may still be tempted to be a pain in the nether regions.
+It is true that cheaters who from my estimate did 100% of the homework with AI still receive a 0. As such, they may still be tempted to be a pain in the nether regions.
 
 This is partly why the rule on repeated offense was introduced: even though their homework grade cannot get any lower, their course grade still can. Which should act as a strong enough deterrent.
 
@@ -653,25 +690,26 @@ Evidence of AI use on any part of a homework assignment warrants a grade of 0 fo
 A repeated offense warrants a failing grade for the entire course.
 
 <div style="font-size: 80%;">
-The teacher may opt for a more leniant approach at their sole discretion, with no obligation whatsoever.
+The teacher may opt for a more lenient approach at their sole discretion, with no obligation whatsoever.
 <br/>
 
-[Accusations of AI use can always be challenged if indeed student is certain that no AI was used and accusations are perceived as unfair]. Challenging them will result in a re-evaluation with a strict application of the previous policy.
+Accusations of AI use may be challenged by students who believe they were wrongly accused. Doing so will trigger a re-evaluation with a strict application of the official policy.
 </div>
 </div>
 
 I believe this set of rules is both reasonably fair and effective.
 
-As a side note, the part of the doctrine written in a smaller font may not even need to be official. So far, no one has complained about me being too nice compared to the official class policy.
+Incidentally, the fine print of the policy may not even need to be official. So far, no one has complained that I was too generous with their grade.
 But you never know.
 
-The main advantage of this approach is that I don't *need* to give a 0 to all students who cheated "just a little" in order to maintain a credible threat -- which as we've seen would be really hard to enforce.
+The main advantage of this approach is that I don't *need* to give a 0 to all students who cheated "just a little" in order to maintain a credible threat -- which as discussed would be hard to enforce in practice.
 I have more gradual responses than a full-on nuclear war at my disposal.
-Similarly to real life, my nuclear arsenal mostly exists so [that I may never need to use it].
+<!-- But I also now have a weapon even more destructive than before. -->
+Similarly to real life, my nuclear arsenal exists to hopefully never be used.
 However, if provoked, I still *can* order a swift and decisive strike, which is essential for deterrence to be effective.
 
 <sub><sup>
-As a reminder for international students and in all seriousness, [French nuclear doctrine][french-nuclear] provides for the possibility of a limited nuclear strike as a final warning. You've been [warned].
+As a reminder for international students and in all seriousness, [French nuclear doctrine][french-nuclear] provides for the possibility of a limited nuclear strike as a final warning. You've been forewarned.
 </sup></sub>
 
 <!-- As a side note, the part of the doctrine written in a smaller font may not even need to be official.
@@ -696,12 +734,18 @@ At least been true empirically until now.
 
 ### Amendments, case law and the Geneva Convention
 
-I would like to emphasize just a few clarifications. Don't worry, I promise we're almost done.
+So, my deterrence metaphors went from fines in the metro to nuclear armageddon. Boy, that escalated quickly.
 
-<details markdown="1">
+Anyway, we're pretty much done. Before I conclude, here are just a few clarifications I would like to emphasize.
+
+<!-- The only way I see to escalate this further would be Eternal Hell, but even I would consider this to be a bit harsh. -->
+
+<!-- I would like to emphasize just a few clarifications. Don't worry, I promise we're almost done. -->
+
+<details markdown="1" open>
 <summary><b>The applicable policy must be clearly announced.</b></summary>
 
-Quite obviously, students need to know the rules from the start, and need to accept them, even implicitly -- e.g. taking the class means that the rules are accepted.
+Quite obviously, students need to know the rules from the start and accept them, even implicitly -- taking the class may count as acceptance as long as the rules appear clearly on the material.
 
 <!-- At least the AI => 0 part of them. -->
 
@@ -716,13 +760,65 @@ After all, a deterrent is only effective if people know about it.
 </details>
 
 
+
+<details markdown="1" open>
+<summary><b>Dispute of AI accusations must be possible.</b></summary>
+
+As far as I know, I've never wrongly accused anyone of cheating:
+so far, grand total of zero students I accused have claimed to be fully innocent.
+Even then, since no one is 100% infallible, I guess we should contemplate the possibility that [I am no exception][categorical-imperative].
+<!-- Because Kant's [categorical imperative][categorical-imperative], blablabla. -->
+
+Thus, the possibility of appeal is essential.
+We just need to make it so that only *unfair* accusations are worth challenging, in order not to waste everyone's time. And by everyone's, I mean *mine*.
+I believe the proposed system is already fairly efficient in this respect.
+
+<details markdown="1" style="background-color: #ffffff;">
+<summary>Yeah, but what if there is an appeal though?</summary>
+
+Right: what happens if there *is* an appeal? To avoid any unfair outcome or the re-emergence of misaligned incentives, it is imperative that the appeal determines whether AI was used as accurately as possible.
+As a result, it may be worth dedicating significantly more resources than usual. If the proposed policy is effective, this shouldn't happen too often anyway.
+
+If the evidence of AI is deemed already strong: I suggest asking for a second opinion from a neutral third party, briefed on the fact that one strong piece of evidence is all that's needed.
+
+If there was doubt from the start or the third-party cannot conclusively estimate whether the submission contain AI,
+I suggest organizing an oral examination.
+From experience, if a student did not write their submission themself, it is fairly easy to poke holes in their solution by asking them to clarify certain concepts that I suspect they may not be familiar with.
+For example, what do they mean by suggesting to use [Platt calibration][platt-calibration]? Or if they proved that a function was a kernel using [Mercer's theorem][mercer-theorem], can they briefly explain what this theorem states?
+
+The specifics will of course vary by subject, but the general idea should hold.
+
+<div style="font-size: 70%;">
+The example questions above are drawn from real-life oral defenses, though not related to AI-use disputes. In both instances, the unfortunate student had no idea what these concepts were about.
+<br/>
+
+</div>
+<br/>
+
+Ideally, the student should have little notice about this oral exam.
+After all, they should already be familiar with the material they allegedly produced.
+To ensure the oral defense is as unbiased as possible, it can also be conducted by or in the presence of another teacher.
+
+Although establishing guilt is the responsibility of the accuser (a.k.a. me), the student should also be given an opportunity to present evidence in their favour: for instance any draft, notes, or intermediate version worth considering, provided it couldn't easily have been forged after the accusation.
+
+If, after this due-diligence, the use of at least some AI is established: the official policy is applied, resulting in a grade of 0, and possibly further sanctions.
+
+If not: well, there may have been a mistake after all. This is a great opportunity to learn what went wrong with our assumptions, and to update our AI detection skills accordingly.
+
+(But to reiterate, I've never been in this situation thus far.)
+
+</details>
+
+</details>
+
+
 <details markdown="1">
-<summary><b>The proposed policy can be most effectively applied if there is at least one strong evidence of cheating.</b></summary>
+<summary><b>The proposed policy can be most effectively applied if there is at least one strong piece evidence of cheating.</b></summary>
 
-By that, I mean that numerous weak evidence of cheating may not be enough.
+In other words, accumulating weak evidence may not be sufficient.
 
-This is for two reasons: to begin with, not having conclusive evidence would risk getting me into contestation fights I may not win, thus undermining the perceived risks of cheating.
-And incidentally, not having conclusive evidence would also risk unfairly penalizing an honest student for cheating, something I do not wish to do.
+This is for two reasons: first, not having conclusive evidence would risk getting dragged into challenges one may not win, thus undermining the perceived risk of cheating.
+Besides, not having conclusive evidence would also risk unfairly penalizing an honest student for cheating, something I do not wish to do.
 
 </details>
 
@@ -730,78 +826,30 @@ And incidentally, not having conclusive evidence would also risk unfairly penali
 <details markdown="1">
 <summary><b>Any use of AI for legitimate reasons must be strictly disclosed.</b></summary>
 
-Sometimes, there may be cases where using AI is legitimate and does not hinder learning given the context of the class.
+There may be cases where using AI is legitimate and does not hinder learning given the context of the class.
 
 One example from my class would be plotting graphs with [Matplotlib](https://matplotlib.org/), which can be notoriously tedious, and doesn't teach you much to be honest.
-Speeding up this menial task may save time, which may be put to better use learning more relevant concepts.
+Time saved on this menial task may be better spent on learning more relevant concepts.
 
 Depending on specific class policy, partial AI use may thus be occasionally tolerated, provided that its scope is explicitly disclosed.
 Failure to disclose AI use and its exact scope must be interpreted as cheating.
-This measure is necessary to avoid leaving the door open to all manner of attempts at post-hoc excuses and justifications.
+This measure is necessary to avoid leaving the door open to post-hoc excuses.
 
 <span style="font-size: 90%;">(As a token of good faith, I would like to disclose that [I did use AI][ai-disclosure] to proofread this article).</span>
 
 However, allowing even some AI use may also be a double edged sword.
-In particular, in general I would not advise allowing AI for formatting or [polishing/rewriting], since it would make it basically impossible to separate its use in terms of substance from its use in terms of form.
+In particular, however convenient it may be, I would not advise allowing AI for formatting or rewording in general, since it would make it basically impossible to separate its use for form from its use for substance -- and thus to prove its illicit use for the latter.
 
 </details>
 
 
 <details markdown="1">
-<summary><b>It is [crucial] that accusations of AI use can still be challenged.</b></summary>
+<summary><b>If accusations of AI use have not been formally challenged, the evidence that led to the accusation need not be provided.</b></summary>
 
-As far as I know, I've never wrongly accused anyone of cheating:
-so far, a grand total of zero student whom I accused has claimed to be fully innocent.
-Even then, since no one is 100% unfailible, I guess we should contemplate the possibility that [this also applies to me][categorical-imperative].
-<!-- Because Kant's [categorical imperative][categorical-imperative], blablabla. -->
+This hopefully should *not* discourage honest students from speaking up if they believe there has been a mistake.
 
-Thus, the possibility of appeal is critical.
-We just need to make it so that only *unfair* accusations are worth challenging, in order not to waste everyone's time.
-I believe the proposed system is fairly efficient in this respect.
-
-<details markdown="1" style="background-color: #ffffff;">
-<summary>What if there is an appeal?</summary>
-
-So: what happens if there *is* an appeal? To avoid any unfair outcome or the re-emergence of misaligned incentives, it is imperative that [this process] determines whether AI was used as accurately as possible.
-As a result, it may be worth it to dedicate significantly more resources to the issue than we would otherwise for a typical homework assignment, with the idea that if the proposed policy is effective, this is not a situation that should happen often anyway.
-
-In case the evidence of AI is already strong: I suggest asking for a second opinion to a neutral third-party, who has been briefed on the fact that one single piece of strong enough evidence is all that's needed.
-
-If there was some doubt from the start or the third-party cannot conclusively estimate whether the submissions contain AI,
-I believe a decent solution is to organize an oral examination.
-From experience, if a student did not write their solution themself, it is fairly easy to pock holes in their [work] by asking them to clarify certains concepts that I suspect they may not be familiar with.
-For example, what do they mean by suggesting to use [Platt calibration][platt-calibration]? Or if they proved that a function was a kernel using [Mercer's theorem][mercer-theorem], can they briefly explain what this theorem states?
-
-<div style="font-size: 70%;">
-The example questions above are [inspired/taken] from real-life oral defenses, although they happened in a context different from AI-use dispute. In both instances, the unfortunate student had no idea what these concepts were about.
-<br/>
-</div>
-
-<br/>
-The specificities of the questions and examples will of course vary from subject to subject, but the [general] idea can be generalized.
-
-Ideally, the student should have little notice about this oral exam. After all, if they did write the material they submitted, they should already be quite familiar with it.
-To ensure the oral defense is as unbiased as possible, it can also be conducted by or in the presence of another teacher.
-
-Although establishing guilt is the responsibility of the accuser (i.e. me), I believe the student should also be given an opportunity to present any element they possess that could strengthen the plausibility of their innocence. For instance, any draft, notes, intermediate version etc. may be evidence worth considering -- provided they can't easily have been forged after the accusation took place.
-
-If, after this due-diligence, the use of at least some AI is established: the official policy is applied, resulting in a grade of 0, and possibly further sanctions.
-
-If not: well, maybe there has been a mistake after all. This is a great opportunity to learn what went wrong with our assumptions, and update our [AI detection abilities] accordingly.
-
-But to [reiterate], I've never been in this situation thus far.
-
-</details>
-
-</details>
-
-
-<details markdown="1">
-<summary><b>If the accusation of AI has not been formally challenged, the evidence that led to this decision need not be provided.</b></summary>
-
-This hopefully does *not* prevent students who know they were honest from saying there must have been a mistake.
-But not knowing the extend of the evidence makes it difficult for dishonest students to estimate their chance of winning a bad faith argument with high stakes, ideally discouraging it.
-In a way, this is using the fog of war to our advantage.
+But not knowing the extent of the evidence makes it difficult for dishonest students to estimate their chance of winning a bad faith argument with high stakes, ideally discouraging it.
+In a way, this is the fog of war working in our favour.
 
 Also, the last thing I want to do is to help students get better at cheating by "learning from their mistakes".
 I'm the only one allowed to learn from mistakes related to this topic.
@@ -810,31 +858,37 @@ I'm the only one allowed to learn from mistakes related to this topic.
 
 
 <details markdown="1">
-<summary><b>Keep on paper exam whenever possible.</b></summary>
+<summary><b>On-paper exams should be included whenever possible.</b></summary>
 
-Different reasons:
-- Only way to accurately measure student performance.
-- Since no cheating possible, incentive for students to actually learn things
-- Useful to "calibrate" AI detectors: if student turns perfect assignments that don't look like AI, but dramatically blunders final exam... maybe something fishy was going on after all. Opportunity for teacher to find out what and learn from it.
+This one should go without saying.
+
+Even though they are technically out of the scope of this essay at first glance, I believe having supervised, on-paper examinations is more important now than ever, for several reasons:
+- First and quite obviously, this remains the only reliable way to measure student performance. Ensuring students meet a minimum abilities threshold (different from the ability to coast through thanks to their AI buddy) is essential if we want diplomas to mean anything.
+
+  I'm not planning to stop bragging about my [PhD][phd] anytime soon, so please make it retain its value. (Did I mention that I have a [PhD][phd]?)
+
+- Since cheating at supervised exam remains much more difficult, one of the easiest ways to obtain a passing grade is to actually learn the things that will be needed for the exam. Which, as a reminder, is what we would like the students to do as per the GOAL.
+
+- As a bonus, exams are useful to "recalibrate" our internal AI detectors: if a student consistently turns in perfect assignments that don't look like AI, but dramatically blunders the final exam... it's possible something fishy was going on after all. This is an opportunity for the teacher to find out what went wrong and learn from it.
 
 </details>
 
 
 <details markdown="1" open ontoggle="this.open = true">
-<summary><b>It is crucial that the teacher retains full liberty to apply the full sanctions if (even limited) use of AI is formally established.</b></summary>
+<summary><b>The teacher must retain full liberty to apply the full range of sanctions if (even limited) use of AI is formally established.</b></summary>
 
-This final one is probably the most important, so no collapsible section [for this one].
+This final one is probably the most important.
 
-I'm not going to explain again why this is important from an student incentive and teacher time-saving perspective.
-However, I would just like to emphasize that unconditional support from the university is extremely important regarding this. Having to fight administration to fail a student for (proven) AI use would pretty much ruin all the system of incentives we've been trying to build here.
+I won't rehash why this matters from an incentive and effort perspective.
+I would however like to emphasize that unconditional support from the university is critical. Having to fight administration to fail a student for (proven) AI use would undermine everything we've been trying to build here.
 
-In particular, I believe that strict, *official* rules regarding academic integrity, that includes rules about presenting AI content as one's own, would be a useful addition to existing university policies.
-Most American universities already had such rules about plagiarism when I was studying there: instances of proven plagiarism could go as far as getting you expelled. These rules had to be unconditionnaly accepted by all students.
-I think this idea should be extended to unauthorized AI use and [expanded] to more universities or schools in general, including in France.
+In particular, I believe that strict, *official* rules regarding academic integrity which explicitly cover AI content would be a valuable addition to existing university policies.
+Most American universities already had such rules about plagiarism when I was studying there: instances of proven plagiarism could go as far as getting you expelled. These rules had to be unconditionally accepted by all students.
+I think this idea should be extended to unauthorized AI use and rolled out to more universities or schools in general, including in France.
 
 <span style="font-size: 90%;"> *[**Update**: some universities such as [Oxford][oxford-ai-policy] or [Stanford][Stanford-ai-policy] have started implementing such a policy.]* </span>
 
-It is true that such rules may sometimes be really painful to enforce: there is no denying than failing 20% of a cohort is extremely unpleasant for everyone involved.
+It is true that such rules may sometimes be genuinely painful to enforce: there is no denying that failing 20% of a cohort is extremely unpleasant for everyone involved.
 However, I believe the alternative (🏛️💥) is even worse.
 
 </details>
@@ -870,36 +924,42 @@ However, having no background in law or behovarial psychology in spite of my gra
 
 Many of the ideas from this essay were introduced with my own classes in mind, but I believe that they should be applicable much more broadly.
 
-Some [adaptations] to different classes are straightforward: you may e.g. easily replace "answer to a homework question" by "part of an essay" depending on the context of the class.
-The scope and severity of the proposed sanctions can similarly be partly adapted to be better suited to a different setting.
-Other transpositions may not be so [easy], particularly everything related to AI detection.
-Here, I'm afraid I have significant [priviledges] compared to almost all other [settings]:
-I am lucky enough to have a directly relevant background, and detecting AI in code is arguably much easier than in alternative submission formats.
-Unfortunately, I don't yet have a universal solution for how to detect AI and adapt sanctions.
-This will need to be evaluated on a case by case basis, although I believe the overall approach is generally relevant.
+Some adjustments to different classes are straightforward: you may e.g. easily replace "answer to a homework question" by "part of an essay" depending on the context.
+<!-- The scope and severity of the proposed sanctions can similarly be adapted to fit a different setting. -->
+Other transpositions may not be so seamless, particularly everything related to AI detection.
+Here, I'm afraid I have significant advantages over almost all other contexts:
+I have a directly relevant background, and detecting AI in code is arguably much easier than in other submission formats.
+<!-- Or maybe I'm just delluded -- although in this context I'd almost like it be the case. -->
+Unfortunately, I don't yet have a universal solution for AI detection and sanction adaptation.
+<!-- This will need to be evaluated on a case by case basis, although I believe the overall approach remains broadly relevant. -->
 <!-- I experimented with variations of previous policies, but just started with the latest one. I'll let you know how it goes. -->
 
-Finally, one thing I am *not* saying in this article is that AI has no place at all in universities, or that we should ban computers altogether and write with quils and parchment instead.
+<details markdown="1">
+<summary>I'm working on it though</summary>
 
-On the contrary, I believe AI can be a fantastic tool to facilitate learning, allowing [motivated/proactive] students to benefit from individual tutoring, tailored explanations and detailed feedback -- things that traditional teachers unfortunately cannot afford to offer to everyone.
-Furthermore, I believe that all <del>students</del> *humans* would benefit from having at least a rough understanding of how AI works and how to effectively use it.
-However, there is a time and place for everything.
-<!-- Copy-paste is a tremendously useful invention -- using it to turn in a Wikipedia article as-is [in lieu of] an expected thorough reflection on a given topic is dishonest and educationaly harmful. -->
-<!-- The same goes with AI. -->
+I can almost pretend I'm making progress: I am currently experimenting with possible "AI traps" in future homework assignments. The idea is to design questions so that an AI, while answering, generates subtle telltale patterns, constituting irrefutable proof of AI use if found.
+This is still a work in progress for now, but if it bears fruit, I will update this post accordingly.
+Stay tuned!
+
+</details>
+
 
 <!-- As a tangential note: -->
 <!-- On a related topic -->
-To hammer my point:
-as part of my work, I see people using AI more and more in large companies. Some fruitfully, and some to avoid a week's work by presenting slides visibly copy-pasted from ChatGPT instead of having actually thought about the topic they are talking about.
-I generally argue that since the latter group brings about as much value as a ChatGPT subscription, but typically cost way more, there are big savings just waiting to be made.
+<!-- To hammer my point: as part of my work, I see people using AI more and more in large companies. -->
 
-Therefore, *training students to belong to this group is not helping them.*
+Finally, please bear in mind that I am *not* saying that AI has *no place at all* at work or in universities, or that we should ban computers altogether and write with quills and parchment instead.
 
-In fact, the relevance of keeping the ability to think, write and perform other intellectual tasks by oneself is certainly not restricted to students.
-As a straightforward example, writing this article ["manually"] has greatly helped me clarify my thoughts on this matter, something which would not have [happened] had I delegated this task to an AI.
+On the contrary, AI can be a fantastic tool for learning, allowing self-driven students to benefit from individual tutoring, tailored explanations and detailed feedback -- things that traditional teachers unfortunately can't offer to everyone, through no fault of their own.
+I also believe that all <del>students</del> humans would benefit from at least a basic understanding of how AI works and how to use it effectively.
 
-So, let's keep on thinking by ourselves!
+<!-- Copy-paste is a tremendously useful invention -- using it to turn in a Wikipedia article as-is [in lieu of] an expected thorough reflection on a given topic is dishonest and educationaly harmful. -->
+<!-- The same goes with AI. -->
+However, there is a time and place for everything.
+Beyond that, keeping the ability to think, write, and perform other intellectual tasks by oneself is valuable well beyond the classroom.
+As a case in point, writing this article [by hand][ai-disclosure] has greatly helped me clarify my thoughts on this matter, something that would not have happened had I delegated the task to an AI.
 
+So, let's keep on thinking for ourselves!
 
 <!-- Opening: I'm thinking about including "AI traps" in my assignments. More on that later (maybe). -->
 
@@ -919,6 +979,7 @@ This should be a hidden comment.
 [pseudo-inverse]: {% link _posts/2025-07-24-pseudo-inverse.md %}
 [ai-examples]: https://todo.com <!-- TODO -->
 [ai-disclosure]: {% link about.md %}#do-you-use-ai-to-write-your-posts
+[phd]: {% link about.md %}#who-are-you-again
 
 [common-good]: {% link _posts/2026-06-16-ai-homework.md %}#common-good
 [goal]: {% link _posts/2026-06-16-ai-homework.md %}#goal
