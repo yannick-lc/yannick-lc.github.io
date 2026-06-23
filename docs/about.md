@@ -35,13 +35,13 @@ Since then, I've been working as a freelance consultant in machine learning/data
 As a hobby, I also teach graduate classes in machine learning at [CentraleSupélec](https://masterofscience-ia.com/) and [Université Paris-Saclay](https://www.universite-paris-saclay.fr/formation/master/biologie-sante/m2-computational-neurosciences-and-neuroengineering).
 
 ### Do you write about your work for your clients?
-Yes, this blog includes (or will soon include) practical case studies inspired by real work for real clients.
+Yes, this blog includes practical case studies inspired by real work for real clients.
 
 ### But isn't it super sensitive?
 Yes, but mostly no.
 
 There is obviously no private client data used on this blog: all datasets are either publicly available or artificially generated to somehow resemble real data.
-The same goes for the technical methods described here: they are typically fairly straightforward—although not necessarily obvious—ideas that have been simplified compared to the actual work done for my clients.
+The same goes for the technical methods described here: they are typically fairly straightforward ---although not necessarily obvious--- ideas that have been simplified compared to the actual work done for my clients.
 
 So you won't find any trade secrets here, sorry.
 
@@ -55,6 +55,20 @@ Other domain names were expensive, so that's the one I kept.
 ### How much do you make?
 Wow, you're not afraid to ask direct questions. I may write a blog post about this topic one of these days.
 -->
+
+### Do you use AI to write your posts?
+
+All my posts are guaranteed to contain at least 99.9% human content.
+
+More seriously: I write the first iterations of all my posts 100% by myself. After this first step, AI may be sporadically used, mostly for correcting typos and grammar mistakes -- and very occasionally to polish or shorten a sentence, or to find a word that keeps eluding me.
+
+#### Haha, you just used an em dash! Gotcha, you filthy liar!
+
+There are a few classic indicators of AI writing which I happen to like, including the now infamous [em dash](https://en.wikipedia.org/wiki/Dash#Usage_in_AI-generated_text).
+I have been using it for a while, as evidenced by its 228 appearances in my [PhD dissertation](https://theses.hal.science/tel-03153445), written in 2020.
+
+I have no intention of changing my writing style just because I'm seemingly an inspiration to ChatGPT.
+
 
 ### How can I make sure I don't miss the next blog post?
 
