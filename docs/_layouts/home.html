@@ -9,7 +9,7 @@ layout: default
 
   {{ content }}
 
-  <h2 class="post-list-heading">{{ page.list_title | default: "Non technical essays" }}</h2>
+  <h2 class="post-list-heading">{{ page.list_title | default: "Essays" }}</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
       {%- if post.categories contains "essay" -%}

@@ -17,7 +17,7 @@ So far, so good. Yay science!
 
 But, there's a teeny tiny problem: *students also know this*.
 
-<details markdown="1">
+<details markdown="1" open>
 <summary>TL;DR (click me to expand)</summary>
 
 <a id="tldr"></a>
@@ -26,13 +26,47 @@ But, there's a teeny tiny problem: *students also know this*.
 
 <div class="goldhighlight" markdown="1">
 
-Students cheat. This is bad. (More precisions are coming.)
+[Thinking hard] on challenging problems is essential to intellectual development.
+<!-- in the same way that [physical] exercise/effort in essential to [physical] [development]. -->
 
-[Double check that I what I used to do, what I now do and what I propose is clear and consistent.]
+Homework used to be a great [way] to make students... especially graded homework -- since students may not try their best without the carrot of a good grade/the threat of a bad one.
 
-[common good] -> greater good?
+However, AI now offers a (too) convenient way to obtain...
 
-Double check we/I
+<div class="silverhighlight" markdown="1">
+<ins>Grand Axiom of Student Psychology (GASP)</ins>:
+a student wants to get the best possible grade $G$ while minimizing effort spent $E$.
+</div>
+
+<div class="silverhighlight" markdown="1">
+<a id="goal"></a>
+<ins>Grand Objective of the Astute Lecturer (GOAL):</ins>
+maximize students' learning $L$ 
+while minimizing their own effort $E$.
+<!-- while keeping a manageable workload. -->
+</div>
+
+The "minimizing"
+
+Objective of article: select rules to incentivize students to not use AI for homework.
+
+Unfortunately/one import difficulty is that detecting... 
+
+<div class="silverhighlight" markdown="1">
+Evidence of AI use on any part of a homework assignment warrants a grade of 0 for the entire homework.
+
+A repeated offense warrants a failing grade for the entire course.
+
+<div style="font-size: 80%;">
+The teacher may opt for a more lenient approach at their sole discretion, with no obligation whatsoever.
+<br/>
+
+Accusations of AI use may be challenged by students who believe they were wrongly accused. Doing so will trigger a re-evaluation with a strict application of the official policy.
+</div>
+</div>
+
+
+
 
 </div>
 
@@ -41,33 +75,27 @@ Double check we/I
 
 ## Homework assignments and the imminent collapse of civilization
 
-As it turns out, the objective of the homework assignments I give was never to provide *me* with the solution, as in principle, I already know it. It's not even really about evaluating the students either, although assignments *are* graded in my class.
+As it turns out, the objective of the homework assignments I give was never to provide *me* with the solution, since in principle, I already know it. It's not even really about evaluating the students either, although assignments *are* graded in my class.
 No, the real objective is to ensure students think hard about interesting\* problems, and learn cool\* things along the way.
 
-<sup><sub>(\*Yes, interesting and cool indeed. Don't be too quick to shout "neeerd", as I gently remind you that you are currently reading a machine learning blog.)</sub></sup>
+<sup><sub>(\*Yes, *interesting* and *cool* indeed. Don't be too quick to shout "neeerd", as I gently remind you that you are currently reading a machine learning blog.)</sub></sup>
 
 To use a metaphor I'm fond of: working hard on a problem is to intellectual development what physical exercise is to muscle building.
-A coach may assign a 10km run to a student athlete, who may later proudly show the GPS-tracked route as proof of completion. But if the route was covered on an electric scooter, the exercise becomes entirely pointless, as the goal was never to trace a path on a map.
+A coach may assign a 10km run to a student athlete, who later shows the GPS-tracked route as proof of completion. But if the route was covered by car, the exercise becomes entirely pointless, as the goal was never to trace the path on a map.
 <!-- A sport coach may assign a 10km track run to a coachee as an exercise; the coachee may later show them the registered route in Strava/their favorite training app as evidence this was completed. But if the route was done using an electric scooter, the exercice becomes entirely pointless, as the objective was never to ensure that the track itself is run around. -->
 
 Similarly, if current students don't put in intellectual effort anymore, they won't build intellectual muscles. We will then have an entire generation of intellectual weaklings, our leaders will be <sub><sup>(even more)</sup></sub> incompetent <sub><sup>(than now)</sup></sub>, and human civilization will collapse.
 
 I might be slightly exaggerating here, but honestly not that much.
 
-Incidentally, I also see problems related to uncritical reliance on AI at work.
-Some people use it fruitfully, while others use it to avoid a week's work by presenting slides visibly copy-pasted from ChatGPT, instead of actually thinking about the topic at hand.
-I generally argue that since the latter group brings about as much value as a ChatGPT subscription, but typically costs way more, there are big savings just waiting to be made.
-
-Therefore, *training students to belong to this group is not helping them.*
-
-So, as a (not so) humble teacher, what can I do to save my students and, more generally, the world?
+So, as a (not so) humble teacher, what can I do to save the world?
 There are a couple of immediate possibilities I could consider to solve my AI problem:
 
 1. **Completely remove these now obsolete homework assignments.** This would be equivalent to stopping making trainees do physical exercise altogether: see the previous part about the collapse of civilization.
 2. **Keep homework assignments, but stop grading them.** Let's be honest, in practice this would be equivalent to proposition n°1. Civilization collapses again.
 3. **Continue grading homework assignments as I used to.** Then students continue using AI. Civilization goes boom. 🏛️💥
-4. **Book special slots to have students work on the homework assignments while under my constant scrutiny.** Well... while I *should* be concerned about civilizational collapse, I also have a life outside of work. So I'd rather not do that
-<sub><sup>(see [this part][goal])</sup></sub>.
+4. **Book special slots to have students work on the homework assignments while under my constant scrutiny.** Well... while I *should* be concerned about civilizational collapse, I also have a life outside of work. So I'd rather not do that.
+<!-- <sub><sup>(see [this part][goal])</sup></sub>. -->
 
 None of these solutions is great.
 To save the world, we must find a way to ensure students continue thinking hard on cool problems.
@@ -80,13 +108,12 @@ There's an elephant in the (class)room that I didn't address yet: *how do I know
 <!-- In other words, does the world really need saving? -->
 <!-- Two points. -->
 
-There are a few trails.
-<!-- [Bodies of evidence instead?] -->
+There are a few bodies of evidence.
 First, based on the stellar quality of last semester's average homework: either I happened to have the brightest cohort ever by far, *or* many students used AI.
 The average quality of the supervised, on-paper final exam was somewhere around *"meh"*. This tips the scales towards the latter hypothesis.
 
 In addition, some students are *really bad* at covering their tracks. Subtle hints of AI use that I've seen in submissions include:
-- Leaving the generated *"Your Name"* placeholder as-is instead of replacing it with their actual name.
+- Leaving the *"Your Name"* placeholder generated by ChatGPT/whatever.ai as-is instead of replacing it with their actual name.
 - Keeping AI follow-up questions like *"Would you like further clarification?"* in the submission.
 - Answering hallucinated questions that were never asked <sub><sup>(although they were sometimes good questions, so thanks for the suggestions!)</sup></sub>
 
@@ -105,7 +132,7 @@ One faint hope one might be tempted to cling to: my students are, after all, gra
 Let me shatter your dreams right here and now: using AI to cheat on homework doesn't require any skill more advanced than typing [chatgpt.com][chatgpt] in a Web browser.
 
 So this problem is unfortunately not restricted to my university or field of study.
-As a matter of facts, similar situations have been reported at or by [Harvard][harvard-cheating], [Cornell][cornell-cheating], [Stanford][stanford-cheating], etc.
+As a matter of fact, similar situations have been reported at or by [Harvard][harvard-cheating], [Cornell][cornell-cheating], [Stanford][stanford-cheating], etc.
 
 So, students' AI use really is on the rise. All right.
 
@@ -114,13 +141,14 @@ Or, does using AI to do homework actually impede learning?
 
 I'm convinced this is true to some extent at least.
 
-For a start, in my classes, there is an inverse correlation between the "AI-ness" of homework submissions, and the actual performance on the AI-free final exam.
-Thus, quite paradoxically, the worse (non AI-adjusted) homework grades are often obtained by the students who end up with the best performance on the final exam, and vice-versa. This used to be the complete opposite.
+For a start, in my classes, there is an inverse correlation between the "AI-ness" of homework submissions and actual performance on the AI-free final exam.
+<!-- Thus, quite paradoxically, the worse (non AI-adjusted) homework grades are often obtained by the students who end up with the best performance on the final exam, and vice-versa. This used to be the complete opposite. -->
+Quite paradoxically, the best final exam results now tend to come from students with the worst homework grades. This used to be the complete opposite.
 
 I know that correlation is not causation, and there may be confounding factors like intrinsic motivation, which influence both homework dedication and final exam result.
 Still, I believe this counts as suggestive evidence that unchecked AI use actively impairs students' learning.
 
-Moreover, even though this debate is fairly new, studies suggesting that this is indeed the case are slowly [starting][mit-deskilling] [to emerge][pnas-deskilling].
+Moreover, even though this debate is fairly recent, studies suggesting that this is indeed the case are slowly [starting][mit-deskilling] [to emerge][pnas-deskilling].
 A [recent study][nature-deskilling] in Nature argues that AI-induced "deskilling" affects not only students, but even established professionals.
 
 So, there you go. Imminent civilisational collapse is coming.
@@ -142,12 +170,12 @@ and that as such, maybe they ought to assume that I'm *somewhat* competent at de
 However, I have a confession to make: 
 even for me, most situations are far from black and white.
 
-There are many cases where I have strong suspicions that AI was used, without necessarily having undeniable evidence
--- e.g. I would estimate the probability of AI-generation at 80%.
+There are many cases where I have strong suspicions that AI was used, without necessarily having conclusive evidence.
+<!-- -- e.g. I would estimate the probability of AI-generation at 80%. -->
 There are cases where I'm virtually certain that AI was used but still don't have evidence that would hold up to a jury.
-And there are situations where it is practically impossible to tell AI from non-AI
--- e.g. answers to the question *"How much is 2+2? Answer using only a number"*
-<sub><sup>(although questions on my assignments tend to be a bit more difficult than this).</sup></sub>
+And there are situations where it is practically impossible to tell AI from non-AI.
+<!-- -- e.g. answers to the question *"How much is 2+2? Answer using only a number"* -->
+<!-- <sub><sup>(although questions on my assignments tend to be a bit more difficult than this).</sup></sub> -->
 
 <details markdown="1">
 <summary>What about AI detectors? Short answer: <b>they're not reliable.</b></summary>
@@ -168,16 +196,16 @@ Still here? Fine, I'll elaborate.
 <!-- First, to get it out of the way: even if we had access to a very reliable AI detector, this wouldn't solve the issue that many estimates are probabilistic by nature, and also couldn't magically determine whether the digit "4" was typed by an AI or a human. -->
 
 Existing AI detectors can lead to both false positives and false negatives, as has been documented by [a][ai-detection-1] [number][ai-detection-2] [of][ai-detection-3] [studies][ai-detection-4].
-But the strongest argument is probably that OpenAI, the company behind ChatGPT, has notoriously [discontinued their own AI-detection tool][openai-detection-discontinued] because of its poor accuracy.
+But the strongest argument might be that OpenAI, the company behind ChatGPT, has notoriously [discontinued their own AI-detection tool][openai-detection-discontinued] because of its poor accuracy.
 
 <!-- On the one hand, there are e.g. PhD thesis written well before AI-generated text [existed] which are detected as mostly AI.
 This is because scientific writing style is somehow specific, and AI writing and human writing are fairly similar in this situation.
 On the other hand, adding typos and gramar mistakes to AI generated text may be enough to fool AI detector (and occasionaly the teacher too, to be honest). -->
 
-It's not that everyone at OpenAI and all the referenced AI-detection companies is incompetent: creating an AI detector that cannot be fooled is fundamentally doomed to failure, for [reasons outside the scope of this essay][ai-detection-impossible].
+It's not that everyone at OpenAI and all the referenced AI-detection companies are incompetent: creating a foolproof AI detector is fundamentally doomed to failure, for [reasons outside the scope of this essay][ai-detection-impossible].
 
 There are [horror stories][reddit-horror]* of students facing severe academic consequences because of false flags from AI detectors, despite being willing to prove that no malpractice occurred.
-I think we can all agree that this is not a [desirable] situation for anyone.
+I hope we can all agree that this is not great for anyone.
 
 <sub><sup>*I have no way of knowing how accurate this specific story is, but I have no doubts that similar situations did and will occur.</sup></sub>
 
@@ -195,9 +223,9 @@ Are we cooked?
 <!-- ## Incentives, meta-incentives and the Grand Axiom of Students' Psychology -->
 ## Incentives and the Grand Axiom of Student Psychology
 
-Maybe, maybe not.
+<!-- Maybe, maybe not. -->
 
-For now, I'd like to go on yet another metaphorical journey. Since I live in Paris, journeys typically start with the Métro.
+To find out, I'd like to go on yet another metaphorical journey. Since I live in Paris, journeys typically start with the Métro.
 It's not free to operate, so metro tickets were invented.
 
 Great (allegorical) news: we have just been appointed as BOSS (Behavorial Optimization & Sanctions Supervisor) of the metro. We are in charge of ensuring passengers actually buy a ticket, as opposed to hopping on trains as free riders.
@@ -205,7 +233,7 @@ We *could* simply ask people nicely to buy a ticket.
 <!-- [But hum, yeah, I think you can see the limit with that approach.] -->
 Although, maybe... well... Finding the limits of such an approach is left as an exercise to the reader.
 
-OK, new brilliantly original idea: we could randomly check people's tickets, and impose fines on people who don't have a valid ticket.
+OK, new brilliantly original idea: we could randomly check passengers' tickets, and impose fines on those without a valid ticket.
 
 This is where we embark on an expedition into the fabulous world of *rational agents* and *incentives*! 🌈👮‍♂️🥕🪵
 
@@ -214,18 +242,18 @@ This is where we embark on an expedition into the fabulous world of *rational ag
 
 ### Setting incentives like a BOSS
 
-Let's assume passengers want to minimize the average cost of using public transportation.
+Let's assume passengers want to minimize their average cost of using public transportation.
 
-For a start, if the fine is simply the ticket price, buying a ticket is actually irrational: cheating will never cost more than being honest, and will cost less whenever one's not caught.
+For a start, if the fine is simply the ticket price, buying a ticket is actually irrational: cheating will never cost more than being honest, and will cost less whenever one is not caught.
 So in such a situation, we can expect people to *not* buy a ticket.
 
 <details markdown="1">
 <summary>On the existence of honest people, and economists</summary>
 
-I am aware that the model above has its limits: for a start, it's *possible* that not everyone is fully rational, or reasons in terms of expected cost.
+I am aware that the model above has its limits: for a start, it's *possible* that not everyone is fully rational, or thinks in terms of expected cost.
 
-In particular, this framework completely excludes any moral consideration; in real life, some people will *always* buy the ticket regardless of any cost/benefit analysis, just because they believe it's the right thing to do. Other people will *never* buy a ticket for a number of reasons.
-Still, this type of framework is often used by economists as a a useful simplification enabling one to reason about how many people are likely to behave in different situations.
+In particular, this framework excludes any moral consideration. In real life, some people will *always* buy the ticket regardless of any cost/benefit analysis, simply because they believe it's the right thing to do. Others will *never* buy a ticket for various reasons.
+Still, economists often use this type of framework as a useful simplification to reason about how people are likely to behave in different situations.
 
 So, please don't force me to make this post longer than it already is, and please address all complaints about forgetting (to account for) the existence of honesty to economists instead.
 
@@ -240,12 +268,12 @@ $$
 If we want to increase the number of people paying their ticket, we have 3 levers:
 1. **Decrease the price of the ticket $t_p$.** This has the obvious disadvantage of also decreasing revenue, which may not be economically sustainable.
 <!-- (*ignoring any effect of the price elasticity of demand on the ground that it is totally unrelated to the point I'm trying to make). -->
-2. **Increase the probability $p$ of ticket checks.** One thing to keep in mind is that this lever also comes at a cost: in extreme cases, paying controllers to check everyone all the time between any 2 stations could end up costing more than what the tickets bring in, making the whole operation unviable.
+2. **Increase the probability $p$ of ticket checks.** One thing to keep in mind is that this lever also comes at a cost: in extreme cases, stationing a controller between every pair of stations could end up costing more than what the tickets bring in, making the whole operation unviable.
 <!-- (Assumption: checks are manual; in practice, checks might be partly automated, but AI detection may not (yet)). -->
-3. **Increase the amount of the fine $f_p$.** In practice, this tends to be the most practical option. With a small nuance though: $p$ and $f_p$ must remain reasonably balanced for the system to be socially acceptable. Reducing checks to a single one per year to reduce cost, i.e. setting $p$ to 0.0001% while increasing $f_p$ to $5,000,000 to make up for it would probably receive some backlash.
+3. **Increase the amount of the fine $f_p$.** In practice, this tends to be the most practical option. With a small nuance though: $p$ and $f_p$ must remain reasonably balanced for the system to be socially acceptable. Saving costs by checking a single passenger per year, i.e. setting $p$ to 0.0001% while increasing $f_p$ to $5,000,000 to compensate would probably receive some backlash.
 
-Right, my girlfriend just reminded me that I'm not the BOSS; I'm merely a teacher trying to save humanity from LLM-induced brainrot.
-*Back to reality then.*
+Right, my girlfriend just reminded me that I'm not the BOSS; I'm merely a teacher trying to save humanity from AI-induced brainrot.
+Back to reality then.
 
 
 
@@ -261,18 +289,18 @@ I have at long last succeeded in distilling the entirety of student psychology i
 <div class="silverhighlight" markdown="1">
 <ins>Grand Axiom of Student Psychology</ins> (GASP):
 
-The objective of a student $s$ is to get the best possible grade $G$ while minimizing effort spent $E$.
+The objective of a student is to get the best possible grade $G$ while minimizing effort spent $E$.
 
 </div>
 
 <details markdown="1">
-<summary><em>"This feels like a slight oversimplification. Yolo 67."</em> — a student (probably)</summary>
+<summary><em>"This feels like a slight oversimplification. Yolo 67."</em> — a student</summary>
 
 \**sigh\** Fine, let's make this blog post even longer, after all why not?
 
 So, a few additional comments about this objective.
 
-**Firstly.** The most immediate remark I would expect from any of my *good* students is to notice that it's a dual objective: we're trying to maximize/minimize 2 things at the same time, namely grade and effort. So we should probably specify a trade-off $\lambda$ between the two and write our objective as e.g.
+**Firstly.** The most immediate remark I'd expect from any of my *good* students is to notice that it's a dual objective: we're trying to maximize/minimize 2 things at the same time, namely grade and effort. So we should probably specify a trade-off $\lambda$ between the two and write our objective as e.g.
 
 $$
 \text{maximize}~~ G - \lambda E
@@ -290,20 +318,20 @@ $$
 \text{minimize}~~ E \quad \text{such that}~~ G \geq G_{min}
 $$
 
-All of these formulations are equivalent given the right choice of $\lambda$, $E_{max}$ or $G_{min}$ (you may want to have a look at [this post][pseudo-inverse] on constrained optimization if it is not clear why). So if you agree with any of them, you agree with me.
+All of these formulations are equivalent given the right choice of $\lambda$, $E_{max}$ or $G_{min}$ (see [this post][pseudo-inverse] on constrained optimization if it's not clear why). So if you agree with any of them, you agree with me.
 And if you don't agree with any of them, i.e. you disagree with me, then *you're wrong*  -- cf. disclaimer in the footer of the blog.
 
-In addition, this trade-off varies from student to student, and is arguably one of the main parameters explaining grade variance among students (along with initial familiarity with adjacent material and innate abilities).
+In addition, this trade-off varies from student to student, and is arguably one of the main parameters explaining grade variance among students, along with initial familiarity with adjacent material and innate abilities.
 
 So explicitly estimating this trade-off is not what I'm after here; I'm mostly interested in the general idea, and will thus omit the $\lambda$.
 
 **Secondly.** A much more minor remark could be that this *might* indeed be an oversimplification of student psychology.
 For instance, it doesn't account for the possibility that *some* students are interested in learning for its own sake, not just as a proxy to get good grades.
-However, I believe the GASP hypothesis above is a better heuristic to predict students' behavior than relying on an entirely hypothetical self-driven motivation to learn.
+However, I believe the GASP hypothesis above is a better heuristic to predict students' behavior than relying on an entirely hypothetical intrinsic motivation to learn.
 
-At least, *my* hypothesis explains pretty well why most students used to do graded homework assignments, used to *not* do *ungraded* homework assignments, and started using AI for homework assignments once this became possible.
+At least, *my* hypothesis explains pretty well why most students used to do graded homework assignments, used to *not* do *ungraded* one, and started using AI once this became possible.
 
-**Finally.** As previously, I invite you to address any concern you may have to economists.
+**Finally.** As before, I invite you to address any remaining concerns to economists.
 
 </details>
 
@@ -313,15 +341,18 @@ And we shouldn't put the blame entirely on this generation: as a notorious procr
 
 <!-- But, as we've seen, this still leads to the collapse of civilization, which most of my friends consider to be a bad thing. -->
 <!-- So we still ought to do something about this, at the expense of fellow lazy video-gamers. Sorry. -->
-But, as we've seen, this still leads to the collapse of civilization, which is inherently bad for video gaming.
-So we still ought to do something about this.
+But, as we've seen, this still leads to the collapse of civilization.
+Which is generally considered to be a bad thing,
+<!-- which is inherently bad for video gaming. -->
+so we still ought to do something about this.
 
 
 ### The teacher's side of the equation
 
 
-OK, not that I want to put the spotlight on myself, but: what about *MY* objective?
-Or by extension, what about *The Teacher*'s objective in a more abstract and generalized sense, for my entire being is merely reduced to a synecdochic incarnation of the whole teaching body in this essay.
+OK, not to make this about me, but: what about *MY* objective?
+<!-- Or by extension, what about *The Teacher*'s objective in a more abstract and generalized sense, for my entire being is merely reduced to a synecdochic incarnation of the whole teaching body in this essay. -->
+Or more abstractly, what about *The Teacher*'s objective, for my entire being is merely reduced to a synecdochic incarnation of the whole teaching body in this essay.
 
 Let me try to offer yet another brilliant distillation of human psychology:
 
@@ -329,30 +360,30 @@ Let me try to offer yet another brilliant distillation of human psychology:
 <a id="goal"></a>
 <ins>Grand Objective of the Astute Lecturer (GOAL):</ins>
 
-The objective of the teacher $t$ is to maximize students' learning $L^s$ while minimizing their own effort $E^t$.
+The objective of the teacher is to maximize students' learning $L$ while minimizing their own effort $E$.
 </div>
 
 <sub><sup>Note: in this essay, we focus mostly on the "make students think instead of using AI" component of the learning objective, although there are obviously many other aspects to it.</sup></sub>
 
 <details markdown="1">
-<summary><em>"Are you implying that I'm lazy?"</em> — a teacher (probably)</summary>
+<summary><em>"Are you implying that I'm lazy?"</em> — a teacher</summary>
 
-**Firstly.** A more charitable way to state "while minimizing their own effort" could have been "while maintaining their own involvement under a manageable threshold $E_{max}$" -- as I hope everyone agrees that even teachers only have a finite amount of time to dedicate to their job. E.g.:
+**Firstly.** A more charitable phrasing of "while minimizing their own effort" could have been "while keeping their own involvement under a manageable threshold $E_{max}$" -- as I hope everyone agrees that even teachers only have a finite amount of time to dedicate to their job. E.g.:
 
 $$
 \text{maximize}~~ L \quad \text{such that}~~ E \leq E_{max}
 $$
 
-But as we've discussed [earlier](link) [LINK], given the right trade-off $\lambda$ or threshold $E_{max}$, these 2 statements are functionally equivalent.
+But as discussed [earlier](link) [LINK], given the right trade-off $\lambda$ or threshold $E_{max}$, these 2 formulations are functionally equivalent.
 
 **Secondly.** We could waste time making the same remarks as for the previous students objective: teachers *may* have objectives other than making students learn.
 
-Worse though, is that some of these objectives may involve feeding their own family. Which may involve keeping their job, which may involve not going to war with the administration who themselves may have yet more objectives such as e.g. keeping the university funded, which may involve not failing half the students, which may involve not penalizing cheaters too harshly. So some of these objectives may actually be *opposite* to our stated GOAL, and it can get pretty complicated.
+Worse though, is that some of these objectives may involve feeding their own family. Which may involve keeping their job, which may involve not going to war with the administration, who themselves may have yet more objectives such as e.g. keeping the university funded. Which may involve not failing half the students, which may involve not penalizing cheaters too harshly. So some of these objectives may actually be *opposite* to our stated GOAL, and it can get pretty complicated.
 
 <a id="common-good"></a>
-*However*, I believe a functional society should have rules that incentivize individuals to maximize the common good, which in this case would mean that one of society's goals should be that teachers' goal is to make students learn as much as possible.
+*However*, I believe a functional society should have rules that incentivize individuals to maximize the common good, which here would mean that one of society's goals should be that teachers' goal is to make students learn as much as possible.
 
-But crafting rules for the entirety of society may be slightly too ambitious for this blog post. So I will refrain from further talking about meta-incentives and try to focus on classroom rules instead.
+But crafting rules for the entirety of society is slightly too ambitious for this blog post. So I will refrain from discussing meta-incentives further and try to focus on classroom rules instead.
 
 **Finally:** talk to <del>the hand</del> economists.
 
@@ -362,8 +393,8 @@ There is one problem: the students' objective is somehow conflicting with my own
 
 However, as the teacher, I have one ace up my sleeve: *I* set the rules in my class.
 
-Thus, I should define rules such that while trying to achieve their objective, students will actually achieve *MY* goal
-<sub><sup>(yeah, no more [common good][common-good], just MY own goals now 😈)</sup></sub>.
+Thus, I should define rules such that while trying to achieve their objective, students will actually achieve *MY* goal.
+<!-- <sub><sup>(yeah, no more [common good][common-good], just MY own goals now 😈)</sup></sub>. -->
 That is, I should set incentives such that when trying to maximize their grade while minimizing effort, students will learn as much as possible -- while also keeping my involvement at a manageable level.
 
 <!-- Hopefully, this should involve them working on hard problems presented in HW assignments. -->
@@ -393,7 +424,7 @@ This way, even though the probability of getting (indisputably) caught for *any 
 3. **Increase the cheating penalty.**
 <!-- 3. **Increase the price of the fine.** -->
 One implicit justification for the fine is that if we have been caught cheating for one ride, we've probably been cheating for more rides. And we should make up for that.
-Plus, as we've seen, small fines make it irrational not to cheat. To be effective enough to act as a deterrent, the cost of the penalty must thus be (much) higher than the cost of being honest.
+Plus, as we've seen, small fines make it irrational not to cheat. To deter effectively, the cost of the penalty must thus be (much) higher than the cost of being honest.
 
 As a direct consequence of points 2 and 3, I propose:
 
@@ -439,7 +470,9 @@ But the 2<sup>nd</sup> component -- keeping the teacher's workload reasonable --
 In particular, there is an important asymmetry that must be taken into account: students and teachers are not on equal footing when it comes to the effort component of their respective objectives.
 Before you call me lazy *(again)*: let me explain.
 
-Up until not so long ago, crafting a solution to a homework problem (an essay, a mathematical proof, a design, whatever) took way longer than grading it.
+Up until not so long ago, crafting a solution to a homework problem
+<!-- (an essay, a mathematical proof, a design, whatever) -->
+took way longer than grading it.
 This is why we can have classes of 30 students for 1 professor.
 However, *conclusively proving that* or even *correctly estimating if* a solution is AI-generated may now take far longer than generating it.
 This is obviously an issue: reversing the previous ratio and having 30 professors for 1 student is not realistic.
@@ -462,20 +495,20 @@ Thus, it is paramount that the teacher-side effort to detect and penalize AI con
 
 Good news, for once: even taking this into account, the proposed first rule still holds up from a game-theoretic perspective.
 
-To recap: the class policy acts as a strong deterrent against AI use, making it unattractive from a risk-reward analysis (significant risk of getting caught, high cost to pay if so). This results in students hopefully doing homework the good old-fashioned way, namely, using their brain. Consequently, students learn more: $L \nearrow$.
+To recap: the proposed class policy acts as a strong deterrent against AI use by making it unattractive from a risk-reward analysis (significant risk of getting caught, high cost to pay if so). This results in students hopefully doing homework the good old-fashioned way, namely, using their brain. Consequently, students learn more: $L \nearrow$.
 And, should the need arise, identifying a single piece of evidence of AI use should remain manageable from a teacher's effort perspective. Consequently, $E \leq E_{max}$.
 
-Therefore, everything seems to be aligned with the GOAL.
+Therefore, this seems to be aligned with both components of the GOAL.
 <!-- Among all the solutions that I have seen proposed, [the one above is one of the only ones] that accomplishes this. -->
 
 <!-- <br/> -->
 <div style="text-align: center;">...</div>
-<br/><br/><br/>
+<br/><br/>
 
 
 Now, this begs the question: did I really need to write all this simply to justify why I have a strict no-AI rule in my class?
 
-Well, first, very few of the solutions that I have seen proposed actually manage to handle both the $L$ and the $E$ component of the GOAL. So getting there wasn't *that* simple.
+Well, first, very few of the solutions that I have seen proposed actually manage to handle both the $L$ and the $E$ component of the GOAL. So getting there wasn't *that* straightforward.
 But as it turns out, there's still an insidious problem left. So this essay is not entirely finished yet. Sorry.
 
 
@@ -503,8 +536,8 @@ Or, to be more specific to our setting: never make a threat you can't follow thr
 
 Here's the thing: I can promise you from experience that whatever your initial warnings and however harsh the promised sanctions, at least *some* students will think they are smart enough to cheat and get away with it.
 
-So, in theory, the previous rule deters students from using AI. In practice, some of them will still try their luck.
-And we're now forced to consider a scenario that wasn't even supposed to happen.
+So, in theory, the previous rule deters students from using AI; in practice, some of them will still try their luck.
+And we're now forced to consider a scenario *that wasn't even supposed to happen!*
 
 <!-- So now, we are forced to consider what happens in this scenario, even though *it was not even supposed to happen in our model!* -->
 
@@ -533,7 +566,7 @@ But this is [survivorship bias][survivorship-bias].
 We simply don't know about the one who cheated and did not get caught. From all we know, this could very well be *all the other students* -- although I certainly hope not.
 
 <div style="font-size: 70%;">
-I actually have good reason to believe at least some of the submissions I received were written by humans, because they contain typical (cute) student mistakes. Either that, or these students are expert manipulators. I guess we'll never know.
+I actually have good reason to believe at least some of the submissions I received were written by humans, because they contain typical (cute) student mistakes, jokes, etc. Either that, or these students are expert manipulators. I guess we'll never know.
 </div>
 
 </details>
@@ -556,7 +589,7 @@ Why is this an issue?
 Well, we've seen that the effort component of the students' and teachers' conflicting objectives is heavily asymmetric and tipping against the teacher, because 1. there are more students than teachers and 2. proving misconduct may take longer than misconducting.
 Yet, even facing the tyranny of Yayanini's law <sub><sup>(yes, that's a thing now)</sup></sub>,
 <!-- we managed to propose a rule that should keep the required effort under control. -->
-we managed to keep the required effort under control.
+we managed to keep the required teacher-side effort under control.
 
 Until now.
 Because when a student is caught, this dual effort asymmetry is compounded by yet another asymmetry, this time in terms of personal stakes.
@@ -565,7 +598,7 @@ Because when a student is caught, this dual effort asymmetry is compounded by ye
 For the teacher, ensuring that an undeserving student fails the class is worthwhile, but not nearly as immediately and personally consequential.
 So given their GOAL, the teacher has only so much energy they are willing to spend on this. -->
 
-For the teacher, ensuring that an undeserving student fails the class is worthwhile, but not nearly as immediately and personally consequential as for the affected student, for whom the impact of crossing the pass/fail boundary is enormous. As a result, failed students have a huge incentive to dispute accusations and challenge the validity of the (agreed-upon) rules, even in bad faith, if it has a chance to improve their grade.
+For the teacher, ensuring that an undeserving student fails the class is worthwhile, but not nearly as immediately and personally consequential as for the affected student, for whom the impact of crossing the pass/fail boundary is enormous. As a result, failed students have a huge incentive to spend time disputing accusations and challenging the validity of the (agreed-upon) rules, even in bad faith, if it has a chance to improve their grade.
 
 Wasting the teacher's time is not simply collateral damage here: it may be the entire point of this deliberate attrition war, based on the hope that the enemy (a.k.a. *me* in this instance) will eventually give up due to lack of energy.
 
@@ -608,7 +641,7 @@ Which is of course *bad* for a number of reasons. In particular:
 This then further increases the time that needs to be dedicated to the issue, further increasing the likelihood of just giving up, and so on.
 Worse, this also has the effect of decreasing the expected cost of getting caught, thus increases the expected reward for cheating.
 This may then lead to more students cheating, spending more time arguing in bad faith, wasting even more time for the teacher, thus increasing leniancy, thus further decreasing the expected cost of cheating and so on and so on. -->
-knowing there is a reasonable chance of getting lenient treatment by being sufficiently annoying obviously incentivises future cheaters to do just that. This increases the time the teacher needs to dedicate to the issue, further increasing the future likelihood of giving up. Which in turn lowers the expected cost of cheating, encourages more students to cheat, and so on.
+knowing there is a reasonable chance of getting lenient treatment by being sufficiently annoying obviously incentivises future cheaters to do just that. This further increases the time the teacher needs to dedicate to the issue, further increasing the future likelihood of giving up. Which in turn lowers the expected cost of cheating, encourages more students to cheat, and so on.
 
 As a consequence: civilization 💥.
 
@@ -658,9 +691,9 @@ However, in these aspects, it is not really better than the previous rule. It is
 
 <!-- The thing is, I also include two additional changes to the previous policy: -->
 <!-- What I didn't tell you is that I also surreptitiously included two changes to the previous policy: -->
-There is a catch, though. Two of them, even:
-- The official policy is updated so that repeated cheating now warrants a failing grade for the entire course.
-- *If* there is any dispute about the grade, particularly about the extent of AI use, I roll back to the previous strict policy: mere suspicion of AI use is not penalized, but one indisputably proven AI sentence results in an automatic 0.
+There is a catch, though.
+<!-- - The official policy is updated so that repeated cheating now warrants a failing grade for the entire course. -->
+*If* there is any dispute about the grade, particularly about the extent of AI use, I roll back to the previous strict policy: mere suspicion of AI use is not penalized, but one indisputably proven AI sentence results in an automatic 0.
 <!-- This serves to strenghten deterrence, which was slightly weakened by the more leniant approach to grading. -->
 
 <!-- The whole idea of this approach is that for caught cheaters, spending a lot of time arguing in bad faith is not a winning strategy anymore.
@@ -669,14 +702,24 @@ Most cheaters know this is likely to result in an actively worse situation -- at
 The whole idea is that arguing in bad faith is no longer a winning strategy for caught cheaters. On the contrary, it is likely to make things actively worse for them.
 
 <details markdown="1">
-<summary>What about students who used AI for 100% of the homework?</summary>
+<summary>What about students who used AI for 100% of the assignment? <em>(spoiler: new rule)</em></summary>
 
-It is true that cheaters who from my estimate did 100% of the homework with AI still receive a 0. As such, they may still be tempted to be a pain in the nether regions.
+It is true that cheaters who, by my estimate, did 100% of an assignment with AI continue to receive a 0. As such, they may still be tempted to be a pain in the nether regions.
 
-This is partly why the rule on repeated offense was introduced: even though their homework grade cannot get any lower, their course grade still can. Which should act as a strong enough deterrent.
+The same idea as before applies: ensure that even these students have something to lose if they try to push it. So that they hopefully don't.
 
-But from experience, these students tend to have such abysmal results on the supervised final exam that convincing anyone why they should fail the class is not difficult anyway.
-One alternative strategy that I've used for such students in the past is to offer to skip the whole what-is-AI-and-what-is-not debate: that is, to base the course grade only on what can confidently be attributed to them, namely the final exam. In practice, this has the same effect on the pass/fail decision anyway.
+This can get tricky though: enabling grades of *less than zero* would be handing them the stick to beat you with if they decide to escalate to the school administration.
+A rule stating than one conclusively proven AI sentence warrants failing *the entire course*, as opposed to a single assignment, might seem more defensible. But they could call your bluff:
+why didn't you fail *all* students with traces of AI in their submission? And why is there a difference in treatment if they're the only ones affected? We're back to square one.
+
+Instead, I can suggest this fair middle ground: a repeated offense -- i.e. more than one homework assignment positively containing AI content -- warrants a failing grade for the entire course.
+This seems reasonable enough to be accepted by everyone, school administration included.
+And it ensures you have enough leverage to deal with any given student acting in bad faith *at most once*.
+<!-- After this, you have the possibility to... Which means that you hopefully don't have to... -->
+<!-- This is partly why the rule on repeated offense was introduced: even though their homework grade cannot get any lower, their course grade still can. Which should act as a strong enough deterrent. -->
+
+Anyway, from my experience, students who do *all* homework with AI tend to have such abysmal results on the supervised final exam that convincing anyone why they should fail the class is not really difficult.
+One alternative strategy I've used in the past for such students is to offer to skip the whole what-is-AI-and-what-is-not debate: that is, to base the course grade solely on what can confidently be attributed to them, namely the final exam. In practice, this has the same effect on the pass/fail decision anyway.
 
 <!-- Such students were not the main reason why the rule was updated anyway. -->
 </details>
@@ -703,9 +746,9 @@ Incidentally, the fine print of the policy may not even need to be official. So 
 But you never know.
 
 The main advantage of this approach is that I don't *need* to give a 0 to all students who cheated "just a little" in order to maintain a credible threat -- which as discussed would be hard to enforce in practice.
-I have more gradual responses than a full-on nuclear war at my disposal.
+I have more gradual responses than a full-on nuclear war at my disposal:
 <!-- But I also now have a weapon even more destructive than before. -->
-Similarly to real life, my nuclear arsenal exists to hopefully never be used.
+similarly to real life, my nuclear arsenal exists to hopefully never be used.
 However, if provoked, I still *can* order a swift and decisive strike, which is essential for deterrence to be effective.
 
 <sub><sup>
@@ -745,11 +788,10 @@ Anyway, we're pretty much done. Before I conclude, here are just a few clarifica
 <details markdown="1" open>
 <summary><b>The applicable policy must be clearly announced.</b></summary>
 
-Quite obviously, students need to know the rules from the start and accept them, even implicitly -- taking the class may count as acceptance as long as the rules appear clearly on the material.
-
-<!-- At least the AI => 0 part of them. -->
-
+Quite obviously, students need to know the rules from the start and accept them, even implicitly -- taking the class may count as acceptance.
 After all, a deterrent is only effective if people know about it.
+
+Having the rules plainly written also makes enforcing sanctions easier should the need arise. Trust me, I've been there.
 
 <!-- I don't think any country has secret nuclear weapons they will only reveal by using them if attacked, as this would defeat the entire concept of nuclear deterrence. -->
 
@@ -765,12 +807,12 @@ After all, a deterrent is only effective if people know about it.
 <summary><b>Dispute of AI accusations must be possible.</b></summary>
 
 As far as I know, I've never wrongly accused anyone of cheating:
-so far, grand total of zero students I accused have claimed to be fully innocent.
+so far, a grand total of zero students I accused have claimed to be fully innocent.
 Even then, since no one is 100% infallible, I guess we should contemplate the possibility that [I am no exception][categorical-imperative].
 <!-- Because Kant's [categorical imperative][categorical-imperative], blablabla. -->
 
 Thus, the possibility of appeal is essential.
-We just need to make it so that only *unfair* accusations are worth challenging, in order not to waste everyone's time. And by everyone's, I mean *mine*.
+We just need to ensure that only *unfair* accusations are worth challenging, in order not to waste everyone's time -- and by everyone's, I mean *mine*.
 I believe the proposed system is already fairly efficient in this respect.
 
 <details markdown="1" style="background-color: #ffffff;">
@@ -813,9 +855,9 @@ If not: well, there may have been a mistake after all. This is a great opportuni
 
 
 <details markdown="1">
-<summary><b>The proposed policy can be most effectively applied if there is at least one strong piece evidence of cheating.</b></summary>
+<summary><b>The proposed policy can be most effectively applied if there is at least one strong piece of evidence.</b></summary>
 
-In other words, accumulating weak evidence may not be sufficient.
+In other words, accumulating weak evidence of cheating may not be sufficient.
 
 This is for two reasons: first, not having conclusive evidence would risk getting dragged into challenges one may not win, thus undermining the perceived risk of cheating.
 Besides, not having conclusive evidence would also risk unfairly penalizing an honest student for cheating, something I do not wish to do.
@@ -867,7 +909,7 @@ Even though they are technically out of the scope of this essay at first glance,
 
   I'm not planning to stop bragging about my [PhD][phd] anytime soon, so please make it retain its value. (Did I mention that I have a [PhD][phd]?)
 
-- Since cheating at supervised exam remains much more difficult, one of the easiest ways to obtain a passing grade is to actually learn the things that will be needed for the exam. Which, as a reminder, is what we would like the students to do as per the GOAL.
+- Since cheating at supervised exam remains much more difficult, one of the easiest ways to obtain a passing grade is to actually learn the material that will be needed for the exam. Which, as a reminder, is what we would like the students to do as per the GOAL.
 
 - As a bonus, exams are useful to "recalibrate" our internal AI detectors: if a student consistently turns in perfect assignments that don't look like AI, but dramatically blunders the final exam... it's possible something fishy was going on after all. This is an opportunity for the teacher to find out what went wrong and learn from it.
 
@@ -895,7 +937,7 @@ However, I believe the alternative (🏛️💥) is even worse.
 
 
 
-
+<!--
 <details markdown="1">
 <summary>On justice and society</summary>
 
@@ -916,13 +958,14 @@ I'd be glad if someone could clarify if that's the case.
 However, having no background in law or behovarial psychology in spite of my grand claims, maybe I am [naively mistaken].
 
 </details>
+-->
 
 
 ## Final dispatch
 
 <!-- Congrats, you made it to the end! A summary of the main points is available at the beginning of the article. -->
 
-Many of the ideas from this essay were introduced with my own classes in mind, but I believe that they should be applicable much more broadly.
+Many of the ideas from this essay were introduced with my own classes in mind, but should be applicable much more broadly.
 
 Some adjustments to different classes are straightforward: you may e.g. easily replace "answer to a homework question" by "part of an essay" depending on the context.
 <!-- The scope and severity of the proposed sanctions can similarly be adapted to fit a different setting. -->
@@ -937,7 +980,7 @@ Unfortunately, I don't yet have a universal solution for AI detection and sancti
 <details markdown="1">
 <summary>I'm working on it though</summary>
 
-I can almost pretend I'm making progress: I am currently experimenting with possible "AI traps" in future homework assignments. The idea is to design questions so that an AI, while answering, generates subtle telltale patterns, constituting irrefutable proof of AI use if found.
+I can actually almost pretend that I'm making progress: I am currently experimenting with possible "AI traps" in future homework assignments. The idea is to design questions so that an AI, while answering, generates subtle telltale patterns, constituting irrefutable proof of AI use if found.
 This is still a work in progress for now, but if it bears fruit, I will update this post accordingly.
 Stay tuned!
 
@@ -949,14 +992,22 @@ Stay tuned!
 <!-- To hammer my point: as part of my work, I see people using AI more and more in large companies. -->
 
 Finally, please bear in mind that I am *not* saying that AI has *no place at all* at work or in universities, or that we should ban computers altogether and write with quills and parchment instead.
-
 On the contrary, AI can be a fantastic tool for learning, allowing self-driven students to benefit from individual tutoring, tailored explanations and detailed feedback -- things that traditional teachers unfortunately can't offer to everyone, through no fault of their own.
-I also believe that all <del>students</del> humans would benefit from at least a basic understanding of how AI works and how to use it effectively.
+I also believe that all <del>students</del> *humans* would benefit from at least a basic understanding of how AI works and how to use it effectively.
 
-<!-- Copy-paste is a tremendously useful invention -- using it to turn in a Wikipedia article as-is [in lieu of] an expected thorough reflection on a given topic is dishonest and educationaly harmful. -->
-<!-- The same goes with AI. -->
 However, there is a time and place for everything.
-Beyond that, keeping the ability to think, write, and perform other intellectual tasks by oneself is valuable well beyond the classroom.
+Copy-paste is a tremendously useful invention -- but using it to turn in a Wikipedia article as-is instead of an expected thorough reflection on a given topic is dishonest and educationally harmful.
+The same goes for AI.
+
+Incidentally, I also see problems related to uncritical reliance on AI at work.
+Some people do use it fruitfully, while others use it to avoid a week's work by presenting slides visibly copy-pasted from ChatGPT,
+ <!-- instead of actually thinking about the topic at hand. -->
+with no critical thinking whatsoever.
+It might be argued that since the latter group brings about as much value as a ChatGPT subscription, but typically costs way more, there are big savings just waiting to be made.
+
+Therefore, *training students to belong to this group is not helping them.*
+
+Beyond that, keeping the ability to think, write, and perform other intellectual tasks by oneself is valuable by itself.
 As a case in point, writing this article [by hand][ai-disclosure] has greatly helped me clarify my thoughts on this matter, something that would not have happened had I delegated the task to an AI.
 
 So, let's keep on thinking for ourselves!
@@ -994,17 +1045,11 @@ This should be a hidden comment.
 [gpt1]: https://en.wikipedia.org/wiki/GPT-1
 [chatgpt-wiki]: https://en.wikipedia.org/wiki/ChatGPT
 [survivorship-bias]: https://en.wikipedia.org/wiki/Survivorship_bias
+[french-nuclear]: https://en.wikipedia.org/wiki/Force_de_dissuasion
 
-[shanghai-ranking]: https://www.shanghairanking.com/institution?n&r=France
 [stanford-cheating]: https://ed.stanford.edu/news/what-do-ai-chatbots-really-mean-students-and-cheating
 [harvard-cheating]: https://www.thecrimson.com/article/2026/4/24/students-ai-usage-by-the-numbers/
 [cornell-cheating]: https://news.cornell.edu/stories/2026/05/widespread-ai-misuse-means-higher-ed-must-rethink-assessment
-[stanford-ai-policy]: https://news.stanford.edu/stories/2025/10/academic-integrity-working-group-generative-ai-exam-policies
-[oxford-ai-policy]: https://libguides.bodleian.ox.ac.uk/using-ai-to-support-academic-work/university-policies
-
-[openai-detection-discontinued]: https://decrypt.co/149826/openai-quietly-shutters-its-ai-detection-tool
-[reddit-horror]: https://www.reddit.com/r/tech_x/comments/1trs1bt/new_york_university_student_spends_6_months/
-[french-nuclear]: https://en.wikipedia.org/wiki/Force_de_dissuasion
 
 [nature-deskilling]: https://www.nature.com/articles/d41586-026-01947-1
 [mit-deskilling]: https://www.media.mit.edu/publications/your-brain-on-chatgpt/
@@ -1016,4 +1061,11 @@ This should be a hidden comment.
 [ai-detection-4]: https://www.sciencedirect.com/science/article/abs/pii/S305047592600093X
 [ai-detection-impossible]: https://arxiv.org/abs/2303.11156
 
+[openai-detection-discontinued]: https://decrypt.co/149826/openai-quietly-shutters-its-ai-detection-tool
+[reddit-horror]: https://www.reddit.com/r/tech_x/comments/1trs1bt/new_york_university_student_spends_6_months/
+
+[stanford-ai-policy]: https://news.stanford.edu/stories/2025/10/academic-integrity-working-group-generative-ai-exam-policies
+[oxford-ai-policy]: https://libguides.bodleian.ox.ac.uk/using-ai-to-support-academic-work/university-policies
+
+[shanghai-ranking]: https://www.shanghairanking.com/institution?n&r=France
 [chatgpt]: https://chatgpt.com/

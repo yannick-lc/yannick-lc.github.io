@@ -70,6 +70,7 @@ I have been using it for a while, as evidenced by its 228 appearances in my [PhD
 I have no intention of changing my writing style just because I'm seemingly an inspiration to ChatGPT.
 
 
+
 ### How can I make sure I don't miss the next blog post?
 
 You can follow me on [Twitter](https://x.com/yannlecac) or [LinkedIn](https://www.linkedin.com/in/lecacheux/). I sometimes write about machine learning there as well.
