@@ -2,6 +2,8 @@
 
 Repository for the content of Yannick Le Cacheux's blog.
 
+Available at https://yannick-lc.github.io/ (for now)
+
 Created and hosted using [Jekyll](https://jekyllrb.com/) and [Github Pages](https://docs.github.com/en/pages/quickstart).
 
 ## Structure
@@ -67,6 +69,8 @@ For collapsible sections in details tag, maybe add emojis like ℹ️ to indicat
 ## Todo
 
 Maybe better handle ToC scroll bar on mobile (or disable?)
+
+Add a couple of exercises in matrix notation article
 
 Standalone example of pseudo inverse: 3D hand landmarks
 
