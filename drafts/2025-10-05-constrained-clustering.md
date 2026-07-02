@@ -89,7 +89,7 @@ It would make more sense to assign all clients in a same area to the same repres
 
 <img class="center-image" src="" alt="Random assignment" width="400"/>
 <div class="figure-legend" markdown="1">
-Figure 1: Random client assignments of the 3 sales representatives, Rep. Brown, Rep. Cyan and Rep. Indigo. Probably not optimal.
+Figure 1: Random client assignments of the 3 Sales Representatives, Rep. Brown, Rep. Cyan and Rep. Indigo. Probably not optimal.
 </div>
 
 **We have been missioned to do just that**: (re)assign the 500 clients to the 3 salespersons' portfolios in a way that reduces travel times.
