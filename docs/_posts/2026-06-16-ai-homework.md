@@ -2,12 +2,11 @@
 layout: post
 title:  "AI will destroy the world (through homework)"
 rendered_title: "AI will destroy the world (through homework)"
-date:   2026-06-16 21:32:00 +0200
-last_modified_at:  2026-06-16 21:32:00 +0200
+date:   2026-07-03 00:08:00 +0200
+last_modified_at:  2026-07-03 00:08:00 +0200
 categories: essay
-permalink: /blog/ai-homeworks/
+permalink: /blog/ai-homework/
 description: "AI may put an end to civilization, but not the way you think. It will be because of homework."
-image: /assets/img/matrix-notation/matrix-illustration.jpg
 comments: true
 ---
 
